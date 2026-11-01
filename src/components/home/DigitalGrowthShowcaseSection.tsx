@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import Link from '@/components/Link';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import {
   ArrowRight,
   ChevronRight,
@@ -80,6 +81,29 @@ const SERVICES_LIST: ServiceItem[] = [
 
 export default function DigitalGrowthShowcaseSection() {
   const [hoveredService, setHoveredService] = useState<string | null>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  // Smooth mouse tilt tracking for 3D card perspective
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const smoothX = useSpring(mouseX, { stiffness: 120, damping: 20 });
+  const smoothY = useSpring(mouseY, { stiffness: 120, damping: 20 });
+  const cardRotateX = useTransform(smoothY, [-0.5, 0.5], [6, -6]);
+  const cardRotateY = useTransform(smoothX, [-0.5, 0.5], [-6, 6]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    mouseX.set(x);
+    mouseY.set(y);
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+  };
 
   return (
     <section
@@ -107,46 +131,132 @@ export default function DigitalGrowthShowcaseSection() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
           {/* ======================================================== */}
-          {/* LEFT COLUMN: 3D Studio Rocket Visual Showcase Card       */}
+          {/* LEFT COLUMN: Animated 3D Studio Rocket & Telemetry Frame */}
           {/* ======================================================== */}
           <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="w-full max-w-md lg:max-w-none relative group">
-              {/* Outer Glow Halo */}
-              <div
-                className="absolute -inset-1 bg-gradient-to-r from-solar/20 via-amber-500/15 to-orange-500/20 rounded-[32px] blur-xl opacity-60 group-hover:opacity-100 transition-opacity pointer-events-none"
+            <div
+              ref={cardRef}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              className="w-full max-w-md lg:max-w-none relative group [perspective:1000px]"
+            >
+              {/* Animated Outer Glow Halo */}
+              <motion.div
+                className="absolute -inset-1.5 bg-gradient-to-r from-solar/25 via-amber-500/20 to-orange-500/25 rounded-[32px] blur-xl pointer-events-none"
+                animate={{
+                  opacity: [0.45, 0.75, 0.45],
+                  scale: [0.99, 1.015, 0.99],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
                 aria-hidden="true"
               />
 
-              {/* Showcase Card Surface */}
-              <div className="relative rounded-[28px] bg-gradient-to-b from-white via-zinc-50/90 to-amber-50/20 border border-zinc-200/90 shadow-[0_20px_50px_-15px_rgba(232,116,44,0.1),0_10px_25px_rgba(0,0,0,0.03)] p-6 sm:p-8 overflow-hidden flex items-center justify-center min-h-[380px] sm:min-h-[440px] lg:min-h-[520px]">
-                
-                {/* Background Radar Vector Rings */}
-                <svg
+              {/* Animated Showcase Card Surface Frame */}
+              <motion.div
+                style={{
+                  rotateX: cardRotateX,
+                  rotateY: cardRotateY,
+                  transformStyle: 'preserve-3d',
+                }}
+                className="relative rounded-[28px] bg-gradient-to-b from-white via-zinc-50/90 to-amber-50/25 border border-zinc-200/90 shadow-[0_20px_50px_-15px_rgba(232,116,44,0.12),0_10px_25px_rgba(0,0,0,0.03)] p-6 sm:p-8 overflow-hidden flex items-center justify-center min-h-[380px] sm:min-h-[440px] lg:min-h-[520px]"
+              >
+                {/* Aerospace Frame Corner Crosshairs */}
+                <span className="absolute top-3.5 left-3.5 font-mono text-[10px] text-zinc-300 select-none">
+                  +
+                </span>
+                <span className="absolute top-3.5 right-3.5 font-mono text-[10px] text-zinc-300 select-none">
+                  +
+                </span>
+                <span className="absolute bottom-3.5 left-3.5 font-mono text-[10px] text-zinc-300 select-none">
+                  +
+                </span>
+                <span className="absolute bottom-3.5 right-3.5 font-mono text-[10px] text-zinc-300 select-none">
+                  +
+                </span>
+
+                {/* Animated Rotating Radar Vector Rings Frame */}
+                <motion.svg
                   className="absolute inset-0 w-full h-full pointer-events-none opacity-30"
                   viewBox="0 0 400 400"
                   fill="none"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
                   aria-hidden="true"
                 >
                   <circle cx="200" cy="200" r="160" stroke="#E8742C" strokeWidth="1" strokeDasharray="4 6" opacity="0.35" />
                   <circle cx="200" cy="200" r="110" stroke="#71717A" strokeWidth="1" strokeDasharray="3 5" opacity="0.4" />
                   <circle cx="200" cy="200" r="60" stroke="#E8742C" strokeWidth="1" opacity="0.25" />
-                </svg>
+                </motion.svg>
 
-                {/* Ambient Soft Glow Behind Rocket */}
-                <div className="absolute w-56 h-56 bg-gradient-to-tr from-amber-400/20 via-orange-500/15 to-transparent rounded-full blur-2xl pointer-events-none" />
+                {/* Animated Pulsing Thruster Flare Light Behind Rocket */}
+                <motion.div
+                  className="absolute w-60 h-60 bg-gradient-to-tr from-amber-400/25 via-orange-500/20 to-transparent rounded-full blur-2xl pointer-events-none"
+                  animate={{
+                    scale: [0.95, 1.25, 0.9, 1.15, 0.95],
+                    opacity: [0.45, 0.85, 0.4, 0.75, 0.45],
+                  }}
+                  transition={{
+                    duration: 2.2,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
+                />
 
-                {/* 3D Rocket Artwork (No badge overlaid, clean rendering) */}
-                <div className="relative z-10 w-full max-w-[340px] sm:max-w-[380px] flex items-center justify-center transform transition-transform duration-700 ease-out group-hover:scale-105">
+                {/* Floating Staggered Energy Spark Particles */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+                  {[0, 1, 2, 3].map((i) => (
+                    <motion.span
+                      key={i}
+                      className="absolute w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(245,158,11,0.8)]"
+                      style={{
+                        left: `${35 + i * 10}%`,
+                        bottom: `${30 + (i % 2) * 15}%`,
+                      }}
+                      animate={{
+                        y: [-10, -90 - i * 25],
+                        x: [0, 25 + i * 10],
+                        opacity: [0, 0.85, 0],
+                        scale: [0.6, 1.2, 0.3],
+                      }}
+                      transition={{
+                        duration: 2.4 + i * 0.4,
+                        repeat: Infinity,
+                        delay: i * 0.55,
+                        ease: 'easeOut',
+                      }}
+                    />
+                  ))}
+                </div>
+
+                {/* Animated Levitating Rocket Entity */}
+                <motion.div
+                  className="relative z-10 w-full max-w-[340px] sm:max-w-[380px] flex items-center justify-center select-none pointer-events-none"
+                  animate={{
+                    y: [-8, 8, -8],
+                    x: [-3, 3, -3],
+                    rotate: [-0.8, 1.2, -0.8],
+                  }}
+                  transition={{
+                    duration: 4.8,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                >
                   <Image
                     src="/images/home/rocket-growth-corner.png"
                     alt="ARKA Digital Acceleration Rocket"
                     width={480}
                     height={480}
-                    className="w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(232,116,44,0.16)] select-none pointer-events-none"
+                    className="w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(232,116,44,0.18)]"
                     priority
                   />
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
 
