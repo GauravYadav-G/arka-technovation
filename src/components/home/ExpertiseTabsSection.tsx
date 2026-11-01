@@ -254,11 +254,11 @@ export default function ExpertiseTabsSection() {
         aria-hidden="true"
       />
 
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <div className="relative container mx-auto px-3 sm:px-6 lg:px-8 max-w-7xl">
         {/* ======================================================== */}
         {/* SECTION HEADER: Preserving exact required texts           */}
         {/* ======================================================== */}
-        <div className="grid lg:grid-cols-12 gap-5 sm:gap-8 items-end mb-8 sm:mb-14">
+        <div className="grid lg:grid-cols-12 gap-5 sm:gap-8 items-end mb-8 sm:mb-14 px-1 sm:px-0">
           <div className="lg:col-span-7">
             <p className="text-xs sm:text-sm font-mono font-semibold uppercase tracking-widest text-zinc-500 mb-2 sm:mb-3">
               Our expertise
@@ -287,7 +287,7 @@ export default function ExpertiseTabsSection() {
         {/* ======================================================== */}
         <div className="relative mb-8 sm:mb-12">
           {/* Subtle edge fade gradients on mobile to indicate horizontal scrollability */}
-          <div className="overflow-x-auto scroll-smooth scrollbar-none py-2 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:mx-0 lg:px-0 [mask-image:linear-gradient(to_right,transparent,black_16px,black_calc(100%-16px),transparent)] sm:[mask-image:none]">
+          <div className="overflow-x-auto scroll-smooth scrollbar-none py-2 -mx-3 px-3 sm:-mx-6 sm:px-6 lg:mx-0 lg:px-0 [mask-image:linear-gradient(to_right,transparent,black_16px,black_calc(100%-16px),transparent)] sm:[mask-image:none]">
             <div className="flex items-center justify-start lg:justify-center">
               <div
                 role="tablist"
@@ -356,7 +356,7 @@ export default function ExpertiseTabsSection() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.22, ease: [0.2, 0, 0, 1] }}
-            className="relative rounded-[24px] sm:rounded-[36px] bg-white border border-zinc-200/90 p-5 sm:p-8 lg:p-12 xl:p-14 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.06),0_1px_2px_rgba(0,0,0,0.02)] overflow-hidden"
+            className="relative rounded-2xl sm:rounded-[36px] bg-white border border-zinc-200/90 px-3.5 py-5 sm:p-8 lg:p-12 xl:p-14 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.06),0_1px_2px_rgba(0,0,0,0.02)] overflow-hidden"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 xl:gap-14 items-center">
 
@@ -394,15 +394,15 @@ export default function ExpertiseTabsSection() {
                   </div>
 
                   {/* 3 Structured Spec Pillars */}
-                  <div className="flex flex-col gap-3 sm:gap-3.5 mb-7 sm:mb-9">
+                  <div className="flex flex-col gap-2.5 sm:gap-3.5 mb-6 sm:mb-9">
                     {active.pillars.map((pillar, idx) => {
                       const PillarIcon = pillar.icon;
                       return (
                         <div
                           key={idx}
-                          className="group relative flex items-start gap-3 sm:gap-4 p-3.5 sm:p-4.5 rounded-2xl bg-zinc-50/70 border border-zinc-200/60 hover:border-zinc-300 hover:bg-white hover:shadow-xs transition-all duration-200"
+                          className="group relative flex items-start gap-2.5 sm:gap-4 p-2.5 sm:p-4.5 rounded-xl sm:rounded-2xl bg-zinc-50/70 border border-zinc-200/60 hover:border-zinc-300 hover:bg-white hover:shadow-xs transition-all duration-200"
                         >
-                          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center shrink-0 text-solar group-hover:scale-105 group-hover:bg-orange-500/15 transition-all">
+                          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center shrink-0 text-solar group-hover:scale-105 group-hover:bg-orange-500/15 transition-all">
                             <PillarIcon className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={2} />
                           </div>
                           <div className="flex-1 min-w-0">
@@ -428,7 +428,7 @@ export default function ExpertiseTabsSection() {
                 </div>
 
                 {/* Action Bar / CTA Buttons (Full width on mobile, inline on tablet/desktop) */}
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-6 border-t border-zinc-100">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 pt-5 sm:pt-6 border-t border-zinc-100">
                   <Link
                     href={active.link}
                     className="inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-3.5 min-h-[48px] rounded-full bg-zinc-950 hover:bg-zinc-800 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm transition-all duration-200 active:scale-[0.98] group"
