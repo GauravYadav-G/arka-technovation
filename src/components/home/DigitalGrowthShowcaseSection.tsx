@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from '@/components/Link';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   ArrowRight,
   ChevronRight,
@@ -17,7 +17,6 @@ interface ServiceItem {
   category: string;
   slug: string;
   highlight: string;
-  tag: string;
 }
 
 const SERVICES_LIST: ServiceItem[] = [
@@ -27,7 +26,6 @@ const SERVICES_LIST: ServiceItem[] = [
     category: 'Digital Experience',
     slug: '/services/development',
     highlight: 'Next.js 15, headless architecture & interactive 3D web',
-    tag: 'Next.js 15',
   },
   {
     id: 'digital-marketing',
@@ -35,7 +33,6 @@ const SERVICES_LIST: ServiceItem[] = [
     category: 'Full-Funnel Growth',
     slug: '/services/digital-marketing',
     highlight: 'Revenue attribution, performance media & omnichannel scaling',
-    tag: 'Full Funnel',
   },
   {
     id: 'software-dev',
@@ -43,7 +40,6 @@ const SERVICES_LIST: ServiceItem[] = [
     category: 'Custom Engineering',
     slug: '/services/crm-software',
     highlight: 'Custom enterprise CRM, ERP portals & high-throughput APIs',
-    tag: 'Enterprise ERP',
   },
   {
     id: 'film-making',
@@ -51,7 +47,6 @@ const SERVICES_LIST: ServiceItem[] = [
     category: 'Creative Production',
     slug: '/services/film-making',
     highlight: 'Cinematic brand documentaries, 4K product films & aerial cinema',
-    tag: '4K Cinema',
   },
   {
     id: 'seo-services',
@@ -59,7 +54,6 @@ const SERVICES_LIST: ServiceItem[] = [
     category: 'Organic Authority',
     slug: '/services/seo-lead-generation',
     highlight: 'Schema.org entity graphs, Core Web Vitals & Top-3 rank dominance',
-    tag: 'Top 3 SERP',
   },
   {
     id: 'content-marketing',
@@ -67,7 +61,6 @@ const SERVICES_LIST: ServiceItem[] = [
     category: 'Editorial Systems',
     slug: '/services/content-marketing',
     highlight: 'Executive thought leadership, technical whitepapers & media assets',
-    tag: 'Editorial Hub',
   },
   {
     id: 'google-ads',
@@ -75,35 +68,11 @@ const SERVICES_LIST: ServiceItem[] = [
     category: 'Paid Search & Media',
     slug: '/services/digital-advertising',
     highlight: 'High-intent search capture, smart bidding & programmatic display',
-    tag: 'Smart Bidding',
   },
 ];
 
 export default function DigitalGrowthShowcaseSection() {
   const [hoveredService, setHoveredService] = useState<string | null>(null);
-  const cardRef = useRef<HTMLDivElement>(null);
-
-  // Smooth mouse tilt tracking for 3D card perspective
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const smoothX = useSpring(mouseX, { stiffness: 120, damping: 20 });
-  const smoothY = useSpring(mouseY, { stiffness: 120, damping: 20 });
-  const cardRotateX = useTransform(smoothY, [-0.5, 0.5], [6, -6]);
-  const cardRotateY = useTransform(smoothX, [-0.5, 0.5], [-6, 6]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    mouseX.set(x);
-    mouseY.set(y);
-  };
-
-  const handleMouseLeave = () => {
-    mouseX.set(0);
-    mouseY.set(0);
-  };
 
   return (
     <section
@@ -129,139 +98,47 @@ export default function DigitalGrowthShowcaseSection() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          
+
           {/* ======================================================== */}
-          {/* LEFT COLUMN: Animated 3D Studio Rocket & Telemetry Frame */}
+          {/* LEFT COLUMN: Large Freestanding Animated 3D Rocket       */}
           {/* ======================================================== */}
-          <div className="lg:col-span-5 flex flex-col items-center">
-            <div
-              ref={cardRef}
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}
-              className="w-full max-w-md lg:max-w-none relative group [perspective:1000px]"
+          <div className="lg:col-span-5 flex items-center justify-center relative py-6 lg:py-0">
+            {/* Ambient Solar Warmth Glow Behind Rocket Thrusters */}
+            <motion.div
+              className="absolute w-72 h-72 sm:w-96 sm:h-96 bg-gradient-to-t from-amber-400/25 via-orange-500/15 to-transparent rounded-full blur-3xl pointer-events-none bottom-4 sm:bottom-8"
+              animate={{
+                scale: [0.95, 1.25, 0.95],
+                opacity: [0.4, 0.8, 0.4],
+              }}
+              transition={{
+                duration: 2.4,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
+              aria-hidden="true"
+            />
+
+            {/* Freestanding Large 3D Vertical Rocket */}
+            <motion.div
+              className="relative z-10 w-full max-w-[360px] sm:max-w-[440px] lg:max-w-[500px] xl:max-w-[540px] flex items-center justify-center select-none pointer-events-none"
+              animate={{
+                y: [-12, 12, -12],
+              }}
+              transition={{
+                duration: 4.8,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
             >
-              {/* Animated Outer Glow Halo */}
-              <motion.div
-                className="absolute -inset-1.5 bg-gradient-to-r from-solar/25 via-amber-500/20 to-orange-500/25 rounded-[32px] blur-xl pointer-events-none"
-                animate={{
-                  opacity: [0.45, 0.75, 0.45],
-                  scale: [0.99, 1.015, 0.99],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-                aria-hidden="true"
+              <Image
+                src="/images/home/rocket-growth-vertical.png"
+                alt="ARKA Digital Acceleration Vertical Rocket"
+                width={650}
+                height={690}
+                className="w-full h-auto object-contain drop-shadow-[0_25px_60px_rgba(232,116,44,0.22)]"
+                priority
               />
-
-              {/* Animated Showcase Card Surface Frame */}
-              <motion.div
-                style={{
-                  rotateX: cardRotateX,
-                  rotateY: cardRotateY,
-                  transformStyle: 'preserve-3d',
-                }}
-                className="relative rounded-[28px] bg-gradient-to-b from-white via-zinc-50/90 to-amber-50/25 border border-zinc-200/90 shadow-[0_20px_50px_-15px_rgba(232,116,44,0.12),0_10px_25px_rgba(0,0,0,0.03)] p-6 sm:p-8 overflow-hidden flex items-center justify-center min-h-[380px] sm:min-h-[440px] lg:min-h-[520px]"
-              >
-                {/* Aerospace Frame Corner Crosshairs */}
-                <span className="absolute top-3.5 left-3.5 font-mono text-[10px] text-zinc-300 select-none">
-                  +
-                </span>
-                <span className="absolute top-3.5 right-3.5 font-mono text-[10px] text-zinc-300 select-none">
-                  +
-                </span>
-                <span className="absolute bottom-3.5 left-3.5 font-mono text-[10px] text-zinc-300 select-none">
-                  +
-                </span>
-                <span className="absolute bottom-3.5 right-3.5 font-mono text-[10px] text-zinc-300 select-none">
-                  +
-                </span>
-
-                {/* Animated Rotating Radar Vector Rings Frame */}
-                <motion.svg
-                  className="absolute inset-0 w-full h-full pointer-events-none opacity-30"
-                  viewBox="0 0 400 400"
-                  fill="none"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
-                  aria-hidden="true"
-                >
-                  <circle cx="200" cy="200" r="160" stroke="#E8742C" strokeWidth="1" strokeDasharray="4 6" opacity="0.35" />
-                  <circle cx="200" cy="200" r="110" stroke="#71717A" strokeWidth="1" strokeDasharray="3 5" opacity="0.4" />
-                  <circle cx="200" cy="200" r="60" stroke="#E8742C" strokeWidth="1" opacity="0.25" />
-                </motion.svg>
-
-                {/* Animated Pulsing Thruster Flare Light Behind Rocket */}
-                <motion.div
-                  className="absolute w-60 h-60 bg-gradient-to-tr from-amber-400/25 via-orange-500/20 to-transparent rounded-full blur-2xl pointer-events-none"
-                  animate={{
-                    scale: [0.95, 1.25, 0.9, 1.15, 0.95],
-                    opacity: [0.45, 0.85, 0.4, 0.75, 0.45],
-                  }}
-                  transition={{
-                    duration: 2.2,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                  }}
-                />
-
-                {/* Floating Staggered Energy Spark Particles */}
-                <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-                  {[0, 1, 2, 3].map((i) => (
-                    <motion.span
-                      key={i}
-                      className="absolute w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(245,158,11,0.8)]"
-                      style={{
-                        left: `${35 + i * 10}%`,
-                        bottom: `${30 + (i % 2) * 15}%`,
-                      }}
-                      animate={{
-                        y: [-10, -90 - i * 25],
-                        x: [0, 25 + i * 10],
-                        opacity: [0, 0.85, 0],
-                        scale: [0.6, 1.2, 0.3],
-                      }}
-                      transition={{
-                        duration: 2.4 + i * 0.4,
-                        repeat: Infinity,
-                        delay: i * 0.55,
-                        ease: 'easeOut',
-                      }}
-                    />
-                  ))}
-                </div>
-
-                {/* Animated Levitating Rocket Entity */}
-                <motion.div
-                  className="relative z-10 w-full max-w-[340px] sm:max-w-[380px] flex items-center justify-center select-none pointer-events-none"
-                  style={{
-                    maskImage: 'radial-gradient(ellipse 90% 90% at 55% 45%, black 60%, transparent 100%)',
-                    WebkitMaskImage: 'radial-gradient(ellipse 90% 90% at 55% 45%, black 60%, transparent 100%)',
-                  }}
-                  animate={{
-                    y: [-8, 8, -8],
-                    x: [-3, 3, -3],
-                    rotate: [-0.8, 1.2, -0.8],
-                  }}
-                  transition={{
-                    duration: 4.8,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                  }}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <Image
-                    src="/images/home/rocket-growth-corner.png"
-                    alt="ARKA Digital Acceleration Rocket"
-                    width={480}
-                    height={480}
-                    className="w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(232,116,44,0.18)]"
-                    priority
-                  />
-                </motion.div>
-              </motion.div>
-            </div>
+            </motion.div>
           </div>
 
           {/* ======================================================== */}
@@ -294,7 +171,7 @@ export default function DigitalGrowthShowcaseSection() {
               <strong className="font-semibold text-black">ARKA Technovation</strong> is committed to helping businesses across industries augment their marketing efforts, modernize digital infrastructure, and capture decisive competitive advantage through integrated engineering, search authority, and comprehensive digital marketing solutions.
             </p>
 
-            {/* 7 Capabilities Interactive List (Matching user reference) */}
+            {/* 7 Capabilities Interactive List (Clean, no pills, matching reference) */}
             <div className="mt-8 w-full">
               <div className="text-xs font-mono uppercase tracking-wider text-zinc-500 font-semibold mb-3 flex items-center gap-2">
                 <Layers className="w-3.5 h-3.5 text-solar" />
@@ -316,7 +193,7 @@ export default function DigitalGrowthShowcaseSection() {
                           : 'bg-white/80 hover:bg-white border-zinc-200/80 hover:border-zinc-300'
                       }`}
                     >
-                      <div className="flex items-center gap-2.5 min-w-0 pr-2">
+                      <div className="flex items-center gap-2.5 min-w-0">
                         {/* Double Arrow Chevron Accent (matching reference » mark with solar flair) */}
                         <div className="flex items-center text-solar group-hover:translate-x-0.5 transition-transform flex-shrink-0">
                           <ChevronRight className="w-3.5 h-3.5 -mr-2" strokeWidth={3} />
@@ -332,11 +209,6 @@ export default function DigitalGrowthShowcaseSection() {
                           </span>
                         </div>
                       </div>
-
-                      {/* Tech Tag Pill */}
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-zinc-100 text-zinc-600 border border-zinc-200 flex-shrink-0 group-hover:bg-solar/10 group-hover:text-solar group-hover:border-solar/20 transition-colors">
-                        {srv.tag}
-                      </span>
                     </Link>
                   );
                 })}
