@@ -66,6 +66,8 @@ export default function ServicesStickySection() {
     const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const initializeReleve = () => {
+      // Do not run WebGL particle relief on mobile (< 1024px) to ensure heading and description text remain razor-sharp and unobstructed
+      if (typeof window !== 'undefined' && window.innerWidth < 1024) return;
       if (!canvas || releve) return;
       releve = creerReleve(canvas, {
         seed: 5.3,
@@ -280,15 +282,10 @@ export default function ServicesStickySection() {
             align-items: center !important;
             padding: 68px 16px 20px !important;
             box-sizing: border-box !important;
+            background-color: #FAFAFA !important;
           }
           #services .pf__bg {
-            display: block !important;
-            position: absolute !important;
-            inset: 0 !important;
-            width: 100% !important;
-            height: 100% !important;
-            pointer-events: none !important;
-            z-index: 0 !important;
+            display: none !important;
           }
           #services .pf__head-mobile {
             width: min(88vw, 360px);
@@ -296,7 +293,7 @@ export default function ServicesStickySection() {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            z-index: 10;
+            z-index: 20 !important;
           }
           #services .pf__num-mobile {
             display: flex !important;
@@ -305,7 +302,7 @@ export default function ServicesStickySection() {
             margin: 0;
             font-family: var(--font-mono);
             font-variant-numeric: tabular-nums;
-            z-index: 10;
+            z-index: 20 !important;
           }
           #services .pf__num-mobile .pf__lbl {
             font-size: 11px !important;
@@ -336,8 +333,8 @@ export default function ServicesStickySection() {
           #services .pf__card-wrap {
             position: relative;
             width: min(88vw, 360px);
-            height: calc(min(88vw, 360px) * (10 / 16) + 165px);
-            z-index: 10;
+            height: calc(min(88vw, 360px) * (10 / 16) + 195px);
+            z-index: 20;
           }
           #services .pf__steps, #services .pf__step {
             display: contents !important;
@@ -378,7 +375,7 @@ export default function ServicesStickySection() {
             left: 0 !important;
             right: 0 !important;
             width: 100% !important;
-            z-index: 10 !important;
+            z-index: 25 !important;
             opacity: 0 !important;
             pointer-events: none !important;
             transition: opacity 0.4s var(--ease-out-quint), transform 0.5s var(--ease-out-quint) !important;
@@ -397,36 +394,37 @@ export default function ServicesStickySection() {
             font-family: var(--font-mono);
             letter-spacing: .04em;
             text-transform: uppercase;
-            color: var(--fg-muted);
+            color: #71717a !important;
             margin: 0 0 4px;
             font-size: 11px;
             display: block !important;
           }
           #services .pf__title {
-            font-size: 21px !important;
+            font-size: 22px !important;
             font-weight: 700 !important;
             letter-spacing: -0.02em !important;
             line-height: 1.15 !important;
             margin: 0 !important;
+            color: #09090B !important;
           }
           #services .pf__text {
-            margin: 6px 0 0 !important;
-            font-size: 13px !important;
-            line-height: 1.5 !important;
-            color: color-mix(in srgb, var(--fg) 72%, transparent) !important;
+            margin: 8px 0 0 !important;
+            font-size: 13.5px !important;
+            line-height: 1.55 !important;
+            color: #3f3f46 !important;
             display: -webkit-box !important;
-            -webkit-line-clamp: 2 !important;
+            -webkit-line-clamp: 3 !important;
             -webkit-box-orient: vertical !important;
             overflow: hidden !important;
           }
           #services .pf__cta {
-            margin-top: 12px !important;
+            margin-top: 14px !important;
           }
           #services .cta {
-            height: 42px !important;
-            padding: 0 16px !important;
+            min-height: 44px !important;
+            padding: 0 18px !important;
             font-size: 13px !important;
-            border-radius: 8px !important;
+            border-radius: 9999px !important;
           }
         }
       `}</style>
@@ -460,10 +458,10 @@ export default function ServicesStickySection() {
             overflow: 'hidden',
           }}
         >
-          {/* WebGL Particle Relief Canvas (active on BOTH desktop & mobile) */}
+          {/* WebGL Particle Relief Canvas (Desktop only; disabled on mobile so text is completely crisp & unobstructed) */}
           <canvas
             ref={canvasRef}
-            className="pf__bg !block absolute inset-0 w-full h-full pointer-events-none z-0"
+            className="pf__bg hidden lg:block absolute inset-0 w-full h-full pointer-events-none z-0"
             data-pf-bg
             aria-hidden={true}
           />
