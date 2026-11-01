@@ -13,6 +13,9 @@ const PortfoliteServicesBento = dynamic(() => import('../components/portfolite/P
 const PortfoliteAbout = dynamic(() => import('../components/portfolite/PortfoliteAbout'), {
   ssr: true,
 });
+const DigitalGrowthShowcaseSection = dynamic(() => import('../components/home/DigitalGrowthShowcaseSection'), {
+  ssr: true,
+});
 const PortfoliteRecentWorksCarousel = dynamic(() => import('../components/portfolite/PortfoliteRecentWorksCarousel'), {
   ssr: true,
 });
@@ -58,6 +61,11 @@ export default function PortfoliteHome() {
       {/* Services Bento Grid (Reference 6-Card Layout: Web Dev, Software Dev, SEO, Film, SMM, Digital Marketing) */}
       <div className="cv-auto">
         <PortfoliteServicesBento />
+      </div>
+
+      {/* Digital Capabilities & Growth Engine Showcase (Above Meet Founder) */}
+      <div className="cv-auto">
+        <DigitalGrowthShowcaseSection />
       </div>
 
       {/* Who We Are: Founded by Kranti Parashar, 17+ Years Heritage */}
