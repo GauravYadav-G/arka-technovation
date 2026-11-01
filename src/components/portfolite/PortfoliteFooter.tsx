@@ -205,7 +205,7 @@ export default function PortfoliteFooter() {
               decoding="async"
               width={340}
               height={112}
-              className="h-16 sm:h-24 md:h-28 w-auto max-w-[280px] sm:max-w-[420px] object-contain transition-all duration-300 group-hover:scale-105 drop-shadow-[0_4px_12px_rgba(0,0,0,0.06)]"
+              className="h-14 sm:h-24 md:h-28 w-auto max-w-[240px] sm:max-w-[420px] object-contain object-left transition-all duration-300 group-hover:scale-105 drop-shadow-[0_4px_12px_rgba(0,0,0,0.06)]"
             />
           </Link>
 
@@ -281,7 +281,7 @@ export default function PortfoliteFooter() {
           <p className="mono text-[0.62rem] tracking-[0.24em] uppercase text-zinc-500 mb-5 font-semibold">
             Contact Details
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-1 gap-6 sm:gap-4 text-xs">
+          <div className="grid grid-cols-1 sm:grid-cols-1 gap-4 sm:gap-4 text-xs">
             <div>
               {OFFICES.map((o) => (
                 <div key={o.city}>
@@ -296,10 +296,10 @@ export default function PortfoliteFooter() {
                 </div>
               ))}
             </div>
-            <div className="space-y-2">
+            <div className="space-y-2 pt-1 sm:pt-0">
               <a
                 href={`mailto:${COMPANY.email}`}
-                className="text-zinc-900 hover:text-solar transition-colors block font-mono text-xs break-all font-medium"
+                className="text-zinc-900 hover:text-solar transition-colors block font-mono text-xs font-medium"
               >
                 {COMPANY.email}
               </a>

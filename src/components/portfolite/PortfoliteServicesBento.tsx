@@ -93,9 +93,9 @@ export default function PortfoliteServicesBento() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Left-Aligned Editorial Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-14 sm:mb-20 gap-6 text-left">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 sm:mb-20 gap-4 sm:gap-6 text-left">
           <div className="max-w-2xl">
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-black leading-[1.08] font-display">
+            <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold tracking-tight text-black leading-[1.12] sm:leading-[1.08] font-display">
               Integrated digital services,{' '}
               <span className="font-serif italic font-normal text-solar">
                 engineered
@@ -110,18 +110,18 @@ export default function PortfoliteServicesBento() {
         </div>
 
         {/* ── 3-Column × 2-Row Grid: Clean, High-Polish Bento Cards ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-7">
           {SERVICES_DATA.map((service) => {
             const Icon = service.icon;
             return (
               <Link
                 key={service.id}
                 href={service.link}
-                className="group relative rounded-[24px] sm:rounded-[28px] bg-white/80 hover:bg-white active:scale-[0.985] backdrop-blur-md p-7 sm:p-9 flex flex-col justify-between border border-zinc-200/80 hover:border-black/30 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 transition-[transform,box-shadow,border-color,background-color] duration-300 ease-out min-h-[340px] sm:min-h-[360px]"
+                className="group relative rounded-2xl sm:rounded-[28px] bg-white/80 hover:bg-white active:scale-[0.985] backdrop-blur-md p-5 sm:p-7 lg:p-9 flex flex-col justify-between border border-zinc-200/80 hover:border-black/30 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 transition-[transform,box-shadow,border-color,background-color] duration-300 ease-out min-h-[300px] sm:min-h-[360px]"
               >
                 {/* Card Top: Index, Category & Icon */}
                 <div>
-                  <div className="flex items-center justify-between mb-7">
+                  <div className="flex items-center justify-between mb-4 sm:mb-7">
                     <div className="flex items-center gap-2">
                       <span className="text-sm font-mono font-bold text-[#b45309]" style={{ fontVariantNumeric: 'tabular-nums' }}>
                         {service.index}
@@ -132,25 +132,25 @@ export default function PortfoliteServicesBento() {
                       </span>
                     </div>
 
-                    <div className="w-11 h-11 rounded-2xl bg-white/90 backdrop-blur-md border border-zinc-200/80 flex items-center justify-center text-zinc-900 group-hover:bg-black group-hover:text-white group-hover:border-black transition-[background-color,color,border-color] duration-200 shadow-sm">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-md border border-zinc-200/80 flex items-center justify-center text-zinc-900 group-hover:bg-black group-hover:text-white group-hover:border-black transition-[background-color,color,border-color] duration-200 shadow-sm">
                       <Icon className="w-4 h-4" />
                     </div>
                   </div>
 
                   {/* Service Title */}
-                  <h3 className="text-2xl sm:text-[25px] font-bold text-black tracking-tight leading-snug font-display text-balance">
+                  <h3 className="text-xl sm:text-[25px] font-bold text-black tracking-tight leading-snug font-display text-balance">
                     {service.title}
                   </h3>
 
                   {/* Clean, Punchy Description */}
-                  <p className="mt-4 text-zinc-600 text-sm sm:text-[15px] font-normal leading-relaxed text-pretty">
+                  <p className="mt-3 sm:mt-4 text-zinc-600 text-sm sm:text-[15px] font-normal leading-relaxed text-pretty">
                     {service.description}
                   </p>
                 </div>
 
                 {/* Card Footer: Simple Minimal Action */}
-                <div className="pt-6 mt-8 border-t border-zinc-100 flex items-center justify-between">
-                  <span className="text-xs font-mono text-zinc-600 uppercase tracking-wider font-medium">
+                <div className="pt-4 sm:pt-6 mt-6 sm:mt-8 border-t border-zinc-100 flex items-center justify-between min-h-[44px]">
+                  <span className="text-[11px] sm:text-xs font-mono text-zinc-600 uppercase tracking-wider font-medium">
                     Core Capability
                   </span>
 

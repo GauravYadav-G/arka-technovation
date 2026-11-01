@@ -102,10 +102,10 @@ export default function DigitalGrowthShowcaseSection() {
           {/* ======================================================== */}
           {/* LEFT COLUMN: Large Freestanding Animated 3D Rocket       */}
           {/* ======================================================== */}
-          <div className="lg:col-span-5 flex items-center justify-center relative py-6 lg:py-0">
+          <div className="lg:col-span-5 flex items-center justify-center relative py-4 lg:py-0">
             {/* Ambient Solar Warmth Glow Behind Rocket Thrusters */}
             <motion.div
-              className="absolute w-72 h-72 sm:w-96 sm:h-96 bg-gradient-to-t from-amber-400/25 via-orange-500/15 to-transparent rounded-full blur-3xl pointer-events-none bottom-4 sm:bottom-8"
+              className="absolute w-56 h-56 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-gradient-to-t from-amber-400/25 via-orange-500/15 to-transparent rounded-full blur-3xl pointer-events-none bottom-2 sm:bottom-6 lg:bottom-8"
               animate={{
                 scale: [0.95, 1.25, 0.95],
                 opacity: [0.4, 0.8, 0.4],
@@ -120,9 +120,9 @@ export default function DigitalGrowthShowcaseSection() {
 
             {/* Freestanding Large 3D Vertical Rocket */}
             <motion.div
-              className="relative z-10 w-full max-w-[360px] sm:max-w-[440px] lg:max-w-[500px] xl:max-w-[540px] flex items-center justify-center select-none pointer-events-none"
+              className="relative z-10 w-full max-w-[260px] sm:max-w-[380px] lg:max-w-[500px] xl:max-w-[540px] flex items-center justify-center select-none pointer-events-none"
               animate={{
-                y: [-12, 12, -12],
+                y: [-10, 10, -10],
               }}
               transition={{
                 duration: 4.8,
@@ -135,7 +135,7 @@ export default function DigitalGrowthShowcaseSection() {
                 alt="ARKA Digital Acceleration Vertical Rocket"
                 width={650}
                 height={690}
-                className="w-full h-auto object-contain drop-shadow-[0_25px_60px_rgba(232,116,44,0.22)]"
+                className="w-auto h-[240px] sm:h-[340px] lg:h-auto lg:w-full object-contain drop-shadow-[0_20px_50px_rgba(232,116,44,0.22)] [mix-blend-mode:multiply]"
                 priority
               />
             </motion.div>
@@ -149,7 +149,7 @@ export default function DigitalGrowthShowcaseSection() {
             {/* Editorial Heading (No badge above it, clean & confident) */}
             <h2
               id="services-showcase-heading"
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-black leading-[1.12]"
+              className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-black leading-[1.15] sm:leading-[1.12]"
               style={{ textWrap: 'balance' }}
             >
               Check out what{' '}
@@ -217,17 +217,17 @@ export default function DigitalGrowthShowcaseSection() {
 
             {/* 3 Core Performance Metrics (6256, 12000, 1220 from Reference) */}
             <div className="mt-10 w-full pt-8 border-t border-zinc-200/90">
-              <div className="grid grid-cols-3 gap-4 sm:gap-8">
+              <div className="grid grid-cols-3 gap-2.5 sm:gap-8">
                 
                 {/* Stat 1: 6256 Projects Executed */}
                 <div className="flex flex-col">
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-zinc-950 tracking-tight tabular-nums font-framer">
+                  <div className="flex items-baseline gap-0.5 sm:gap-1">
+                    <span className="text-2xl sm:text-4xl lg:text-[40px] font-extrabold text-zinc-950 tracking-tight tabular-nums font-framer">
                       6,256
                     </span>
-                    <span className="text-solar font-bold text-xl">+</span>
+                    <span className="text-solar font-bold text-lg sm:text-xl">+</span>
                   </div>
-                  <span className="text-xs sm:text-sm font-medium text-zinc-700 mt-1">
+                  <span className="text-[11px] sm:text-sm font-medium text-zinc-700 mt-1">
                     Projects Executed
                   </span>
                   <span className="text-[11px] text-zinc-500 font-light hidden sm:inline-block">
@@ -236,14 +236,14 @@ export default function DigitalGrowthShowcaseSection() {
                 </div>
 
                 {/* Stat 2: 12000 Calls & Inbound Inquiries */}
-                <div className="flex flex-col border-l border-zinc-200/80 pl-4 sm:pl-8">
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-zinc-950 tracking-tight tabular-nums font-framer">
+                <div className="flex flex-col border-l border-zinc-200/80 pl-2.5 sm:pl-8">
+                  <div className="flex items-baseline gap-0.5 sm:gap-1">
+                    <span className="text-2xl sm:text-4xl lg:text-[40px] font-extrabold text-zinc-950 tracking-tight tabular-nums font-framer">
                       12,000
                     </span>
-                    <span className="text-solar font-bold text-xl">+</span>
+                    <span className="text-solar font-bold text-lg sm:text-xl">+</span>
                   </div>
-                  <span className="text-xs sm:text-sm font-medium text-zinc-700 mt-1">
+                  <span className="text-[11px] sm:text-sm font-medium text-zinc-700 mt-1">
                     Calls Generated
                   </span>
                   <span className="text-[11px] text-zinc-500 font-light hidden sm:inline-block">
@@ -252,14 +252,14 @@ export default function DigitalGrowthShowcaseSection() {
                 </div>
 
                 {/* Stat 3: 1220 Client Testimonials */}
-                <div className="flex flex-col border-l border-zinc-200/80 pl-4 sm:pl-8">
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-zinc-950 tracking-tight tabular-nums font-framer">
+                <div className="flex flex-col border-l border-zinc-200/80 pl-2.5 sm:pl-8">
+                  <div className="flex items-baseline gap-0.5 sm:gap-1">
+                    <span className="text-2xl sm:text-4xl lg:text-[40px] font-extrabold text-zinc-950 tracking-tight tabular-nums font-framer">
                       1,220
                     </span>
-                    <span className="text-solar font-bold text-xl">+</span>
+                    <span className="text-solar font-bold text-lg sm:text-xl">+</span>
                   </div>
-                  <span className="text-xs sm:text-sm font-medium text-zinc-700 mt-1">
+                  <span className="text-[11px] sm:text-sm font-medium text-zinc-700 mt-1">
                     Client Testimonials
                   </span>
                   <span className="text-[11px] text-zinc-500 font-light hidden sm:inline-block">
@@ -271,11 +271,11 @@ export default function DigitalGrowthShowcaseSection() {
             </div>
 
             {/* CTA Buttons (Let's Connect + Learn More) */}
-            <div className="mt-9 flex flex-wrap items-center gap-4">
+            <div className="mt-9 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
               {/* Primary CTA: Let's Connect */}
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-gradient-to-r from-solar via-orange-600 to-amber-600 text-white font-semibold text-sm shadow-[0_8px_20px_rgba(232,116,44,0.28)] hover:shadow-[0_12px_28px_rgba(232,116,44,0.38)] hover:brightness-105 active:scale-[0.98] transition-all group"
+                className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 min-h-[48px] rounded-full bg-gradient-to-r from-solar via-orange-600 to-amber-600 text-white font-semibold text-sm shadow-[0_8px_20px_rgba(232,116,44,0.28)] hover:shadow-[0_12px_28px_rgba(232,116,44,0.38)] hover:brightness-105 active:scale-[0.98] transition-all group"
               >
                 <span>Let&apos;s Connect</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -284,7 +284,7 @@ export default function DigitalGrowthShowcaseSection() {
               {/* Secondary CTA: Learn More */}
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white text-zinc-900 border border-zinc-300 font-medium text-sm hover:bg-zinc-50 hover:border-zinc-400 active:scale-[0.98] transition-all shadow-sm group"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 min-h-[48px] rounded-full bg-white text-zinc-900 border border-zinc-300 font-medium text-sm hover:bg-zinc-50 hover:border-zinc-400 active:scale-[0.98] transition-all shadow-sm group"
               >
                 <span>Learn More</span>
                 <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />

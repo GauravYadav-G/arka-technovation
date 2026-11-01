@@ -268,12 +268,12 @@ export default function PortfoliteProcess() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Header */}
-        <div className="max-w-3xl mb-16 sm:mb-20">
-          <p className="text-xs uppercase tracking-widest text-zinc-500 font-mono mb-3">Our Delivery Process</p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-black leading-[1.08]">
+        <div className="max-w-3xl mb-10 sm:mb-20">
+          <p className="text-xs uppercase tracking-widest text-zinc-500 font-mono mb-2.5 sm:mb-3">Our Delivery Process</p>
+          <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold tracking-tight text-black leading-[1.12] sm:leading-[1.08]">
             Engineered for enterprise scale.
           </h2>
-          <p className="mt-4 sm:mt-5 text-zinc-600 text-base sm:text-lg font-light leading-relaxed max-w-2xl">
+          <p className="mt-3 sm:mt-5 text-zinc-600 text-sm sm:text-lg font-light leading-relaxed max-w-2xl">
             From initial system architecture to production deployment — every phase of our delivery process turns business requirements into scalable, dependable software.
           </p>
         </div>
@@ -291,20 +291,20 @@ export default function PortfoliteProcess() {
             return (
               <div
                 key={col.label}
-                className={`p-6 sm:p-8 lg:p-10 flex flex-col justify-between min-h-[420px] sm:min-h-[460px] lg:min-h-[500px] transition-colors duration-300 group hover:bg-white/90 border-black/10 ${borderClasses}`}
+                className={`p-5 sm:p-8 lg:p-10 flex flex-col justify-between min-h-[300px] sm:min-h-[460px] lg:min-h-[500px] transition-colors duration-300 group hover:bg-white/90 border-black/10 ${borderClasses}`}
               >
                 {/* Top Meta & Headline */}
                 <div>
-                  <span className="block text-xs sm:text-sm font-normal text-zinc-400 mb-4 tracking-normal">
+                  <span className="block text-xs sm:text-sm font-normal text-zinc-400 mb-3 sm:mb-4 tracking-normal">
                     {col.label}
                   </span>
-                  <h3 className="text-lg sm:text-xl lg:text-[22px] font-bold text-black tracking-tight leading-[1.35] max-w-[280px]">
+                  <h3 className="text-base sm:text-xl lg:text-[22px] font-bold text-black tracking-tight leading-[1.35] max-w-[280px]">
                     {col.title}
                   </h3>
                 </div>
 
                 {/* Bottom Technical Schematic Wireframe Illustration */}
-                <div className="mt-16 sm:mt-24 pt-6 w-full flex items-end justify-start min-h-[130px]">
+                <div className="mt-8 sm:mt-24 pt-4 sm:pt-6 w-full flex items-end justify-start min-h-[110px] sm:min-h-[130px]">
                   {col.illustration}
                 </div>
               </div>

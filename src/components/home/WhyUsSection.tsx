@@ -125,8 +125,8 @@ export default function WhyUsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="why-us" className="ws" data-ws style={{ '--n': '4' } as React.CSSProperties}>
-      <div className="container ws__head">
+    <section ref={sectionRef} id="why-us" className="ws scroll-mt-24 pt-6 sm:pt-0" data-ws style={{ '--n': '4' } as React.CSSProperties}>
+      <div className="container ws__head pt-4 sm:pt-0">
         <div className="ws__headtxt">
           <p className="eyebrow">Why work with us</p>
           <h2 className="ws__h2">Why work with us?</h2>

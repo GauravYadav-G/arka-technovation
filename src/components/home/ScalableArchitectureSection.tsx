@@ -713,8 +713,8 @@ export default function ScalableArchitectureSection() {
           </div>
 
           {/* Bottom Bar: Action Links & Telemetry */}
-          <div className="flex flex-wrap items-center justify-between gap-3 px-5 sm:px-7 py-3.5 bg-[#f8f8f7] border-t border-black/8 text-xs font-mono select-none">
-            <div className="flex items-center gap-4 text-zinc-600">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 sm:gap-3 px-4 sm:px-7 py-3.5 bg-[#f8f8f7] border-t border-black/8 text-xs font-mono select-none">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-zinc-600">
               <Link
                 href="https://github.com/arka-technovation"
                 target="_blank"
@@ -726,7 +726,7 @@ export default function ScalableArchitectureSection() {
                 </svg>
                 <span>View on GitHub</span>
               </Link>
-              <span className="text-zinc-300">•</span>
+              <span className="text-zinc-300 hidden sm:inline">•</span>
               <Link
                 href="/services/development"
                 className="inline-flex items-center gap-1.5 hover:text-black transition-colors"
@@ -736,8 +736,8 @@ export default function ScalableArchitectureSection() {
               </Link>
             </div>
 
-            <div className="flex items-center gap-2 text-zinc-500">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <div className="flex items-center gap-2 text-zinc-500 text-[11px] sm:text-xs">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
               <span>Sub-15ms Execution · Zero Technical Debt</span>
             </div>
           </div>

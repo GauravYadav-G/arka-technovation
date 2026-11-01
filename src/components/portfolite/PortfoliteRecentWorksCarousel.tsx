@@ -704,23 +704,23 @@ export default function PortfoliteRecentWorksCarousel() {
       id="works"
       className="py-24 sm:py-32 font-framer bg-[#FAF9F5] text-black border-t border-black/10 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-14 sm:mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-16">
         {/* Header matching reference layout */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8">
           <div className="max-w-2xl">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-black leading-[1.08]">
+            <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold tracking-tight text-black leading-[1.12] sm:leading-[1.08]">
               Build incredible digital products, completely scalable.
             </h2>
           </div>
 
-          <div className="max-w-md flex flex-col items-start lg:items-end gap-5">
-            <p className="text-zinc-600 text-base sm:text-lg font-light leading-relaxed lg:text-right">
+          <div className="max-w-md flex flex-col items-start lg:items-end gap-4 sm:gap-5">
+            <p className="text-zinc-600 text-sm sm:text-lg font-light leading-relaxed lg:text-right">
               From idea to deployed software with compounding search dominance — engineer your digital products with in-house technical architecture and verifiable growth.
             </p>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 w-full sm:w-auto">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-black text-white text-sm font-medium hover:bg-zinc-800 transition-colors shadow-sm"
+                className="inline-flex items-center justify-center gap-2.5 px-6 py-3 min-h-[48px] w-full sm:w-auto rounded-full bg-black text-white text-sm font-medium hover:bg-zinc-800 active:scale-[0.98] transition-all shadow-sm"
               >
                 <span>Start building</span>
                 <ArrowRight className="w-4 h-4" />
@@ -730,25 +730,25 @@ export default function PortfoliteRecentWorksCarousel() {
         </div>
       </div>
 
-      {/* ── Overflowing Horizontal Marquee with Wide Side Blur (Continuous Infinite Auto-Rotation) ── */}
+      {/* ── Overflowing Horizontal Marquee with Responsive Side Blur ── */}
       <div className="relative w-full overflow-hidden py-4">
         {/* Left Side Blur Gradient Mask */}
-        <div className="absolute left-0 inset-y-0 w-24 sm:w-56 bg-gradient-to-r from-[#FAF9F5] via-[#FAF9F5]/90 to-transparent z-20 pointer-events-none" />
+        <div className="absolute left-0 inset-y-0 w-8 sm:w-36 lg:w-56 bg-gradient-to-r from-[#FAF9F5] via-[#FAF9F5]/90 to-transparent z-20 pointer-events-none" />
 
         {/* Right Side Blur Gradient Mask */}
-        <div className="absolute right-0 inset-y-0 w-24 sm:w-56 bg-gradient-to-l from-[#FAF9F5] via-[#FAF9F5]/90 to-transparent z-20 pointer-events-none" />
+        <div className="absolute right-0 inset-y-0 w-8 sm:w-36 lg:w-56 bg-gradient-to-l from-[#FAF9F5] via-[#FAF9F5]/90 to-transparent z-20 pointer-events-none" />
 
-        {/* Infinite Rotating Marquee Track: all cards strictly 340px width × 470px height */}
-        <div className="flex animate-marquee-showcase gap-6 sm:gap-7 w-max will-change-transform">
+        {/* Infinite Rotating Marquee Track */}
+        <div className="flex animate-marquee-showcase gap-4 sm:gap-7 w-max will-change-transform">
           {[...SHOWCASE_CARDS, ...SHOWCASE_CARDS].map((card, idx) => (
             <div
               key={`${card.id}-${idx}`}
               onClick={() => setSelectedProject(card.projectData)}
-              className="relative w-[310px] sm:w-[340px] h-[460px] sm:h-[480px] shrink-0 rounded-[28px] sm:rounded-[32px] bg-[#EFECE6] overflow-hidden flex flex-col justify-between select-none cursor-pointer group hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 border border-black/5"
+              className="relative w-[280px] sm:w-[340px] h-[410px] sm:h-[480px] shrink-0 rounded-2xl sm:rounded-[32px] bg-[#EFECE6] overflow-hidden flex flex-col justify-between select-none cursor-pointer group hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 border border-black/5"
             >
               {/* Upper Area: Dynamic Breathing Pixel Canvas with Centered Floating Glass Card */}
               <div
-                className="relative w-full h-[350px] sm:h-[365px] flex items-center justify-center overflow-hidden"
+                className="relative w-full h-[300px] sm:h-[365px] flex items-center justify-center overflow-hidden"
                 style={{ background: VARIANT_TOP_BG[card.mosaicVariant] }}
               >
                 {/* 1. Dynamic Background Pixel Grid Structure */}
@@ -757,14 +757,14 @@ export default function PortfoliteRecentWorksCarousel() {
                 </div>
 
                 {/* 2. Floating Frosted Glass Card in Center matching reference exactly */}
-                <div className="relative z-10 w-[240px] sm:w-[260px] rounded-2xl bg-white/85 backdrop-blur-md p-4 sm:p-5 shadow-[0_16px_36px_rgba(0,0,0,0.08)] border border-white/90 group-hover:scale-[1.02] group-hover:bg-white/95 transition-all duration-300">
+                <div className="relative z-10 w-[220px] sm:w-[260px] rounded-xl sm:rounded-2xl bg-white/85 backdrop-blur-md p-3.5 sm:p-5 shadow-[0_16px_36px_rgba(0,0,0,0.08)] border border-white/90 group-hover:scale-[1.02] group-hover:bg-white/95 transition-all duration-300">
                   {card.glassWidget}
                 </div>
               </div>
 
               {/* Lower Area: Bold bottom title, clean & authentic to reference design */}
-              <div className="flex-1 p-6 sm:p-7 pt-4 pb-6 flex items-center">
-                <h3 className="text-xl sm:text-[22px] font-bold text-black tracking-tight leading-[1.2]">
+              <div className="flex-1 p-5 sm:p-7 pt-3 sm:pt-4 pb-4 sm:pb-6 flex items-center">
+                <h3 className="text-lg sm:text-[22px] font-bold text-black tracking-tight leading-[1.2]">
                   {card.bottomTitle}
                 </h3>
               </div>
