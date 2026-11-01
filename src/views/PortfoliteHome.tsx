@@ -22,6 +22,12 @@ const PortfoliteProcess = dynamic(() => import('../components/portfolite/Portfol
 const ServicesStickySection = dynamic(() => import('../components/home/ServicesStickySection'), {
   ssr: true,
 });
+const ExpertiseTabsSection = dynamic(() => import('../components/home/ExpertiseTabsSection'), {
+  ssr: true,
+});
+const ScalableArchitectureSection = dynamic(() => import('../components/home/ScalableArchitectureSection'), {
+  ssr: true,
+});
 const WhyUsSection = dynamic(() => import('../components/home/WhyUsSection'), {
   ssr: true,
 });
@@ -64,6 +70,11 @@ export default function PortfoliteHome() {
         <PortfoliteRecentWorksCarousel />
       </div>
 
+      {/* Build incredible digital products, completely scalable */}
+      <div className="cv-auto">
+        <ScalableArchitectureSection />
+      </div>
+
       {/* 3-Stage Delivery Process */}
       <div className="cv-auto">
         <PortfoliteProcess />
@@ -72,6 +83,11 @@ export default function PortfoliteHome() {
       {/* Interactive Sticky Stage Services Section */}
       <div className="cv-auto">
         <ServicesStickySection />
+      </div>
+
+      {/* Our Expertise / Outstanding Experience Feature Tabs */}
+      <div className="cv-auto">
+        <ExpertiseTabsSection />
       </div>
 
       {/* Why Work With Us: 4-Stage Stacking Cards with Parallax & Opacity Progression */}
