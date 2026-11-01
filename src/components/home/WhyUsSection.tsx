@@ -145,14 +145,14 @@ export default function WhyUsSection() {
           >
             <article className="ws__card" style={{ color: '#ffffff' }}>
               <div className="container ws__grid">
-                <p className="ws__num" style={{ color: 'rgba(255, 255, 255, 0.75)' }}>{item.num}</p>
-                <h3 className="ws__title" style={{ color: '#ffffff' }}>{item.title}</h3>
+                <p className="ws__num" style={{ color: 'rgba(255, 255, 255, 0.75)', fontVariantNumeric: 'tabular-nums' }}>{item.num}</p>
+                <h3 className="ws__title" style={{ color: '#ffffff', textWrap: 'balance' }}>{item.title}</h3>
                 <div className="ws__right" data-ws-body>
                   <div className="ws__txt">
-                    <p className="ws__sub" style={{ color: '#ffffff' }}>{item.sub}</p>
-                    <p className="ws__text" style={{ color: 'rgba(255, 255, 255, 0.78)' }}>{item.text}</p>
+                    <p className="ws__sub" style={{ color: '#ffffff', textWrap: 'balance' }}>{item.sub}</p>
+                    <p className="ws__text" style={{ color: 'rgba(255, 255, 255, 0.78)', textWrap: 'pretty' }}>{item.text}</p>
                   </div>
-                  <figure className="ws__fig">
+                  <figure className="ws__fig rounded-2xl overflow-hidden border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
                     <img
                       src={item.img}
                       alt={item.alt}
@@ -160,6 +160,7 @@ export default function WhyUsSection() {
                       decoding="async"
                       width="1600"
                       height="1000"
+                      className="w-full h-full object-cover"
                     />
                   </figure>
                 </div>

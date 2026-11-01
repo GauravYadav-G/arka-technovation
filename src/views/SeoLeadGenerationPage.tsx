@@ -547,7 +547,7 @@ export default function SeoLeadGenerationPage() {
         </div>
       </section>
 
-      {/* ── Complete Service Scope Grid (All 23 Headings) ── */}
+      {/* ── Complete Service Scope: Editorial Cards with Images Alongside Context ── */}
       <section className="py-20 sm:py-28 max-w-6xl mx-auto px-4 sm:px-6">
         <div id="full-scope" className="scroll-mt-36 text-left max-w-3xl mb-14">
           <span className="text-xs font-mono uppercase tracking-widest text-solar font-semibold">
@@ -561,72 +561,90 @@ export default function SeoLeadGenerationPage() {
           </p>
         </div>
 
-        <motion.div layout className="grid md:grid-cols-2 gap-8">
+        <motion.div layout className="flex flex-col gap-6 sm:gap-10 lg:gap-14">
           <AnimatePresence mode="popLayout">
-            {filteredOfferings.map((service, idx) => (
-              <motion.div
-                key={service.id}
-                layout
-                initial={{ opacity: 0, scale: 0.97 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.97 }}
-                transition={{ duration: 0.22, ease: 'easeOut' }}
-                id={service.id}
-                className="scroll-mt-36 p-8 sm:p-10 rounded-2xl bg-zinc-50 border border-black/8 hover:border-black/20 hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative"
-              >
-                {/* Alias anchors for seamless navbar deep linking */}
-                {service.aliasIds?.map((alias) => (
-                  <span key={alias} id={alias} className="absolute -top-36 left-0" aria-hidden="true" />
-                ))}
+            {filteredOfferings.map((service, idx) => {
+              const isEven = idx % 2 === 0;
+              return (
+                <motion.article
+                  key={service.id}
+                  layout
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -16 }}
+                  transition={{ duration: 0.3, ease: 'easeOut' }}
+                  id={service.id}
+                  className={`scroll-mt-36 group rounded-2xl sm:rounded-[28px] lg:rounded-[32px] bg-white border border-black/[0.08] hover:border-black/25 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] overflow-hidden transition-[transform,box-shadow,border-color] duration-300 flex flex-col ${
+                    isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                  } relative`}
+                >
+                  {/* Alias anchors for seamless navbar deep linking */}
+                  {service.aliasIds?.map((alias) => (
+                    <span key={alias} id={alias} className="absolute -top-36 left-0" aria-hidden="true" />
+                  ))}
 
-                <div>
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs px-3 py-1 rounded-full bg-white border border-black/10 text-solar font-medium tracking-wide">
-                      {service.tag}
-                    </span>
-                    <span className="text-[11px] font-mono text-zinc-400 uppercase tracking-widest">
-                      #{String(idx + 1).padStart(2, '0')} · ARKA Standard
-                    </span>
+                  {/* ── Visual Panel: Responsive image height on mobile, full editorial height on desktop ── */}
+                  <div className="w-full h-48 sm:h-64 lg:h-auto lg:min-h-[440px] lg:w-[42%] xl:w-[40%] shrink-0 relative overflow-hidden bg-zinc-100">
+                    <img
+                      src={`/images/services/seo/${service.id}.webp?v=2`}
+                      alt={`${service.title} — ARKA Technovation`}
+                      loading="lazy"
+                      decoding="async"
+                      width={800}
+                      height={600}
+                      className="w-full h-full object-cover object-top sm:object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
                   </div>
 
-                  <h3 className="text-2xl font-bold text-black mt-4 tracking-tight">
-                    {service.title}
-                  </h3>
-                  <p className="text-xs font-mono text-solar font-medium mt-1">
-                    {service.subtitle}
-                  </p>
+                  {/* ── Context & Deliverables Panel: Compact mobile spacing, expansive desktop typography ── */}
+                  <div className="w-full lg:w-[58%] xl:w-[60%] p-5 sm:p-8 lg:p-11 flex flex-col justify-between bg-zinc-50/50 group-hover:bg-zinc-50 transition-colors duration-300">
+                    <div>
+                      {/* Title */}
+                      <h3 className="text-xl sm:text-2xl lg:text-[32px] font-bold text-black tracking-tight leading-snug font-display text-balance">
+                        {service.title}
+                      </h3>
 
-                  <p className="mt-4 text-sm text-zinc-600 leading-relaxed font-light">
-                    {service.desc}
-                  </p>
+                      {/* Punchy Subtitle */}
+                      <p className="text-[11px] sm:text-xs lg:text-sm font-mono text-solar font-semibold mt-1.5 leading-relaxed">
+                        {service.subtitle}
+                      </p>
 
-                  <div className="mt-6 border-t border-black/8 pt-5">
-                    <p className="text-xs font-mono uppercase tracking-wider text-zinc-500 mb-3">
-                      Deliverables &amp; Technical Capabilities:
-                    </p>
-                    <ul className="space-y-2.5">
-                      {service.highlights.map((pt, i) => (
-                        <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-700 font-medium">
-                          <CheckCircle2 className="w-4 h-4 text-solar shrink-0 mt-0.5" />
-                          <span>{pt}</span>
-                        </li>
-                      ))}
-                    </ul>
+                      {/* Editorial Context Description */}
+                      <p className="mt-3 sm:mt-4 text-xs sm:text-sm lg:text-[15px] text-zinc-600 leading-relaxed font-normal text-pretty line-clamp-3 sm:line-clamp-none">
+                        {service.desc}
+                      </p>
+
+                      {/* Deliverables & Technical Capabilities Grid */}
+                      <div className="mt-4 pt-4 sm:mt-6 sm:pt-6 border-t border-black/8">
+                        <p className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-zinc-800 font-semibold mb-2.5 sm:mb-3 flex items-center gap-1.5 sm:gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-solar" />
+                          Deliverables &amp; Technical Capabilities:
+                        </p>
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                          {service.highlights.map((pt, i) => (
+                            <li key={i} className="flex items-start gap-2 sm:gap-2.5 text-xs sm:text-sm text-zinc-700 font-medium leading-snug">
+                              <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-solar shrink-0 mt-0.5" />
+                              <span>{pt}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* Card Footer Action Bar */}
+                    <div className="mt-5 pt-4 sm:mt-8 sm:pt-5 border-t border-black/8 flex items-center justify-end">
+                      <Link
+                        to="/contact"
+                        className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-black text-white hover:bg-solar text-xs sm:text-sm font-semibold transition-[background-color,transform] duration-200 active:scale-[0.98] shadow-sm group/btn w-full sm:w-auto"
+                      >
+                        <span>Request Custom Strategy</span>
+                        <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform duration-200" />
+                      </Link>
+                    </div>
                   </div>
-                </div>
-
-                <div className="mt-8 pt-4 border-t border-black/8 flex items-center justify-between">
-                  <span className="text-xs font-mono text-zinc-500">100% In-House Delivery</span>
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-black hover:text-solar transition-colors"
-                  >
-                    <span>Request Custom Strategy</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
+                </motion.article>
+              );
+            })}
           </AnimatePresence>
         </motion.div>
       </section>

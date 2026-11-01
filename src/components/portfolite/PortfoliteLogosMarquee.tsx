@@ -170,7 +170,7 @@ export default function PortfoliteLogosMarquee() {
               target="_blank"
               rel="noopener noreferrer"
               title={`${brand.name} — Visit Website`}
-              className="group flex items-center justify-center shrink-0 opacity-80 hover:opacity-100 transition-all duration-300"
+              className="group flex items-center justify-center shrink-0 opacity-80 hover:opacity-100 transition-opacity duration-300 ease-out"
             >
               <img
                 src={brand.src}

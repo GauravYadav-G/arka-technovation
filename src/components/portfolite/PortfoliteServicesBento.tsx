@@ -89,7 +89,7 @@ export default function PortfoliteServicesBento() {
   return (
     <section
       id="capabilities"
-      className="relative py-20 sm:py-32 font-framer bg-white text-black border-t border-black/10 overflow-hidden"
+      className="relative py-20 sm:py-32 font-framer bg-[#fbfbfb] text-black border-t border-black/10 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Left-Aligned Editorial Section Header */}
@@ -109,7 +109,7 @@ export default function PortfoliteServicesBento() {
           </p>
         </div>
 
-        {/* ── 3-Column × 2-Row Grid: Clean, Simple, Beautiful ── */}
+        {/* ── 3-Column × 2-Row Grid: Clean, High-Polish Bento Cards ── */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
           {SERVICES_DATA.map((service) => {
             const Icon = service.icon;
@@ -117,44 +117,44 @@ export default function PortfoliteServicesBento() {
               <Link
                 key={service.id}
                 href={service.link}
-                className="group relative rounded-[24px] sm:rounded-[28px] bg-white p-7 sm:p-9 flex flex-col justify-between border border-zinc-200/90 hover:border-black/30 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 transition-all duration-300 min-h-[340px] sm:min-h-[360px]"
+                className="group relative rounded-[24px] sm:rounded-[28px] bg-white/80 hover:bg-white active:scale-[0.985] backdrop-blur-md p-7 sm:p-9 flex flex-col justify-between border border-zinc-200/80 hover:border-black/30 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 transition-[transform,box-shadow,border-color,background-color] duration-300 ease-out min-h-[340px] sm:min-h-[360px]"
               >
                 {/* Card Top: Index, Category & Icon */}
                 <div>
                   <div className="flex items-center justify-between mb-7">
                     <div className="flex items-center gap-2">
-                      <span className="text-sm font-mono font-bold text-[#b45309]">
+                      <span className="text-sm font-mono font-bold text-[#b45309]" style={{ fontVariantNumeric: 'tabular-nums' }}>
                         {service.index}
                       </span>
                       <span className="text-zinc-400" aria-hidden="true">/</span>
-                      <span className="text-xs font-mono font-medium text-zinc-600 uppercase tracking-wider">
+                      <span className="text-xs font-mono font-semibold text-zinc-700 uppercase tracking-wider">
                         {service.category}
                       </span>
                     </div>
 
-                    <div className="w-10 h-10 rounded-xl bg-zinc-100/80 border border-zinc-200/70 flex items-center justify-center text-zinc-800 group-hover:bg-black group-hover:text-white group-hover:border-black transition-colors duration-200">
+                    <div className="w-11 h-11 rounded-2xl bg-white/90 backdrop-blur-md border border-zinc-200/80 flex items-center justify-center text-zinc-900 group-hover:bg-black group-hover:text-white group-hover:border-black transition-[background-color,color,border-color] duration-200 shadow-sm">
                       <Icon className="w-4 h-4" />
                     </div>
                   </div>
 
                   {/* Service Title */}
-                  <h3 className="text-2xl sm:text-[25px] font-bold text-black tracking-tight leading-snug font-display group-hover:text-black">
+                  <h3 className="text-2xl sm:text-[25px] font-bold text-black tracking-tight leading-snug font-display text-balance">
                     {service.title}
                   </h3>
 
                   {/* Clean, Punchy Description */}
-                  <p className="mt-4 text-zinc-600 text-sm sm:text-[15px] font-normal leading-relaxed">
+                  <p className="mt-4 text-zinc-600 text-sm sm:text-[15px] font-normal leading-relaxed text-pretty">
                     {service.description}
                   </p>
                 </div>
 
                 {/* Card Footer: Simple Minimal Action */}
                 <div className="pt-6 mt-8 border-t border-zinc-100 flex items-center justify-between">
-                  <span className="text-xs font-mono text-zinc-600 uppercase tracking-wider">
+                  <span className="text-xs font-mono text-zinc-600 uppercase tracking-wider font-medium">
                     Core Capability
                   </span>
 
-                  <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-black group-hover:text-solar transition-colors">
+                  <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-black group-hover:text-solar transition-colors duration-200">
                     <span>Learn more</span>
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 duration-200" />
                   </span>

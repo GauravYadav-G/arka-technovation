@@ -108,10 +108,10 @@ export default function PortfoliteHero() {
             <div className="absolute -inset-0.5 bg-gradient-to-r from-white/20 via-white/40 to-white/20 rounded-full blur-md opacity-40 group-hover:opacity-80 transition duration-500" />
             <a
               href="/contact"
-              className="site-button site-button--light relative px-7 sm:px-8 py-3 rounded-full bg-white hover:bg-zinc-100 text-black text-xs sm:text-sm font-semibold tracking-wide inline-flex items-center gap-2 transition-all shadow-[0_4px_24px_rgba(255,255,255,0.25)]"
+              className="site-button site-button--light relative px-7 sm:px-8 py-3 rounded-full bg-white hover:bg-zinc-100 active:scale-[0.97] text-black text-xs sm:text-sm font-semibold tracking-wide inline-flex items-center gap-2 transition-[transform,background-color,box-shadow] duration-200 ease-out shadow-[0_4px_24px_rgba(255,255,255,0.25)]"
             >
               <span>Get Started Now</span>
-              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-200" />
             </a>
           </div>
 
@@ -119,21 +119,23 @@ export default function PortfoliteHero() {
           <button
             onClick={scrollToProjects}
             style={{ color: '#ffffff' }}
-            className="px-7 sm:px-8 py-3 rounded-full bg-black/25 hover:bg-black/40 border border-white/30 hover:border-white/60 text-white text-xs sm:text-sm font-medium tracking-wide transition-all backdrop-blur-md shadow-sm cursor-pointer"
+            className="px-7 sm:px-8 py-3 rounded-full bg-black/25 hover:bg-black/40 active:scale-[0.97] border border-white/30 hover:border-white/60 text-white text-xs sm:text-sm font-medium tracking-wide transition-[transform,background-color,border-color] duration-200 ease-out backdrop-blur-md shadow-sm cursor-pointer"
           >
             See Projects
           </button>
         </div>
       </div>
 
-      {/* Scroll Down Mouse Indicator — Pure icon button, no text */}
+      {/* Scroll Down Mouse Indicator — Accessible 44px touch area with optical pill */}
       <div className="hero-scroll-animate relative z-20 mt-10 flex items-center justify-center select-none">
         <button
           onClick={scrollToProjects}
           aria-label="Scroll down to projects"
-          className="w-5 h-8 rounded-full border border-white/40 bg-white/15 hover:bg-white/25 hover:border-white transition-all backdrop-blur-sm flex justify-center pt-1.5 cursor-pointer shadow-sm group"
+          className="min-w-[44px] min-h-[44px] flex items-center justify-center cursor-pointer select-none group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-full"
         >
-          <div className="hero-mouse-wheel w-1 h-1.5 rounded-full bg-white shadow-[0_0_6px_rgba(255,255,255,0.8)]" />
+          <div className="w-5 h-8 rounded-full border border-white/40 bg-white/15 group-hover:bg-white/25 group-hover:border-white transition-[border-color,background-color] duration-200 backdrop-blur-sm flex justify-center pt-1.5 shadow-sm">
+            <div className="hero-mouse-wheel w-1 h-1.5 rounded-full bg-white shadow-[0_0_6px_rgba(255,255,255,0.8)]" />
+          </div>
         </button>
       </div>
     </section>
