@@ -108,7 +108,7 @@ export default function DigitalGrowthShowcaseSection() {
   return (
     <section
       id="digital-services-showcase"
-      className="relative py-20 sm:py-28 lg:py-32 font-framer bg-[#FAF9F5] text-black border-t border-black/10 overflow-hidden"
+      className="relative py-20 sm:py-28 lg:py-32 font-framer bg-white text-black border-t border-black/10 overflow-hidden"
       aria-labelledby="services-showcase-heading"
     >
       {/* Background Architectural Blueprint Grid */}
@@ -235,6 +235,10 @@ export default function DigitalGrowthShowcaseSection() {
                 {/* Animated Levitating Rocket Entity */}
                 <motion.div
                   className="relative z-10 w-full max-w-[340px] sm:max-w-[380px] flex items-center justify-center select-none pointer-events-none"
+                  style={{
+                    maskImage: 'radial-gradient(ellipse 90% 90% at 55% 45%, black 60%, transparent 100%)',
+                    WebkitMaskImage: 'radial-gradient(ellipse 90% 90% at 55% 45%, black 60%, transparent 100%)',
+                  }}
                   animate={{
                     y: [-8, 8, -8],
                     x: [-3, 3, -3],
