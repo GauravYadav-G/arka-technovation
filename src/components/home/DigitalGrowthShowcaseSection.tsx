@@ -97,45 +97,37 @@ export default function DigitalGrowthShowcaseSection() {
       />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-stretch">
 
           {/* ======================================================== */}
-          {/* LEFT COLUMN: Large Freestanding Animated 3D Rocket       */}
+          {/* LEFT COLUMN: Freestanding Full-Height Tech Collage       */}
+          {/* Transparent background, no card box, no badges          */}
           {/* ======================================================== */}
-          <div className="lg:col-span-5 flex items-center justify-center relative py-4 lg:py-0">
-            {/* Ambient Solar Warmth Glow Behind Rocket Thrusters */}
-            <motion.div
-              className="absolute w-56 h-56 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-gradient-to-t from-amber-400/25 via-orange-500/15 to-transparent rounded-full blur-3xl pointer-events-none bottom-2 sm:bottom-6 lg:bottom-8"
-              animate={{
-                scale: [0.95, 1.25, 0.95],
-                opacity: [0.4, 0.8, 0.4],
-              }}
-              transition={{
-                duration: 2.4,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
+          <div className="lg:col-span-5 flex items-center justify-center relative py-4 lg:py-0 min-h-[360px] sm:min-h-[460px] lg:min-h-0">
+            {/* Ambient Solar Warmth Glow Pool */}
+            <div
+              className="absolute inset-0 max-w-[420px] max-h-[500px] m-auto bg-gradient-to-tr from-solar/15 via-amber-200/20 to-transparent rounded-full blur-3xl pointer-events-none opacity-70"
               aria-hidden="true"
             />
 
-            {/* Freestanding Large 3D Vertical Rocket */}
+            {/* Freestanding Floating Visual - Spanning Full Height of Content */}
             <motion.div
-              className="relative z-10 w-full max-w-[260px] sm:max-w-[380px] lg:max-w-[500px] xl:max-w-[540px] flex items-center justify-center select-none pointer-events-none"
               animate={{
-                y: [-10, 10, -10],
+                y: [-7, 7, -7],
               }}
               transition={{
-                duration: 4.8,
+                duration: 5.2,
                 repeat: Infinity,
                 ease: 'easeInOut',
               }}
+              className="relative z-10 w-full h-full flex items-center justify-center select-none"
             >
               <Image
-                src="/images/home/rocket-growth-vertical.png"
-                alt="ARKA Digital Acceleration Vertical Rocket"
-                width={650}
-                height={690}
-                className="w-auto h-[240px] sm:h-[340px] lg:h-auto lg:w-full object-contain drop-shadow-[0_20px_50px_rgba(232,116,44,0.22)] [mix-blend-mode:multiply]"
+                src="/images/home/arka-growth-tech-showcase-transparent.webp"
+                alt="ARKA Technovation - Software Development, SEO Authority & Digital Marketing"
+                width={896}
+                height={1200}
+                className="w-auto h-full max-h-[420px] sm:max-h-[520px] lg:max-h-none object-contain select-none pointer-events-none drop-shadow-[0_20px_45px_rgba(0,0,0,0.06)] [mix-blend-mode:multiply]"
                 priority
               />
             </motion.div>
