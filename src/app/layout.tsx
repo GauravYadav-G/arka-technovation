@@ -124,10 +124,11 @@ const jsonLdSchema = {
         },
       ],
       sameAs: [
-        'https://linkedin.com',
+        'https://www.facebook.com/arkatechnovationpvtltd/',
+        'https://www.linkedin.com/company/arka-technovation-private-limited/',
+        'https://www.instagram.com/arkatechnovationpvtltd/',
         'https://youtube.com',
         'https://x.com',
-        'https://instagram.com',
       ],
     },
     {
@@ -163,9 +164,9 @@ export default function RootLayout({
         />
         <link
           rel="preload"
-          href="/images/logo/arka-logo-white.webp"
+          href="/images/logo/arka-logo-white.svg"
           as="image"
-          type="image/webp"
+          type="image/svg+xml"
           fetchPriority="high"
         />
         <link

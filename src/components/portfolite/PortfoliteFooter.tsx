@@ -162,11 +162,11 @@ export default function PortfoliteFooter() {
   const serviceList = SERVICES.slice(0, 7);
 
   const socials = [
-    { label: 'FB', href: '#' },
-    { label: 'IN', href: 'https://linkedin.com' },
-    { label: 'YT', href: 'https://youtube.com' },
-    { label: 'X', href: 'https://x.com' },
-    { label: 'IG', href: 'https://instagram.com' },
+    { label: 'FB', href: 'https://www.facebook.com/arkatechnovationpvtltd/', title: 'Facebook' },
+    { label: 'IN', href: 'https://www.linkedin.com/company/arka-technovation-private-limited/', title: 'LinkedIn' },
+    { label: 'IG', href: 'https://www.instagram.com/arkatechnovationpvtltd/', title: 'Instagram' },
+    { label: 'YT', href: 'https://youtube.com', title: 'YouTube' },
+    { label: 'X', href: 'https://x.com', title: 'X (Twitter)' },
   ];
 
   return (
@@ -199,7 +199,7 @@ export default function PortfoliteFooter() {
         <div className="col-span-2 lg:col-span-2 space-y-6">
           <Link to="/" className="inline-flex items-center group cursor-pointer" aria-label="ARKA Technovation Private Limited">
             <img
-              src="/images/logo/arka-logo-black.webp"
+              src="/images/logo/arka-logo.svg"
               alt="ARKA Technovation Private Limited"
               loading="lazy"
               decoding="async"
@@ -224,6 +224,8 @@ export default function PortfoliteFooter() {
                 key={s.label}
                 href={s.href}
                 aria-label={s.label}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="grid h-9 w-9 place-items-center border border-zinc-300 rounded-md mono text-[0.55rem] text-zinc-800 hover:bg-[#09090B] hover:text-white hover:border-[#09090B] transition-all duration-300 font-medium"
               >
                 {s.label}

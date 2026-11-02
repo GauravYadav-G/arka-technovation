@@ -19,7 +19,7 @@ export default function FooterSection() {
         <div className="footer__grid">
           <ul className="footer__socials">
             <li>
-              <a href="https://www.linkedin.com/in/jules-robichon-07153b1aa/" target="_blank" rel="noopener">
+              <a href="https://www.linkedin.com/company/arka-technovation-private-limited/" target="_blank" rel="noopener noreferrer">
                 <span className="footer__soc">LinkedIn</span>
                 <svg width="0.85em" height="0.85em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden={true} focusable="false" style={{ display: 'inline-block', verticalAlign: '0.02em', flex: 'none' }}>
                   <path d="M7 7h10v10" />
@@ -28,8 +28,17 @@ export default function FooterSection() {
               </a>
             </li>
             <li>
-              <a href="https://x.com/Junca_Studio" target="_blank" rel="noopener">
-                <span className="footer__soc">X (Twitter)</span>
+              <a href="https://www.facebook.com/arkatechnovationpvtltd/" target="_blank" rel="noopener noreferrer">
+                <span className="footer__soc">Facebook</span>
+                <svg width="0.85em" height="0.85em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden={true} focusable="false" style={{ display: 'inline-block', verticalAlign: '0.02em', flex: 'none' }}>
+                  <path d="M7 7h10v10" />
+                  <path d="M7 17 17 7" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/arkatechnovationpvtltd/" target="_blank" rel="noopener noreferrer">
+                <span className="footer__soc">Instagram</span>
                 <svg width="0.85em" height="0.85em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden={true} focusable="false" style={{ display: 'inline-block', verticalAlign: '0.02em', flex: 'none' }}>
                   <path d="M7 7h10v10" />
                   <path d="M7 17 17 7" />
@@ -78,7 +87,7 @@ export default function FooterSection() {
           </div>
         </div>
         <div className="footer__bottom">
-          <img className="footer__logo" src="/images/logo/arka-logo-black.png" alt="ARKA Technovation Private Limited" style={{ height: '64px', width: 'auto', objectFit: 'contain' }} />
+          <img className="footer__logo" src="/images/logo/arka-logo.svg" alt="ARKA Technovation Private Limited" style={{ height: '64px', width: 'auto', objectFit: 'contain' }} />
           <p className="footer__copy">© 2026 ARKA Technovation Private Limited. All rights reserved.</p>
           <a className="footer__top-link" href="#top" data-back-to-top onClick={handleBackToTop}>
             BACK TO TOP <span aria-hidden={true}>↑</span>

@@ -8,8 +8,8 @@ export const COMPANY = {
   name: 'ARKA Technovation Private Limited',
   legalName: 'ARKA Technovation Private Limited',
   short: 'ARKA.',
-  logo: '/images/logo/arka-logo-black.png',
-  logoWhite: '/images/logo/arka-logo-white.png',
+  logo: '/images/logo/arka-logo.svg',
+  logoWhite: '/images/logo/arka-logo-white.svg',
   tagline: 'Digital Product Company.',
   legacy: 'ARKA Enterprise Heritage',
   founded: 2016,
@@ -20,6 +20,11 @@ export const COMPANY = {
   phones: ['+91 97114 87316'],
   hq: 'Royace Business Park, Office No- 202, C-4, Sector 63, Noida, Uttar Pradesh 201301, India',
   address: 'Royace Business Park, Office No- 202, C-4, Sector 63, Noida, Uttar Pradesh 201301, India',
+  socials: {
+    facebook: 'https://www.facebook.com/arkatechnovationpvtltd/',
+    linkedin: 'https://www.linkedin.com/company/arka-technovation-private-limited/',
+    instagram: 'https://www.instagram.com/arkatechnovationpvtltd/',
+  },
 };
 
 export const OFFICES = [
