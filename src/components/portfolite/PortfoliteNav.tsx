@@ -230,9 +230,9 @@ export default function PortfoliteNav() {
     return () => window.removeEventListener('resize', handleResize);
   }, [open]);
 
-  // Transparent header over the dark cinematic hero section; morphs to frosted glass on scroll
+  // Consistent high-contrast frosted glass navigation across the entire site
   const isHome = pathname === '/';
-  const isOverHero = isHome && !solid;
+  const isOverHero = false;
 
   return (
     <>
