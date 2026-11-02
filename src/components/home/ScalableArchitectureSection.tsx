@@ -575,17 +575,16 @@ export default function ScalableArchitectureSection() {
       aria-label="Build incredible digital products, completely scalable"
     >
       <div className="container mx-auto px-5 sm:px-8 lg:px-12 max-w-7xl">
-        {/* Exact Website Heading Placement: Left Eyebrow & Title, Right Intro Paragraph */}
+        {/* Clean, Subtle Section Header */}
         <div className="ws__head mb-12 sm:mb-16">
           <div className="ws__headtxt">
-            <p className="eyebrow">Engineering craft</p>
+            <p className="eyebrow">Architecture</p>
             <h2 className="ws__h2 font-display">
-              Build incredible digital products, <br />
-              <span className="text-zinc-500 font-normal">completely scalable.</span>
+              Technology Stack &amp; Code
             </h2>
           </div>
           <p className="ws__intro">
-            From high-concurrency cloud backends and distributed databases to sub-second Next.js web applications — inspect our production-ready integration architecture across your preferred language and stack.
+            Production-ready backend, cloud, and frontend architectures engineered for speed, stability, and scale across your preferred language and framework.
           </p>
         </div>
 

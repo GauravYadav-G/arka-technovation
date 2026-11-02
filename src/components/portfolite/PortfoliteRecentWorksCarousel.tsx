@@ -705,24 +705,27 @@ export default function PortfoliteRecentWorksCarousel() {
       className="py-24 sm:py-32 font-framer bg-[#FAF9F5] text-black border-t border-black/10 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-16">
-        {/* Header matching reference layout */}
+        {/* Clean, subtle header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8">
           <div className="max-w-2xl">
-            <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold tracking-tight text-black leading-[1.12] sm:leading-[1.08]">
-              Build incredible digital products, completely scalable.
+            <p className="text-xs sm:text-sm font-mono font-semibold uppercase tracking-widest text-[#E8742C] mb-2 sm:mb-3">
+              Portfolio
+            </p>
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-black leading-[1.15]">
+              Featured Work &amp; Projects
             </h2>
           </div>
 
           <div className="max-w-md flex flex-col items-start lg:items-end gap-4 sm:gap-5">
-            <p className="text-zinc-600 text-sm sm:text-lg font-light leading-relaxed lg:text-right">
-              From idea to deployed software with compounding search dominance — engineer your digital products with in-house technical architecture and verifiable growth.
+            <p className="text-zinc-600 text-sm sm:text-base font-light leading-relaxed lg:text-right">
+              Selected software architectures, marketing campaigns, and production projects built for enterprise clients.
             </p>
             <div className="flex items-center gap-3 w-full sm:w-auto">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-3 min-h-[48px] w-full sm:w-auto rounded-full bg-black text-white text-sm font-medium hover:bg-zinc-800 active:scale-[0.98] transition-all shadow-sm"
+                className="inline-flex items-center justify-center gap-2.5 px-6 py-3 min-h-[44px] w-full sm:w-auto rounded-full bg-black text-white text-sm font-medium hover:bg-zinc-800 active:scale-[0.98] transition-all shadow-sm"
               >
-                <span>Start building</span>
+                <span>View All Projects</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

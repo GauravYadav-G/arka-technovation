@@ -18,7 +18,7 @@ const BRANDS: Brand[] = [
     alt: 'Dancing Stars LLC',
     width: 298,
     height: 64,
-    heightClass: 'h-7 sm:h-8',
+    heightClass: 'h-8 sm:h-9',
   },
   {
     name: 'Honey Hut',
@@ -27,7 +27,7 @@ const BRANDS: Brand[] = [
     alt: 'Honey Hut Nature’s Products',
     width: 272,
     height: 64,
-    heightClass: 'h-7 sm:h-8',
+    heightClass: 'h-8 sm:h-9',
   },
   {
     name: 'Hindustan Expellers',
@@ -36,7 +36,7 @@ const BRANDS: Brand[] = [
     alt: 'Hindustan Expellers',
     width: 478,
     height: 56,
-    heightClass: 'h-6 sm:h-7',
+    heightClass: 'h-7 sm:h-8',
   },
   {
     name: 'Luxa Industries',
@@ -45,7 +45,7 @@ const BRANDS: Brand[] = [
     alt: 'Luxa Industries',
     width: 141,
     height: 64,
-    heightClass: 'h-7 sm:h-8',
+    heightClass: 'h-9 sm:h-11',
   },
   {
     name: 'Purolite Industries',
@@ -54,7 +54,7 @@ const BRANDS: Brand[] = [
     alt: 'Purolite Industries',
     width: 120,
     height: 64,
-    heightClass: 'h-7 sm:h-8',
+    heightClass: 'h-10 sm:h-12',
   },
   {
     name: 'Ingenious Solutions India',
@@ -63,7 +63,7 @@ const BRANDS: Brand[] = [
     alt: 'Ingenious Solutions India',
     width: 184,
     height: 64,
-    heightClass: 'h-7 sm:h-8',
+    heightClass: 'h-9 sm:h-11',
   },
   {
     name: 'SKN Industries',
@@ -72,7 +72,7 @@ const BRANDS: Brand[] = [
     alt: 'SKN Industries',
     width: 181,
     height: 64,
-    heightClass: 'h-7 sm:h-8',
+    heightClass: 'h-9 sm:h-11',
   },
   {
     name: 'Laxmi Electromech',
@@ -81,16 +81,16 @@ const BRANDS: Brand[] = [
     alt: 'Laxmi Electromech Pvt. Ltd.',
     width: 274,
     height: 64,
-    heightClass: 'h-7 sm:h-8',
+    heightClass: 'h-8 sm:h-9',
   },
   {
-    name: 'Adexcel',
+    name: 'Adexcel Auto',
     url: 'https://adxelauto.com',
     src: '/portfolite/brands/adexcel.webp',
     alt: 'Adexcel Auto',
     width: 90,
     height: 64,
-    heightClass: 'h-7 sm:h-8',
+    heightClass: 'h-11 sm:h-13',
   },
   {
     name: 'Ambrosia Harvest',
@@ -99,7 +99,7 @@ const BRANDS: Brand[] = [
     alt: 'Ambrosia Harvest',
     width: 180,
     height: 64,
-    heightClass: 'h-7 sm:h-8',
+    heightClass: 'h-9 sm:h-11',
   },
   {
     name: 'Atlas Rolling Mill',
@@ -108,7 +108,7 @@ const BRANDS: Brand[] = [
     alt: 'Atlas Rolling Mill',
     width: 117,
     height: 64,
-    heightClass: 'h-7 sm:h-8',
+    heightClass: 'h-10 sm:h-12',
   },
   {
     name: 'Chic & Holand',
@@ -117,7 +117,7 @@ const BRANDS: Brand[] = [
     alt: 'Chic & Holland',
     width: 473,
     height: 48,
-    heightClass: 'h-7 sm:h-8',
+    heightClass: 'h-6 sm:h-7',
   },
   {
     name: 'Refer Me Group',
@@ -126,7 +126,7 @@ const BRANDS: Brand[] = [
     alt: 'Refer Me Group',
     width: 184,
     height: 64,
-    heightClass: 'h-7 sm:h-8',
+    heightClass: 'h-9 sm:h-11',
   },
   {
     name: 'Sunny Lights',
@@ -135,7 +135,7 @@ const BRANDS: Brand[] = [
     alt: 'Sunny Lights',
     width: 91,
     height: 64,
-    heightClass: 'h-7 sm:h-8',
+    heightClass: 'h-11 sm:h-13',
   },
   {
     name: 'Gemak Engineering Solutions',
@@ -144,7 +144,7 @@ const BRANDS: Brand[] = [
     alt: 'Gemak Engineering Solutions',
     width: 266,
     height: 64,
-    heightClass: 'h-7 sm:h-8',
+    heightClass: 'h-8 sm:h-9',
   },
 ];
 
@@ -153,14 +153,17 @@ export default function PortfoliteLogosMarquee() {
   const displayBrands = [...BRANDS, ...BRANDS];
 
   return (
-    <section aria-label="Enterprise & Industrial Clients" className="py-7 sm:py-9 bg-white relative overflow-hidden font-framer select-none border-y border-black/[0.04]">
+    <section
+      aria-label="Enterprise & Industrial Clients"
+      className="py-7 sm:py-9 bg-white relative overflow-hidden font-framer select-none border-y border-black/[0.04]"
+    >
       {/* Edge gradient fade masks */}
       <div className="absolute left-0 inset-y-0 w-20 sm:w-40 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 inset-y-0 w-20 sm:w-40 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
       <div className="overflow-hidden flex py-1">
         <div
-          className="animate-marquee flex items-center gap-16 sm:gap-24 opacity-85 hover:opacity-100 transition-opacity will-change-transform"
+          className="animate-marquee flex items-center gap-14 sm:gap-20 opacity-90 hover:opacity-100 transition-opacity will-change-transform"
           style={{ animationDuration: '48s' }}
         >
           {displayBrands.map((brand, idx) => (
@@ -170,7 +173,7 @@ export default function PortfoliteLogosMarquee() {
               target="_blank"
               rel="noopener noreferrer"
               title={`${brand.name} — Visit Website`}
-              className="group flex items-center justify-center shrink-0 opacity-80 hover:opacity-100 transition-opacity duration-300 ease-out"
+              className="group flex items-center justify-center shrink-0 opacity-85 hover:opacity-100 transition-opacity duration-300 ease-out"
             >
               <img
                 src={brand.src}
@@ -179,7 +182,7 @@ export default function PortfoliteLogosMarquee() {
                 height={brand.height}
                 loading="lazy"
                 decoding="async"
-                className={`${brand.heightClass} w-auto max-w-[200px] object-contain transition-transform duration-300 group-hover:scale-105`}
+                className={`${brand.heightClass} w-auto max-w-[220px] object-contain transition-transform duration-300 group-hover:scale-105`}
               />
             </a>
           ))}

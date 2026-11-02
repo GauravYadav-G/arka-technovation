@@ -173,9 +173,9 @@ export default function LatestNewsSection() {
     <section ref={sectionRef} className="hn hn--survol" data-hn style={{ background: '#fbfbfb', borderTop: '1px solid rgba(0,0,0,0.06)' }}>
       <div className="container hn__head">
         <div className="hn__headtxt">
-          <p className="eyebrow" data-reveal>Latest news</p>
+          <p className="eyebrow" data-reveal>Updates</p>
           <h2 className="hn__h2" data-reveal data-split="words">
-            Our take on design, technology and what makes a website convert.
+            Latest News &amp; Articles
           </h2>
           <div className="hn__cta" data-reveal>
             <a href="/news" style={{ '--cta-w': '320px' } as React.CSSProperties} className="cta cta--light">

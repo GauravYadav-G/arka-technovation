@@ -260,14 +260,14 @@ export default function ExpertiseTabsSection() {
         {/* ======================================================== */}
         <div className="grid lg:grid-cols-12 gap-4 sm:gap-8 items-end mb-6 sm:mb-14 px-1 sm:px-0">
           <div className="lg:col-span-7">
-            <p className="text-xs sm:text-sm font-mono font-semibold uppercase tracking-widest text-zinc-500 mb-2 sm:mb-3">
-              Our expertise
+            <p className="text-xs sm:text-sm font-mono font-semibold uppercase tracking-widest text-[#E8742C] mb-2 sm:mb-3">
+              Expertise
             </p>
             <h2
               className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-950 font-display leading-[1.12]"
               style={{ textWrap: 'balance' }}
             >
-              Outstanding Experience
+              Core Technical Disciplines
             </h2>
           </div>
 
@@ -276,8 +276,7 @@ export default function ExpertiseTabsSection() {
               className="text-xs sm:text-sm lg:text-base text-zinc-600 font-light leading-relaxed border-l-2 border-solar/40 pl-3.5 sm:pl-5"
               style={{ textWrap: 'pretty' }}
             >
-              Through years our team has achieved the highest level of expertise in our field.
-              Every single member of our team possesses a wealth of knowledge and experience.
+              Proven in-house teams focused on dependable software development, search engine visibility, full-funnel marketing, and corporate production.
             </p>
           </div>
         </div>

@@ -128,11 +128,11 @@ export default function WhyUsSection() {
     <section ref={sectionRef} id="why-us" className="ws scroll-mt-24 pt-6 sm:pt-0" data-ws style={{ '--n': '4' } as React.CSSProperties}>
       <div className="container ws__head pt-4 sm:pt-0">
         <div className="ws__headtxt">
-          <p className="eyebrow">Why work with us</p>
-          <h2 className="ws__h2">Why work with us?</h2>
+          <p className="eyebrow">Why Us</p>
+          <h2 className="ws__h2">Why Choose ARKA</h2>
         </div>
         <p className="ws__intro">
-          At ARKA, we believe a great digital product starts with a great relationship. No complex process, no middlemen. Just a dedicated, responsive team and a smooth workflow to move your projects forward, fast and well.
+          Dedicated in-house specialist teams, direct communication, and dependable technical execution without middlemen or agency fluff.
         </p>
       </div>
       <ul className="ws__list">

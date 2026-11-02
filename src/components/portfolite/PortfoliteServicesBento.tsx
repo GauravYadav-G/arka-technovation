@@ -141,20 +141,19 @@ export default function PortfoliteServicesBento() {
       className="relative py-20 sm:py-32 font-framer bg-[#fbfbfb] text-black border-t border-black/10 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Left-Aligned Editorial Section Header */}
+        {/* Left-Aligned Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 sm:mb-16 gap-4 sm:gap-6 text-left">
           <div className="max-w-2xl">
-            <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold tracking-tight text-black leading-[1.12] sm:leading-[1.08] font-display">
-              Integrated digital services,{' '}
-              <span className="font-serif italic font-normal text-solar">
-                engineered
-              </span>{' '}
-              to scale.
+            <p className="text-xs sm:text-sm font-mono font-semibold uppercase tracking-widest text-[#E8742C] mb-2 sm:mb-3">
+              Capabilities
+            </p>
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-black leading-[1.15]">
+              Services &amp; Solutions
             </h2>
           </div>
 
           <p className="text-zinc-600 max-w-md text-sm sm:text-base font-light leading-relaxed">
-            From technical software development and search authority to full-funnel digital marketing, corporate cinema, and market intelligence — explore our core operational disciplines.
+            Software development, performance marketing, search optimization, film production, and market research.
           </p>
         </div>
 

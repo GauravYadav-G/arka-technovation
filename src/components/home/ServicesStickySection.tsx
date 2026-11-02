@@ -431,9 +431,9 @@ export default function ServicesStickySection() {
 
       {/* Desktop Section Header (lg:absolute lg:top-0) */}
       <div className="hidden lg:block max-w-7xl mx-auto px-4 sm:px-8 pt-12 sm:pt-16 pb-0 lg:absolute lg:inset-x-0 lg:top-0 lg:z-20">
-        <p className="eyebrow text-zinc-500 font-mono tracking-widest uppercase text-xs">Core Capabilities &amp; Architecture</p>
-        <h2 className="mt-3 text-4xl sm:text-6xl font-bold tracking-tight text-black leading-none">
-          Services
+        <p className="eyebrow text-[#E8742C] font-mono tracking-widest uppercase text-xs">Capabilities</p>
+        <h2 className="mt-3 text-4xl sm:text-5xl font-bold tracking-tight text-black leading-none">
+          Services Overview
         </h2>
       </div>
 

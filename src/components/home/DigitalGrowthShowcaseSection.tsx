@@ -138,29 +138,24 @@ export default function DigitalGrowthShowcaseSection() {
           {/* ======================================================== */}
           <div className="lg:col-span-7 flex flex-col items-start">
             
-            {/* Editorial Heading (No badge above it, clean & confident) */}
+            {/* Section Heading */}
+            <p className="text-xs sm:text-sm font-mono font-semibold uppercase tracking-widest text-[#E8742C] mb-2 sm:mb-3">
+              Overview
+            </p>
             <h2
               id="services-showcase-heading"
-              className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-black leading-[1.15] sm:leading-[1.12]"
+              className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-black leading-[1.15]"
               style={{ textWrap: 'balance' }}
             >
-              Check out what{' '}
-              <span className="relative inline-block text-zinc-900">
-                digital marketing
-                <span
-                  className="absolute left-0 bottom-1 w-full h-[3px] bg-gradient-to-r from-solar via-amber-500 to-orange-600 rounded-full"
-                  aria-hidden="true"
-                />
-              </span>{' '}
-              &amp; technology services we engineer!
+              Digital Growth &amp; Technology
             </h2>
 
             {/* Strategic Mission Paragraph */}
             <p
-              className="mt-6 text-zinc-600 text-sm sm:text-base font-light leading-relaxed max-w-2xl"
+              className="mt-4 sm:mt-6 text-zinc-600 text-sm sm:text-base font-light leading-relaxed max-w-2xl"
               style={{ textWrap: 'pretty' }}
             >
-              <strong className="font-semibold text-black">ARKA Technovation</strong> is committed to helping businesses across industries augment their marketing efforts, modernize digital infrastructure, and capture decisive competitive advantage through integrated engineering, search authority, and comprehensive digital marketing solutions.
+              <strong className="font-semibold text-black">ARKA Technovation</strong> helps businesses modernize software infrastructure, expand search visibility, and grow qualified customer demand through dependable engineering and digital marketing.
             </p>
 
             {/* 7 Capabilities Interactive List (Clean, no pills, matching reference) */}

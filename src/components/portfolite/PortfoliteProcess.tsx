@@ -269,12 +269,12 @@ export default function PortfoliteProcess() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Header */}
         <div className="max-w-3xl mb-10 sm:mb-20">
-          <p className="text-xs uppercase tracking-widest text-zinc-500 font-mono mb-2.5 sm:mb-3">Our Delivery Process</p>
-          <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold tracking-tight text-black leading-[1.12] sm:leading-[1.08]">
-            Engineered for enterprise scale.
+          <p className="text-xs uppercase tracking-widest text-[#E8742C] font-mono mb-2.5 sm:mb-3">Our Process</p>
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-black leading-[1.15]">
+            How We Work
           </h2>
-          <p className="mt-3 sm:mt-5 text-zinc-600 text-sm sm:text-lg font-light leading-relaxed max-w-2xl">
-            From initial system architecture to production deployment — every phase of our delivery process turns business requirements into scalable, dependable software.
+          <p className="mt-3 sm:mt-5 text-zinc-600 text-sm sm:text-base font-light leading-relaxed max-w-2xl">
+            A clear, four-stage workflow from initial requirement analysis and interface modeling to system architecture and production deployment.
           </p>
         </div>
 
