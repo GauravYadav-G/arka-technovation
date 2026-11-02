@@ -317,6 +317,39 @@ export const SERVICES: Service[] = [
       'Editorial style guide & PR crisis handbook'
     ],
   },
+  {
+    slug: 'corporate-world-news',
+    title: 'Corporate World News',
+    kicker: 'Editorial & Market Intelligence',
+    cat: 'Creative',
+    short: 'Authoritative journalism, executive broadcasts, and empirical market intelligence.',
+    desc: 'Authoritative corporate journalism, executive interview broadcasts, strategic press releases, breaking business updates, and rigorous market research. We research market verticals, track economic shifts, and produce verified corporate publications that position industry leaders at the forefront of their sector.',
+    stat: 'In-House',
+    statLabel: 'Dedicated Noida Newsroom',
+    img: '/images/disciplines/discipline-05-corporate-world-news.jpg',
+    subs: [
+      { name: 'Executive Interviews & Broadcasts', desc: 'Strategic corporate press releases, multi-camera C-suite broadcasts, and global distribution to verified media outlets.' },
+      { name: 'Industries Analysis & Empirical Research', desc: 'Rigorous empirical market research, vertical benchmarks, and deep competitive intelligence for strategic decision-makers.' },
+      { name: 'Market Updates & Corporate News', desc: 'Daily business news updates, industry trend reporting, and authoritative analysis across emerging technology markets.' },
+      { name: 'Crisis Communications & PR Defense', desc: 'Rapid reputation management, official clarification statements, and structured media relations for corporate entities.' },
+      { name: 'B2B Thought Leadership Publishing', desc: 'In-depth whitepapers, keynote transcripts, and executive point-of-view essays designed to shape industry standards.' },
+      { name: 'Quarterly Sector Briefings', desc: 'Empirical data breakdowns covering valuation multiples, regulatory shifts, and capital investment flows in key industries.' },
+    ],
+    process: [
+      ['Investigation', 'Vertical intelligence gathering, stakeholder interviews, and primary source verification.'],
+      ['Synthesis', 'Data modeling, economic impact analysis, and editorial structuring by veteran journalists.'],
+      ['Production', 'Broadcast-quality studio recording, high-resolution infographic drafting, and editorial review.'],
+      ['Syndication', 'Global wire distribution, targeted executive newsletter dispatch, and verified press dissemination.']
+    ],
+    deliverables: [
+      'Executive interview video master & transcript',
+      'Syndicated press release distribution report',
+      'Quarterly industry vertical research dossier',
+      'B2B thought leadership whitepaper (print & digital)',
+      'Digital PR clippings & media coverage audit',
+      'Editorial style guide & PR crisis handbook'
+    ],
+  },
 ];
 
 /* ── WORK ── */
