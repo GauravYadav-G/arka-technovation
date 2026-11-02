@@ -48,159 +48,159 @@ interface DisciplineItem {
 
 const DISCIPLINES: DisciplineItem[] = [
   {
-    id: 'email-marketing',
+    id: 'software-development',
     num: '01',
-    label: 'Email Marketing',
-    category: 'Lifecycle & Retention',
-    icon: Mail,
-    headline: 'Precision Email Marketing & Automated Retention Engines',
+    label: 'Software Development',
+    category: '01 / Software Engineering',
+    icon: Code2,
+    headline: 'Bespoke Enterprise Software, Custom CRM, ERP & Modular Architectures',
     narrative:
-      "Email advertising is a cost-effective and efficient method to reach consumers. Companies can send targeted messages directly to individuals who have given permission or opted in to receive them. By personalizing the email with the recipient's name, companies entice customers with exclusive offers, promotions, and updates for products or services. Analytics tools allow businesses to track open rates, click-through rates, and conversions of their email campaigns to improve future efforts.",
+      'We engineer bespoke enterprise software, modular backend architectures, scalable ERP systems, custom CRMs, and automated workflow matrices built for dependable scale. Our dedicated software engineering pods eliminate technical debt and deliver high-availability platforms tailored to complex business logic.',
     pillars: [
       {
-        icon: Users,
-        title: 'Targeted Audience Outreach',
-        desc: 'Send targeted messages directly to individuals who have given permission or opted in to receive them.',
+        icon: Layout,
+        title: 'Custom CRM & ERP Systems',
+        desc: 'Bespoke operational backbones with automated approval matrices, live inventory sync, and unified customer data.',
       },
       {
-        icon: Sparkles,
-        title: 'Dynamic Personalization',
-        desc: 'Entice customers with personalized recipient tokens, exclusive promotions, and customized product updates.',
+        icon: Code2,
+        title: 'Mobile & Web Platforms',
+        desc: 'Enterprise iOS, Android, and Next.js applications engineered with strict type safety and sub-second load times.',
       },
       {
-        icon: BarChart3,
-        title: 'Attribution & Analytics',
-        desc: 'Analytics tools track open rates, click-through rates, and conversions to continuously improve campaigns.',
+        icon: ShieldCheck,
+        title: 'Automated Workflow Matrices',
+        desc: 'Modular backend pipelines, microservices, and custom APIs built to handle enterprise scale with complete source handover.',
       },
     ],
-    link: '/services',
-    ctaText: 'Explore Email Marketing',
-    image: '/images/services/technology/lead_nurture_email_marketing.webp',
-    imageAlt: 'Email advertising campaigns, personalized customer outreach and email analytics dashboard',
-  },
-  {
-    id: 'seo-services',
-    num: '02',
-    label: 'SEO Services',
-    category: 'Search Engine Dominance',
-    icon: Radio,
-    headline: 'Strategies to Enhance Online Visibility, Authority & Organic Traffic',
-    narrative:
-      "To enhance online visibility and traffic, there are several strategies that businesses can utilize. The first strategy is to create high-quality content that targets the audience's needs and interests. This includes using relevant keywords in titles and meta descriptions to improve search engine optimization (SEO). Another effective strategy is to engage with the audience through social media platforms by sharing informative posts, visual content, and actively responding to comments or questions.",
-    pillars: [
-      {
-        icon: Gauge,
-        title: 'Site Optimisation',
-        desc: 'Optimizing technical architecture, page speed, mobile UX, and structured semantic HTML to captivate users and search crawlers.',
-      },
-      {
-        icon: TrendingUp,
-        title: 'Page Rankings & Authority',
-        desc: 'Algorithmic ranking dominance built on multi-tier backlink authority, topical clusters, and deep search intent matching.',
-      },
-      {
-        icon: Compass,
-        title: 'Targeted Content & Engagement',
-        desc: 'Engaging with the audience through relevant keyword content and active social media communication.',
-      },
-    ],
-    link: '/seo-lead-generation',
-    ctaText: 'Explore SEO Services',
-    image: '/images/services/seo/seo-services.webp',
-    imageAlt: 'Search engine optimization strategies, site rankings and organic traffic growth audit',
+    link: '/services/development',
+    ctaText: 'Explore Software Development',
+    image: '/images/disciplines/discipline-01-software-development.jpg',
+    imageAlt: 'ARKA Technovation - Software Engineering, Enterprise CRM and Custom Platform Development',
   },
   {
     id: 'digital-marketing',
-    num: '03',
+    num: '02',
     label: 'Digital Marketing',
-    category: 'Performance Acquisition',
+    category: '02 / Performance Media',
     icon: Target,
-    headline: 'Developing Strategic Campaigns Across High-Yield Digital Platforms',
+    headline: 'Full-Funnel Acquisition Campaigns & Multi-Touch Attribution Telemetry',
     narrative:
-      "Developing strategies and campaigns on digital platforms is essential for businesses to thrive in today's fast-paced world. With the proliferation of social media and other online channels, it is critical for companies to have a strong digital presence that can help them connect with customers, build brand awareness, and drive sales. Developing effective digital strategies involves understanding the target audience, identifying the right platforms to reach them on, and creating engaging content that resonates with their interests and behaviors.",
+      'Full-funnel acquisition campaigns, multi-touch attribution telemetry, and precision conversion optimization engineered to accelerate verified business revenue. We build the strategy, manage the spend across Google Ads and Meta Ads, and optimize for pipeline growth rather than vanity metrics.',
     pillars: [
       {
         icon: Target,
-        title: 'Corporate Online Advertising',
-        desc: 'Full-funnel digital campaigns engineered to connect with customers and capture qualified enterprise demand.',
+        title: 'Google & Meta Paid Media',
+        desc: 'Search, Performance Max, and social campaigns managed against strict cost-per-acquisition (CPA) and return on ad spend (ROAS).',
       },
       {
-        icon: LineChart,
-        title: 'SEO Optimization Services',
-        desc: 'Compounding organic search presence aligned directly with business pipeline and digital presence targets.',
+        icon: Sparkles,
+        title: 'Branding & Social Management',
+        desc: 'Comprehensive multi-channel social media marketing, high-impact content marketing, and brand identity governance.',
       },
       {
-        icon: Layers,
-        title: 'Web Analytics & Attribution',
-        desc: 'Multi-touch analytics telemetry tracking audience behaviors, engagement rates, and advertising ROI.',
+        icon: BarChart3,
+        title: 'Conversion Optimization (CRO)',
+        desc: 'Multi-touch attribution telemetry, dynamic landing page testing, and PR management that compound lead volume.',
       },
     ],
     link: '/services/digital-marketing',
     ctaText: 'Explore Digital Marketing',
-    image: '/images/expertise/digital-marketing.jpg',
-    imageAlt: 'Developing digital marketing strategies and online advertising campaigns on digital platforms',
+    image: '/images/disciplines/discipline-02-digital-marketing.jpg',
+    imageAlt: 'ARKA Technovation - Performance Marketing, Paid Media and Attribution Telemetry',
   },
   {
-    id: 'social-media',
-    num: '04',
-    label: 'Social Media',
-    category: 'Digital Communities',
-    icon: Share2,
-    headline: 'Digital Community Channels & Enterprise Brand Amplification',
+    id: 'seo-geo-aeo',
+    num: '03',
+    label: 'SEO, GEO & AEO',
+    category: '03 / Search & AI Engines',
+    icon: Radio,
+    headline: 'Technical Crawl Architecture, Schema Entity Graphs & Generative AI Dominance',
     narrative:
-      'Digital community channels such as social media, forums, and messaging apps have revolutionized the way in which people can connect and share information online. In a professional context, these platforms provide valuable opportunities for individuals to engage with like-minded professionals, collaborate on projects, and build their personal brand. Online communities enable professionals to stay up-to-date on industry news and trends, access training resources, and seek advice on specific challenges or initiatives.',
+      'Technical crawl architecture, high-intent keyword mapping, structured Schema.org entity graphs, generative & answer engine dominance, and local discovery. We ensure your brand dominates traditional search results while being cited as the authoritative source by ChatGPT, Perplexity, Gemini, and Google AI Overviews.',
     pillars: [
       {
-        icon: MessageSquare,
-        title: 'Digital Community Channels',
-        desc: 'Social media, forums, and messaging apps revolutionizing how modern people and businesses connect and share information.',
+        icon: Gauge,
+        title: 'Technical Crawl & Schema Graphs',
+        desc: 'Sub-second Core Web Vitals, semantic HTML hierarchy, and interconnected Schema.org entity knowledge graphs.',
       },
       {
-        icon: Share2,
-        title: 'Professional Collaboration',
-        desc: 'Engage with like-minded professionals, collaborate on high-value projects, and build executive personal branding.',
+        icon: TrendingUp,
+        title: 'Generative & Answer Engines (GEO/AEO)',
+        desc: 'Passage indexing optimization and AI engine answer extraction for maximum citability in LLM-driven search.',
+      },
+      {
+        icon: Compass,
+        title: 'High-Intent Keywords & Local SEO',
+        desc: 'On-page and off-page optimization, local Google Business Profile (GMB) rank maps, and Google Marketplace listings.',
+      },
+    ],
+    link: '/seo-lead-generation',
+    ctaText: 'Explore SEO & AI Optimization',
+    image: '/images/disciplines/discipline-03-search-ai-engines.jpg',
+    imageAlt: 'ARKA Technovation - SEO, GEO and AI Answer Engine Optimization',
+  },
+  {
+    id: 'film-production',
+    num: '04',
+    label: 'Film Production',
+    category: '04 / Production Studio',
+    icon: Zap,
+    headline: 'Broadcast-Quality Corporate Films, TV Commercials & Executive Media',
+    narrative:
+      'Broadcast-quality corporate films, digital & TV commercials, executive interview pods, high-end studio photography, and next-gen AI video creation. Our in-house production studio handles everything from scripting, direction, and cinematography to color grading, sound design, and master delivery.',
+    pillars: [
+      {
+        icon: Layers,
+        title: 'Corporate Films & TV Commercials',
+        desc: 'Cinematic corporate documentaries, TV ads, digital commercials, and industrial facility shoots with aerial drone footage.',
+      },
+      {
+        icon: MessageSquare,
+        title: 'Podcasts & Personal Interviews',
+        desc: 'Broadcast-quality executive podcasts, CEO leadership interviews, and thought-leadership video pods in our studio.',
+      },
+      {
+        icon: Sparkles,
+        title: 'AI Video & Studio Photography',
+        desc: 'Commercial product photography, model shoots, and cutting-edge generative AI video creation for multi-platform distribution.',
+      },
+    ],
+    link: '/services/film-making',
+    ctaText: 'Explore Film Production',
+    image: '/images/disciplines/discipline-04-film-production.jpg',
+    imageAlt: 'ARKA Technovation - Cinematic Corporate Film Production and Soundstage Studio',
+  },
+  {
+    id: 'corporate-world-news',
+    num: '05',
+    label: 'Corporate World News',
+    category: '05 / Editorial & Market Intelligence',
+    icon: LineChart,
+    headline: 'Authoritative Corporate Journalism, Executive Broadcasts & Market Research',
+    narrative:
+      'Authoritative corporate journalism, executive interview broadcasts, strategic press releases, breaking business updates, and rigorous market research. We research market verticals, track economic shifts, and produce verified corporate publications that position industry leaders at the forefront of their sector.',
+    pillars: [
+      {
+        icon: LineChart,
+        title: 'Interview & Press Releases',
+        desc: 'Strategic corporate press releases, executive interview broadcasts, and global distribution to verified media outlets.',
+      },
+      {
+        icon: BarChart3,
+        title: 'Industries Analysis & Research',
+        desc: 'Rigorous empirical market research, vertical benchmarks, and deep competitive intelligence for strategic decision-makers.',
       },
       {
         icon: Zap,
-        title: 'Industry News & Trends',
-        desc: 'Stay up-to-date on market trends, access valuable training resources, and seek peer advice on specific challenges.',
+        title: 'Market Updates & Corporate News',
+        desc: 'Daily business news updates, industry trend reporting, and authoritative analysis across emerging technology markets.',
       },
     ],
-    link: '/services/digital-marketing',
-    ctaText: 'Explore Social Strategy',
-    image: '/images/services/seo/social-media-management.webp',
-    imageAlt: 'Social media digital community channels, audience collaboration and personal brand building',
-  },
-  {
-    id: 'web-design',
-    num: '05',
-    label: 'Web Design',
-    category: 'Platform Engineering',
-    icon: Code2,
-    headline: 'Developing High-Performance Scalable Web Applications',
-    narrative:
-      'Developing web applications requires a systematic approach encompassing planning, designing, implementing and testing to create a high-quality user experience. In order to achieve this, it is important for developers to have extensive knowledge of various programming languages such as HTML, CSS and JavaScript, along with proficiency in frameworks like AngularJS and ReactJS. The development process should also take into consideration the scalability and security of the application while being agile to changes in requirements or technology.',
-    pillars: [
-      {
-        icon: Layout,
-        title: 'Systematic Architecture',
-        desc: 'Comprehensive planning, UX wireframing, designing, implementing, and rigorous testing for high-quality experience.',
-      },
-      {
-        icon: Code2,
-        title: 'Modern Framework Proficiency',
-        desc: 'Extensive knowledge of HTML, CSS, JavaScript, and deep proficiency in frameworks like ReactJS, AngularJS, and Next.js.',
-      },
-      {
-        icon: ShieldCheck,
-        title: 'Scalability & Security',
-        desc: 'Enterprise security, high-concurrency architecture, and agility to rapidly adapt to evolving technology changes.',
-      },
-    ],
-    link: '/services/development',
-    ctaText: 'Explore Web Design',
-    image: '/images/services/ux/website-design.webp',
-    imageAlt: 'Developing web applications with modern frameworks, high-quality user experience and scalable architecture',
+    link: '/blogs',
+    ctaText: 'Read Corporate World News',
+    image: '/images/disciplines/discipline-05-corporate-world-news.jpg',
+    imageAlt: 'ARKA Technovation - Corporate World News, Journalism and Market Intelligence',
   },
 ];
 
@@ -276,7 +276,7 @@ export default function ExpertiseTabsSection() {
               className="text-xs sm:text-sm lg:text-base text-zinc-600 font-light leading-relaxed border-l-2 border-solar/40 pl-3.5 sm:pl-5"
               style={{ textWrap: 'pretty' }}
             >
-              Proven in-house teams focused on dependable software development, search engine visibility, full-funnel marketing, and corporate production.
+              Software development, performance marketing, search optimization, film production, and market research.
             </p>
           </div>
         </div>

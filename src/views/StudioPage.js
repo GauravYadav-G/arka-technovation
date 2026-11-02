@@ -29,18 +29,14 @@ export function renderStudioPage() {
           </div>
         </div>
 
-        <!-- 3 PROVEN STAT COUNTERS -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
+        <!-- 2 PROVEN STAT COUNTERS -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16 max-w-3xl mx-auto">
           <div class="p-8 rounded-2xl bg-[#FAFAFA] border border-black/10">
-            <p class="!font-mono text-4xl sm:text-5xl font-light text-black mb-2">6,256+</p>
+            <p class="!font-mono text-4xl sm:text-5xl font-light text-black mb-2">500+</p>
             <p class="!font-mono text-xs uppercase tracking-widest text-black/50">Projects Successfully Executed</p>
           </div>
           <div class="p-8 rounded-2xl bg-[#FAFAFA] border border-black/10">
-            <p class="!font-mono text-4xl sm:text-5xl font-light text-black mb-2">12,000+</p>
-            <p class="!font-mono text-xs uppercase tracking-widest text-black/50">Inbound Leads & Calls Generated</p>
-          </div>
-          <div class="p-8 rounded-2xl bg-[#FAFAFA] border border-black/10">
-            <p class="!font-mono text-4xl sm:text-5xl font-light text-black mb-2">1,220+</p>
+            <p class="!font-mono text-4xl sm:text-5xl font-light text-black mb-2">100+</p>
             <p class="!font-mono text-xs uppercase tracking-widest text-black/50">Verified Client Testimonials</p>
           </div>
         </div>
@@ -76,7 +72,7 @@ export function renderStudioPage() {
             <div class="shrink-0 flex flex-col gap-2 pt-2 text-xs !font-mono text-white/70">
               <div class="p-4 rounded-xl bg-white/[0.05] border border-white/10">
                 <span class="text-[10px] text-white/40 uppercase block">Execution Heritage</span>
-                <span class="text-white font-medium text-sm">6,256+ Projects Delivered</span>
+                <span class="text-white font-medium text-sm">500+ Projects Delivered</span>
               </div>
               <div class="p-4 rounded-xl bg-white/[0.05] border border-white/10">
                 <span class="text-[10px] text-white/40 uppercase block">Campus Location</span>

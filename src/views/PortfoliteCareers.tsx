@@ -127,7 +127,7 @@ export default function PortfoliteCareers() {
               <div className="pt-4 border-t border-black/10 space-y-3 text-xs text-zinc-600">
                 <div className="flex items-center gap-2.5">
                   <MapPin className="w-4 h-4 text-solar shrink-0" />
-                  <span>Royace Business Park, Sector 63, Noida HQ</span>
+                  <span>Rayos Business Park, Sector 63, Noida HQ</span>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <Mail className="w-4 h-4 text-solar shrink-0" />

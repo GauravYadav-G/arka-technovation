@@ -71,7 +71,7 @@ export default function PortfoliteCta() {
 
         {/* Office Quick Reference */}
         <p className="mt-8 text-xs text-zinc-500 font-mono tracking-wider uppercase">
-          Corporate Office: Royace Business Park, Office No- 202, C-4, Sector 63, Noida, Uttar Pradesh 201301, India • {COMPANY.phone}
+          Corporate Office: Rayos Business Park, Office No- 202, C-4, Sector 63, Noida, Uttar Pradesh 201301, India • {COMPANY.phone}
         </p>
       </div>
     </section>

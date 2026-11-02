@@ -79,9 +79,9 @@ export function renderSeoEditorial() {
 
           <div class="p-4 rounded-xl bg-white/[0.04] border border-white/10">
             <p class="text-[#00E599] font-bold text-sm mb-1">Audited Track Record</p>
-            <p class="text-white font-medium text-base mb-2">6,256+ Project Ledger</p>
+            <p class="text-white font-medium text-base mb-2">500+ Project Ledger</p>
             <p class="text-white/60 font-light leading-relaxed">
-              Aggregated review markup (AggregateRating: 4.9★ from 1,220+ reviews) passing rich snippet star ratings directly to Google SERP.
+              Aggregated review markup (AggregateRating: 4.9★ from 100+ reviews) passing rich snippet star ratings directly to Google SERP.
             </p>
           </div>
         </div>

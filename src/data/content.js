@@ -153,11 +153,11 @@ export const PHILOSOPHY_SECTIONS = {
   studio: {
     tag: 'Identity & Craft // Noida, Delhi NCR',
     title: 'The Studio',
-    body: 'Operating from our innovation studio in Noida, Delhi NCR. Led by CEO Kranti Parashar, Arka Technovation brings together elite software architects, SEO intelligence specialists, growth marketers, and cinema directors with over 6,256+ projects delivered across India, North America, Europe, and the Middle East.',
+    body: 'Operating from our innovation studio in Noida, Delhi NCR. Led by CEO Kranti Parashar, Arka Technovation brings together elite software architects, SEO intelligence specialists, growth marketers, and cinema directors with over 500+ projects delivered across India, North America, Europe, and the Middle East.',
     pillars: [
       { title: 'Noida Innovation Hub', desc: 'Premier technology and media studio in Noida, Delhi NCR.' },
       { title: 'Integrated Teams', desc: 'Full-stack software engineers, 3D motion designers, performance marketers, and cinema directors in one room.' },
-      { title: 'Proven Track Record', desc: 'Over 6,256+ delivered projects, 12,000+ client leads generated, and 1,220+ verified client testimonials.' },
+      { title: 'Proven Track Record', desc: 'Over 500+ delivered projects and 100+ verified client testimonials.' },
     ],
   },
 };

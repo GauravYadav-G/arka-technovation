@@ -202,54 +202,38 @@ export default function DigitalGrowthShowcaseSection() {
               </div>
             </div>
 
-            {/* 3 Core Performance Metrics (6256, 12000, 1220 from Reference) */}
+            {/* 2 Core Performance Metrics (500+ Projects, 100+ Testimonials) */}
             <div className="mt-10 w-full pt-8 border-t border-zinc-200/90">
-              <div className="grid grid-cols-3 gap-2.5 sm:gap-8">
+              <div className="grid grid-cols-2 gap-4 sm:gap-12 max-w-md">
                 
-                {/* Stat 1: 6256 Projects Executed */}
+                {/* Stat 1: 500+ Projects Delivered */}
                 <div className="flex flex-col">
                   <div className="flex items-baseline gap-0.5 sm:gap-1">
-                    <span className="text-2xl sm:text-4xl lg:text-[40px] font-extrabold text-zinc-950 tracking-tight tabular-nums font-framer">
-                      6,256
+                    <span className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-zinc-950 tracking-tight tabular-nums font-framer">
+                      500
                     </span>
-                    <span className="text-solar font-bold text-lg sm:text-xl">+</span>
+                    <span className="text-solar font-bold text-xl sm:text-2xl">+</span>
                   </div>
-                  <span className="text-[11px] sm:text-sm font-medium text-zinc-700 mt-1">
-                    Projects Executed
+                  <span className="text-xs sm:text-sm font-semibold text-zinc-800 mt-1">
+                    Projects Delivered
                   </span>
-                  <span className="text-[11px] text-zinc-500 font-light hidden sm:inline-block">
+                  <span className="text-[11px] sm:text-xs text-zinc-500 font-light mt-0.5">
                     Web, ERP &amp; media deliverables
                   </span>
                 </div>
 
-                {/* Stat 2: 12000 Calls & Inbound Inquiries */}
-                <div className="flex flex-col border-l border-zinc-200/80 pl-2.5 sm:pl-8">
+                {/* Stat 2: 100+ Client Testimonials */}
+                <div className="flex flex-col border-l border-zinc-200/80 pl-4 sm:pl-12">
                   <div className="flex items-baseline gap-0.5 sm:gap-1">
-                    <span className="text-2xl sm:text-4xl lg:text-[40px] font-extrabold text-zinc-950 tracking-tight tabular-nums font-framer">
-                      12,000
+                    <span className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-zinc-950 tracking-tight tabular-nums font-framer">
+                      100
                     </span>
-                    <span className="text-solar font-bold text-lg sm:text-xl">+</span>
+                    <span className="text-solar font-bold text-xl sm:text-2xl">+</span>
                   </div>
-                  <span className="text-[11px] sm:text-sm font-medium text-zinc-700 mt-1">
-                    Calls Generated
-                  </span>
-                  <span className="text-[11px] text-zinc-500 font-light hidden sm:inline-block">
-                    High-intent qualified inbound
-                  </span>
-                </div>
-
-                {/* Stat 3: 1220 Client Testimonials */}
-                <div className="flex flex-col border-l border-zinc-200/80 pl-2.5 sm:pl-8">
-                  <div className="flex items-baseline gap-0.5 sm:gap-1">
-                    <span className="text-2xl sm:text-4xl lg:text-[40px] font-extrabold text-zinc-950 tracking-tight tabular-nums font-framer">
-                      1,220
-                    </span>
-                    <span className="text-solar font-bold text-lg sm:text-xl">+</span>
-                  </div>
-                  <span className="text-[11px] sm:text-sm font-medium text-zinc-700 mt-1">
+                  <span className="text-xs sm:text-sm font-semibold text-zinc-800 mt-1">
                     Client Testimonials
                   </span>
-                  <span className="text-[11px] text-zinc-500 font-light hidden sm:inline-block">
+                  <span className="text-[11px] sm:text-xs text-zinc-500 font-light mt-0.5">
                     Verified enterprise reviews
                   </span>
                 </div>

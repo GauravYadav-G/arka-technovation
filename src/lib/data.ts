@@ -7,23 +7,25 @@
 export const COMPANY = {
   name: 'ARKA Technovation Private Limited',
   legalName: 'ARKA Technovation Private Limited',
+  formerlyKnownAs: 'Formerly known as Jaikvik Technology India Pvt. Ltd.',
   short: 'ARKA.',
   logo: '/images/logo/arka-logo-black.png',
   logoWhite: '/images/logo/arka-logo-white.png',
   tagline: 'Digital Product Company.',
-  legacy: 'ARKA Enterprise Heritage',
+  legacy: 'Jaikvik Technology India Pvt. Ltd.',
   founded: 2016,
-  years: 17,
+  years: 10,
   email: 'info@arkatechnovation.com',
   careers: 'careers@arkatechnovation.com',
   phone: '+91 97114 87316',
   phones: ['+91 97114 87316'],
-  hq: 'Royace Business Park, Office No- 202, C-4, Sector 63, Noida, Uttar Pradesh 201301, India',
-  address: 'Royace Business Park, Office No- 202, C-4, Sector 63, Noida, Uttar Pradesh 201301, India',
+  hq: 'Rayos Business Park, Office No- 202, C-4, Sector 63, Noida, Uttar Pradesh 201301, India',
+  address: 'Rayos Business Park, Office No- 202, C-4, Sector 63, Noida, Uttar Pradesh 201301, India',
   socials: {
     facebook: 'https://www.facebook.com/arkatechnovationpvtltd/',
     linkedin: 'https://www.linkedin.com/company/arka-technovation-private-limited/',
     instagram: 'https://www.instagram.com/arkatechnovationpvtltd/',
+    whatsapp: 'https://wa.me/919711487316',
   },
 };
 
@@ -32,17 +34,18 @@ export const OFFICES = [
     label: 'Corporate Office',
     city: 'Noida',
     lines: [
-      'Royace Business Park, Office No- 202, C-4',
-      'Sector 63, Noida, Uttar Pradesh 201301, India',
+      'Office No- 202, C-4',
+      'Rayos Business Park, Sector 63',
+      'Noida, Uttar Pradesh 201301, India',
     ],
     primary: true,
   },
 ];
 
 export const STATS = [
-  { v: 12, s: '+', l: 'Years experience', d: 'Modern advertisement techniques' },
-  { v: 1500, s: '+', l: 'Clients served', d: 'India and abroad' },
-  { v: 850, s: '+', l: 'Projects executed', d: 'Web · Apps · Films · Campaigns' },
+  { v: 10, s: '+', l: 'Years of Experience', d: 'Enterprise technology & growth marketing' },
+  { v: 500, s: '+', l: 'Projects Delivered', d: 'Web · Apps · Films · Campaigns' },
+  { v: 100, s: '+', l: 'Client Testimonials', d: 'Verified enterprise reviews' },
   { v: 600, s: '+', l: 'Manufacturers', d: 'Our deepest specialisation' },
 ];
 
@@ -62,12 +65,6 @@ export const NAV: NavGroup[] = [
   {
     label: 'About Us',
     to: '/about-us',
-    children: [
-      { label: 'Our Story & Heritage', to: '/about-us#story', note: '17+ years of engineering craft in Sector 63, Noida' },
-      { label: 'Working Methodology', to: '/about-us#methodology', note: 'Zero outsourcing, agile delivery & dedicated teams' },
-      { label: 'Leadership & Specialist Pods', to: '/about-us#leadership', note: 'Direct access to engineers, designers & filmmakers' },
-      { label: 'Why ARKA Technovation', to: '/#why-us', note: 'Enterprise reliability, sub-second speeds & ROI focus' },
-    ],
   },
   {
     label: 'Services',
@@ -368,8 +365,8 @@ export const ROLES = [
 
 export const FAQS = [
   { q: 'What does ARKA Technovation Private Limited do?', a: 'Ten services across three disciplines: marketing (SEO, digital marketing, digital advertising, content, analytics), technology (web development, CRM software, e-commerce) and creative (film making, UX and interactive design). One in-house team delivers all of it.' },
-  { q: 'Who leads ARKA Technovation Private Limited?', a: 'ARKA Technovation Private Limited is founded and led by Mr. Kranti Parashar, an eminent leader with over 17 years of experience in enterprise technology, strategic finance, and corporate communication.' },
-  { q: 'Where are your offices?', a: 'Our corporate office is located at Royace Business Park, Office No- 202, C-4, Sector 63, Noida, Uttar Pradesh 201301, India.' },
+  { q: 'Who leads ARKA Technovation Private Limited?', a: 'ARKA Technovation Private Limited (formerly known as Jaikvik Technology India Pvt. Ltd.) is founded and led by Mr. Kranti Parashar, an eminent leader with over 10 years of experience in enterprise technology, strategic finance, and corporate communication.' },
+  { q: 'Where are your offices?', a: 'Our corporate office is located at Rayos Business Park, Office No- 202, C-4, Sector 63, Noida, Uttar Pradesh 201301, India.' },
   { q: 'How long does a project take?', a: 'A corporate website ships in three to six weeks. E-commerce and mobile apps run eight to sixteen. Custom CRM depends on scope and is planned in milestones. Marketing engines show measurable movement in sixty to ninety days.' },
   { q: 'Do you provide reports after launch?', a: 'Yes. Monthly performance reports, a live dashboard, quarterly strategy reviews and a named account contact. Maintenance, hosting and iteration are available as retainers or per project.' },
   { q: 'How is project pricing determined?', a: 'Every engagement is scoped individually based on your technical deliverables, scale, and business objectives. Following a discovery session, you receive a transparent, itemized proposal with clear milestone deliverables.' },
@@ -450,7 +447,7 @@ export const SEO_SERVICES_DATA = {
       id: 'ppc',
       title: 'Data-Powered PPC Management Services',
       tag: 'Paid Search',
-      desc: 'We combine 17+ years of search experience with millions of data points to launch smarter pay-per-click campaigns that reduce cost per acquisition (CPA) and maximize Return on Ad Spend (ROAS).',
+      desc: 'We combine 10+ years of search experience with millions of data points to launch smarter pay-per-click campaigns that reduce cost per acquisition (CPA) and maximize Return on Ad Spend (ROAS).',
       points: [
         'Google Ads Search, Display & Performance Max Campaigns',
         'Competitor Ad Intelligence & Bid War Mitigation',

@@ -265,12 +265,12 @@ export default function DigitalGrowthCollage() {
           <div className="p-2 sm:p-2.5 rounded-xl bg-gradient-to-br from-zinc-50 to-orange-50/30 border border-zinc-200/70">
             <div className="flex items-baseline justify-between">
               <span className="text-lg sm:text-2xl font-extrabold text-zinc-950 font-display tabular-nums">
-                12,000+
+                100+
               </span>
-              <span className="text-[10px] font-mono font-bold text-solar">Active</span>
+              <span className="text-[10px] font-mono font-bold text-solar">Verified</span>
             </div>
             <span className="text-[10px] sm:text-[11px] font-medium text-zinc-600 block mt-0.5">
-              Qualified Inbound Calls
+              Client Testimonials
             </span>
           </div>
         </div>

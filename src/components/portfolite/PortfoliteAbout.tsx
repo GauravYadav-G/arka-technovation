@@ -1,24 +1,12 @@
 'use client';
 
 export default function PortfoliteAbout() {
-  const capabilities = [
-    'SEO & Lead Generation',
-    'Custom CRM & Enterprise ERP',
-    'Full-Stack Next.js 15 Web',
-    'Mobile Application Systems',
-    'Conversion Optimization (CRO)',
-    'Data & Revenue Attribution',
-    'Corporate Film Production',
-    'WCAG 2.2 ADA Compliance',
-  ];
-
   const workedIn = [
     'Tata Teleservices Ltd',
     'Kotak Mahindra Bank',
     'Aegon Religare',
-    'Care Ratings Ltd.',
     'Indiamart Intermesh Ltd.',
-    'Resurgent India Ltd.',
+    'Care Ratings Ltd.',
   ];
 
   return (
@@ -36,12 +24,18 @@ export default function PortfoliteAbout() {
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-center">
           {/* Left Column (Clean Framer Editorial Layout) */}
           <div className="lg:col-span-7 flex flex-col items-start">
+            <p className="text-xs font-mono uppercase tracking-widest text-[#E8742C] font-semibold mb-2">
+              Leadership &amp; Heritage
+            </p>
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-black leading-[1.12]">
               Meet Founder
             </h2>
+            <p className="text-xs text-zinc-500 font-mono mt-1 mb-2">
+              ARKA Technovation Private Limited · Formerly known as Jaikvik Technology India Pvt. Ltd.
+            </p>
 
             <p className="mt-4 sm:mt-6 text-zinc-600 text-sm sm:text-base font-light leading-relaxed max-w-xl">
-              Led by Founder &amp; Director <strong className="font-semibold text-black">Mr. Kranti Parashar</strong>, an eminent figure in Indian industry circles with over 17 years of craft across technology, enterprise software, and growth marketing. With an MBA background, focus on execution, and dedicated in-house specialist pods based in Sector 63, Noida, he drives integrated digital transformation and revenue acceleration across 850+ enterprise and manufacturing deployments.
+              Led by Founder &amp; Director <strong className="font-semibold text-black">Mr. Kranti Parashar</strong>, an eminent figure in Indian industry circles with over 10 years of craft across technology, enterprise software, and growth marketing. Operating as ARKA Technovation Private Limited (formerly known as Jaikvik Technology India Pvt. Ltd.), with an MBA background, focus on execution, and dedicated in-house specialist pods based in Sector 63, Noida, he drives integrated digital transformation and revenue acceleration across 850+ enterprise and manufacturing deployments.
             </p>
 
             {/* Mobile Founder Photo (shown between narrative and credentials on mobile) */}
@@ -61,26 +55,14 @@ export default function PortfoliteAbout() {
                 <div className="absolute bottom-4 inset-x-4 flex items-end justify-between z-10">
                   <div>
                     <p className="text-white font-bold text-base">Mr. Kranti Parashar</p>
-                    <p className="text-zinc-300 text-xs">Founder &amp; Director · ARKA Technovation</p>
+                    <p className="text-zinc-300 text-xs">Founder &amp; Director · ARKA Technovation Private Limited</p>
                     <p className="text-zinc-400 text-[11px] mt-0.5">Sector 63, Noida (Delhi NCR)</p>
                   </div>
                   <div className="px-2.5 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-[11px] font-semibold flex-shrink-0">
-                    17+ Years
+                    10+ Years
                   </div>
                 </div>
               </div>
-            </div>
-
-            {/* Capability Pills (Framer Badges) */}
-            <div className="mt-6 sm:mt-8 flex flex-wrap gap-1.5 sm:gap-2">
-              {capabilities.map((cap) => (
-                <span
-                  key={cap}
-                  className="px-2.5 sm:px-3 py-1.5 rounded-xl text-[11px] sm:text-xs font-medium bg-zinc-100 border border-black/10 text-zinc-700 hover:text-black hover:border-black/25 transition-colors cursor-default"
-                >
-                  {cap}
-                </span>
-              ))}
             </div>
 
             {/* Worked in Companies */}
@@ -122,7 +104,7 @@ export default function PortfoliteAbout() {
                   <p className="text-zinc-400 text-[11px] mt-0.5">Sector 63, Noida (Delhi NCR)</p>
                 </div>
                 <div className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-[11px] font-semibold">
-                  17+ Years
+                  10+ Years
                 </div>
               </div>
             </div>

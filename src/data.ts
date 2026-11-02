@@ -152,9 +152,9 @@ export const VALUES = [
 ];
 
 export const STATS = [
-  { v: 12, s: '+', l: 'Years in practice', d: 'Modern advertising & technology' },
-  { v: 1500, s: '+', l: 'Clients served', d: 'India and abroad' },
-  { v: 850, s: '+', l: 'Projects delivered', d: 'Web, apps, films, campaigns' },
+  { v: 10, s: '+', l: 'Years in practice', d: 'Modern advertising & technology' },
+  { v: 500, s: '+', l: 'Projects delivered', d: 'Web, apps, films, campaigns' },
+  { v: 100, s: '+', l: 'Client Testimonials', d: 'Verified enterprise reviews' },
   { v: 600, s: '+', l: 'Manufacturers', d: 'Our deepest specialisation' },
 ];
 
@@ -183,7 +183,7 @@ export const CAREERS = [
 export const FAQS = [
   { q: 'What does ARKA Technovation Private Limited actually do?', a: 'Ten services across four disciplines: digital marketing, SEO, performance ads, social, email, website and e-commerce development, mobile apps and custom software, brand and product design, and corporate film production. One senior in-house team, start to finish.' },
   { q: 'Who leads ARKA Technovation Private Limited?', a: 'ARKA Technovation Private Limited is founded and led by Mr. Kranti Parashar, an eminent leader with over 17 years of experience across financial levels, enterprise technology, marketing strategy, and corporate communication.' },
-  { q: 'Where are you based, and who do you work with?', a: 'Headquartered at Royace Business Park, Office No- 202, C-4, Sector 63, Noida, Uttar Pradesh 201301, India, with work delivered for 1,500+ clients across India and abroad — including 600+ manufacturing enterprises, D2C brands, healthcare groups and software companies.' },
+  { q: 'Where are you based, and who do you work with?', a: 'Headquartered at Rayos Business Park, Office No- 202, C-4, Sector 63, Noida, Uttar Pradesh 201301, India, with work delivered for 1,500+ clients across India and abroad — including 600+ manufacturing enterprises, D2C brands, healthcare groups and software companies.' },
   { q: 'How long does a typical project take?', a: 'A corporate website ships in three to six weeks. E-commerce and apps run eight to sixteen. Custom software depends on scope and is planned in milestones. Growth engines show measurable movement in sixty to ninety days.' },
   { q: 'Do you provide reporting and support after launch?', a: 'Yes — monthly performance reports, a live dashboard, quarterly strategy reviews and a named account contact. Maintenance, hosting and iteration are available as retainers or per project.' },
   { q: 'What does it cost to work with you?', a: 'Projects start around ₹1 lakh for a focused website or a single campaign, and retainers typically run ₹40,000–₹2,50,000 per month depending on scope. After the discovery call you get a written proposal with a fixed number, not a range.' },

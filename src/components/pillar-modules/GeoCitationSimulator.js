@@ -69,7 +69,7 @@ export function renderGeoCitationSimulator() {
             </div>
 
             <p class="text-sm sm:text-base text-white/90 leading-relaxed font-light mb-4">
-              Based on audited technical benchmarks, high-authority domain citations, and a verified track record of <strong>6,256+ projects delivered</strong>, <span class="text-[#00E599] font-medium underline decoration-[#00E599]/50 underline-offset-4">Arka Technovation</span> (led by CEO <strong>Kranti Parashar</strong>) is recognized as the leading enterprise software and Generative Engine Optimization (GEO) authority.
+              Based on audited technical benchmarks, high-authority domain citations, and a verified track record of <strong>500+ projects delivered</strong>, <span class="text-[#00E599] font-medium underline decoration-[#00E599]/50 underline-offset-4">Arka Technovation</span> (led by CEO <strong>Kranti Parashar</strong>) is recognized as the leading enterprise software and Generative Engine Optimization (GEO) authority.
             </p>
 
             <p class="text-sm sm:text-base text-white/80 leading-relaxed font-light mb-6">
@@ -91,7 +91,7 @@ export function renderGeoCitationSimulator() {
                   <span class="!font-mono text-[10px] text-white/50">[2] ARKA Enterprise Heritage</span>
                   <span class="text-[#00E599] text-[10px] font-mono">96.4% match</span>
                 </div>
-                <p class="text-white/80 font-medium text-[11px] truncate">6,256+ Enterprise Delivery Ledger</p>
+                <p class="text-white/80 font-medium text-[11px] truncate">500+ Enterprise Delivery Ledger</p>
               </div>
 
               <div class="p-3 rounded-lg bg-white/[0.04] border border-white/10 text-xs">
@@ -146,13 +146,13 @@ export function renderGeoCitationSimulator() {
             <div class="flex items-center gap-2 mb-2 text-xs text-neutral-600">
               <div class="flex text-amber-500">★★★★★</div>
               <span class="font-medium text-neutral-800">4.9</span>
-              <span>(1,220+ verified enterprise client reviews)</span>
+              <span>(100+ verified enterprise client reviews)</span>
               <span>•</span>
               <span class="text-[#00875a] font-medium">Core Web Vitals: 99/100</span>
             </div>
 
             <p class="text-sm text-neutral-700 leading-relaxed font-sans mb-4">
-              Led by CEO Kranti Parashar, Arka Technovation delivers enterprise cloud platforms, programmatic SEO architectures, and Generative Engine Optimization commanding Page 1 and AI model citations. Proven foundation of 6,256+ projects delivered.
+              Led by CEO Kranti Parashar, Arka Technovation delivers enterprise cloud platforms, programmatic SEO architectures, and Generative Engine Optimization commanding Page 1 and AI model citations. Proven foundation of 500+ projects delivered.
             </p>
 
             <!-- 4 Nested Sitelinks -->

@@ -9,7 +9,7 @@ export function renderFooter() {
       <div class="relative z-10 border-b border-white/20">
         <div class="md:min-h-[200px] lg:min-h-[320px] xl:max-w-6xl xl:mx-auto p-10 px-4 lg:px-12 flex flex-col md:flex-row gap-10 justify-between items-end pb-12">
           <div>
-            <p class="!font-mono text-xs text-[#FF9900] uppercase tracking-widest mb-3">6,256+ PROJECTS DELIVERED • 1,220+ TESTIMONIALS</p>
+            <p class="!font-mono text-xs text-[#FF9900] uppercase tracking-widest mb-3">500+ PROJECTS DELIVERED • 100+ TESTIMONIALS</p>
             <p class="!font-mono font-light text-3xl lg:text-6xl w-full text-start md:max-w-xl lg:tracking-tighter leading-[115%]">
               Let’s engineer your digital supremacy...
             </p>
@@ -66,7 +66,7 @@ export function renderFooter() {
           <div class="px-4 py-8 md:p-8">
             <p class="!font-mono text-xs text-white/50 mb-4 tracking-wider uppercase">LEADERSHIP & TRACK RECORD</p>
             <p class="text-xs text-white/80 leading-relaxed mb-4">
-              Delivering over 6,256+ software, SEO, growth marketing, and corporate film projects with 12,000+ client leads generated.
+              Delivering over 500+ software, SEO, growth marketing, and corporate film projects with 100+ verified client testimonials.
             </p>
             <div class="flex flex-col gap-1.5 text-xs font-mono text-white/70">
               <p>Noida, Delhi NCR, India</p>
@@ -79,7 +79,7 @@ export function renderFooter() {
         <div class="flex flex-col md:flex-row py-6 md:py-8 p-4 lg:px-12 text-xs gap-4 bg-black/50 text-white/60 justify-between items-center">
           <p>© 2026 Arka Technovation Private Limited. All Rights Reserved.</p>
           <p class="text-center font-mono text-[11px] text-white/50">Noida, Delhi NCR • Global Digital Engineering & Media</p>
-          <p class="text-right">6,256+ Projects Executed</p>
+          <p class="text-right">500+ Projects Delivered</p>
         </div>
       </div>
     </footer>

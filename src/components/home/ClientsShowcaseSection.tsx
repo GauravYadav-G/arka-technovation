@@ -74,10 +74,10 @@ const CLIENT_BRANDS = [
 ];
 
 const METRICS = [
-  { val: '6,256+', lbl: 'Digital Products Shipped' },
-  { val: '1,500+', lbl: 'Global Enterprise Clients' },
+  { val: '500+', lbl: 'Projects Delivered' },
+  { val: '100+', lbl: 'Client Testimonials' },
   { val: '98%', lbl: 'Client Retention Rate' },
-  { val: '12+', lbl: 'Years Industry Leadership' },
+  { val: '10+', lbl: 'Years Industry Leadership' },
 ];
 
 function AnimatedShowcaseCard({

@@ -112,11 +112,15 @@ export default function WhoWeArePage() {
   const faqs = [
     {
       q: 'Who founded and leads ARKA Technovation Private Limited?',
-      a: 'ARKA Technovation Private Limited is founded and led by Mr. Kranti Parashar, an eminent technology leader with over 15 years of industry experience across enterprise web engineering, digital marketing strategy, and corporate film production.',
+      a: 'ARKA Technovation Private Limited is founded and led by Mr. Kranti Parashar, an eminent technology leader with over 10 years of craft across enterprise software, digital marketing strategy, and corporate film production. The company was formerly known as Jaikvik Technology India Pvt. Ltd.',
     },
     {
       q: 'Where is your corporate headquarters located?',
-      a: 'Our corporate headquarters is located at Royace Business Park, Office No- 202, C-4, Sector 63, Noida, Uttar Pradesh 201301, India. Our facility houses our engineering development bays, design studios, 4K editing and color grading suites, and meeting rooms.',
+      a: 'Our corporate headquarters is located at Rayos Business Park, Office No- 202, C-4, Sector 63, Noida, Uttar Pradesh 201301, India. Our facility houses our engineering development bays, design studios, 4K editing and color grading suites, and executive consultation suites.',
+    },
+    {
+      q: 'What is your track record in enterprise deployments?',
+      a: 'We have successfully delivered 500+ projects across custom ERP platforms, Next.js web applications, digital marketing funnels, and corporate film productions, supported by 100+ verified client testimonials.',
     },
     {
       q: 'Why does ARKA Technovation Private Limited refuse to outsource work to freelancers or third-party agencies?',
@@ -132,7 +136,7 @@ export default function WhoWeArePage() {
     },
     {
       q: 'Can we schedule an in-person meeting at your Noida headquarters?',
-      a: 'Yes, absolutely. We welcome enterprise executives, founders, and marketing directors to visit our corporate office at Royace Business Park, Office No- 202, C-4, Sector 63, Noida, Uttar Pradesh 201301, India. You can meet our team, inspect our development bays and film editing suites, and review your project roadmap in person.',
+      a: 'Yes, absolutely. We welcome enterprise executives, founders, and marketing directors to visit our corporate office at Rayos Business Park, Office No- 202, C-4, Sector 63, Noida, Uttar Pradesh 201301, India. You can meet our team, inspect our development bays and film editing suites, and review your project roadmap in person.',
     },
   ];
 
@@ -146,13 +150,39 @@ export default function WhoWeArePage() {
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
           <div className="max-w-4xl text-left">
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-black leading-[1.08] text-left">
-              Who We Are — ARKA Technovation Private Limited.
-            </h1>
-
-            <p className="mt-6 text-lg sm:text-xl text-zinc-600 max-w-3xl leading-relaxed font-light text-left">
-              Welcome to {COMPANY.legalName}, a renowned company in the fields of enterprise web development, digital marketing, and corporate filmmaking. Guided by Mr. Kranti Parashar, our dedicated team of full-stack developers, cinematographers, and digital marketing strategists helps businesses unlock their full digital potential and achieve sustainable, compounding market growth.
+            <p className="text-xs sm:text-sm font-mono font-semibold uppercase tracking-widest text-[#E8742C] mb-3">
+              Leadership &amp; Heritage
             </p>
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-black leading-[1.08] text-left">
+              About ARKA Technovation
+            </h1>
+            <p className="text-xs sm:text-sm text-zinc-500 font-mono mt-2 mb-4">
+              ARKA Technovation Private Limited · Formerly known as Jaikvik Technology India Pvt. Ltd.
+            </p>
+
+            <p className="mt-4 text-base sm:text-lg text-zinc-600 max-w-3xl leading-relaxed font-light text-left">
+              Welcome to ARKA Technovation Private Limited, a premier technology engineering firm, digital growth agency, and corporate cinema studio based in Sector 63, Noida. Guided by Founder &amp; Director <strong className="font-semibold text-black">Mr. Kranti Parashar</strong>, our dedicated in-house specialist pods engineer full-stack web applications, custom CRM &amp; enterprise ERP platforms, high-intent SEO architectures, and broadcast-grade films for 500+ enterprise clients across India and worldwide.
+            </p>
+
+            {/* Verified Statistics Grid */}
+            <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 py-6 border-y border-black/10">
+              <div>
+                <p className="text-2xl sm:text-3xl font-bold text-black font-mono">10+ Years</p>
+                <p className="text-xs text-zinc-500 font-mono uppercase tracking-wider mt-1">Industry Craft</p>
+              </div>
+              <div>
+                <p className="text-2xl sm:text-3xl font-bold text-black font-mono">500+</p>
+                <p className="text-xs text-zinc-500 font-mono uppercase tracking-wider mt-1">Projects Delivered</p>
+              </div>
+              <div>
+                <p className="text-2xl sm:text-3xl font-bold text-black font-mono">100+</p>
+                <p className="text-xs text-zinc-500 font-mono uppercase tracking-wider mt-1">Client Testimonials</p>
+              </div>
+              <div>
+                <p className="text-2xl sm:text-3xl font-bold text-black font-mono">100%</p>
+                <p className="text-xs text-zinc-500 font-mono uppercase tracking-wider mt-1">In-House Pods</p>
+              </div>
+            </div>
 
             {/* Action CTAs */}
             <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
@@ -176,40 +206,71 @@ export default function WhoWeArePage() {
         </div>
       </section>
 
-      {/* ── 15-Year Heritage & The Unified In-House Advantage ── */}
+      {/* ── 10-Year Heritage & Executive Leadership ── */}
       <section id="story" className="scroll-mt-36 py-20 sm:py-28 max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+        <div className="grid md:grid-cols-12 gap-12 items-center">
+          <div className="md:col-span-7">
             <span className="text-xs font-mono uppercase tracking-widest text-solar font-semibold block mb-2">
               Our Heritage &amp; Vision
             </span>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-black leading-tight">
-              15+ Years of Dedicated Engineering &amp; Market Growth
+              10+ Years of Dedicated Engineering &amp; Market Growth
             </h2>
             <p className="mt-5 text-zinc-600 text-sm sm:text-base leading-relaxed font-light">
-              For over 15 years, {COMPANY.name} has been dedicated to helping businesses across diverse industries augment their digital marketing efforts, build scalable software, and gain an undeniable competitive edge. We follow strict institutional values that have established us as an undisputed leader in business growth and corporate promotions.
+              For over 10 years, ARKA Technovation Private Limited (formerly known as Jaikvik Technology India Pvt. Ltd.) has been dedicated to helping businesses across diverse industries augment their digital infrastructure, build scalable software, and gain an undeniable competitive edge. We follow strict institutional values that have established us as an undisputed leader in business growth and corporate promotions.
             </p>
             <p className="mt-4 text-zinc-600 text-sm sm:text-base leading-relaxed font-light">
-              We offer actionable services and strategic insights at every stage of an enterprise’s life cycle. By continuously investing in industry-leading tools, top-tier engineering talent, and 4K cinema production equipment, we ensure our partners benefit from the most forward-thinking digital approaches in India and globally.
+              Led by Founder &amp; Director Mr. Kranti Parashar, an eminent figure in Indian industry circles with an MBA background and hands-on focus on execution, our in-house specialist pods based in Sector 63, Noida provide actionable services across software engineering, digital marketing, corporate film making, creative UI/UX design, and technical SEO.
             </p>
-          </div>
 
-          <div className="p-8 sm:p-10 rounded-3xl bg-zinc-50 border border-black/10 shadow-sm relative overflow-hidden">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-2xl bg-black text-white flex items-center justify-center font-bold text-xl">
-                A
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-black tracking-tight">{COMPANY.name}</h3>
-                <p className="text-xs text-zinc-500 font-mono">Founded &amp; Led by Mr. Kranti Parashar</p>
+            {/* Corporate pedigree tags */}
+            <div className="mt-6 pt-5 border-t border-black/10">
+              <p className="text-xs font-mono uppercase tracking-wider text-zinc-500 mb-2.5">
+                Leadership Career Pedigree:
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  'Tata Teleservices Ltd',
+                  'Kotak Mahindra Bank',
+                  'Aegon Religare',
+                  'Indiamart Intermesh Ltd.',
+                  'Care Ratings Ltd.',
+                ].map((c) => (
+                  <span
+                    key={c}
+                    className="px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-100 border border-black/8 text-zinc-800"
+                  >
+                    {c}
+                  </span>
+                ))}
               </div>
             </div>
-            <p className="text-sm text-zinc-700 leading-relaxed font-light mb-6">
-              &quot;Our mission from day one has been simple: eliminate agency fluff, banish outsourcing, and bring elite software engineers, technical SEO minds, and cinema directors together under one roof. When specialists collaborate in the same room, extraordinary things happen for our clients.&quot;
-            </p>
-            <div className="pt-4 border-t border-black/10 flex items-center justify-between text-xs font-mono text-zinc-500">
-              <span>Corporate HQ: Sector 63, Noida</span>
-              <span className="text-solar font-semibold">100% In-House</span>
+          </div>
+
+          {/* Founder Executive Card */}
+          <div className="md:col-span-5">
+            <div className="relative rounded-3xl overflow-hidden border border-black/12 bg-zinc-100 aspect-[4/5] shadow-xl group">
+              <img
+                src="/portfolite/kranti-parashar.webp"
+                alt="Mr. Kranti Parashar — Founder & Director, ARKA Technovation Private Limited"
+                loading="lazy"
+                decoding="async"
+                width="768"
+                height="1024"
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-95 pointer-events-none" />
+
+              <div className="absolute bottom-6 inset-x-6 flex items-end justify-between z-10">
+                <div>
+                  <p className="text-white font-bold text-lg">Mr. Kranti Parashar</p>
+                  <p className="text-zinc-300 text-xs">Founder &amp; Director · ARKA Technovation Private Limited</p>
+                  <p className="text-zinc-400 text-[11px] mt-0.5">Sector 63, Noida (Delhi NCR)</p>
+                </div>
+                <div className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-[11px] font-semibold shrink-0">
+                  10+ Years
+                </div>
+              </div>
             </div>
           </div>
         </div>

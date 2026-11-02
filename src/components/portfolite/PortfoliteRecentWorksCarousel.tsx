@@ -1,12 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
-import dynamic from 'next/dynamic';
+import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import Link from '../Link';
 import type { ProjectData } from './ProjectModal';
-
-const ProjectModal = dynamic(() => import('./ProjectModal'), { ssr: false });
 
 interface ShowcaseCardItem {
   id: string;
@@ -697,35 +694,33 @@ const SHOWCASE_CARDS: ShowcaseCardItem[] = [
 ];
 
 export default function PortfoliteRecentWorksCarousel() {
-  const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
-
   return (
     <section
       id="works"
       className="py-24 sm:py-32 font-framer bg-[#FAF9F5] text-black border-t border-black/10 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-16">
-        {/* Clean, subtle header */}
+        {/* Clean, subtle header aligned with operational standards & engineering protocols */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8">
           <div className="max-w-2xl">
             <p className="text-xs sm:text-sm font-mono font-semibold uppercase tracking-widest text-[#E8742C] mb-2 sm:mb-3">
-              Portfolio
+              Delivery Standards
             </p>
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-black leading-[1.15]">
-              Featured Work &amp; Projects
+              Engineering &amp; Delivery Standards
             </h2>
           </div>
 
           <div className="max-w-md flex flex-col items-start lg:items-end gap-4 sm:gap-5">
             <p className="text-zinc-600 text-sm sm:text-base font-light leading-relaxed lg:text-right">
-              Selected software architectures, marketing campaigns, and production projects built for enterprise clients.
+              Production-grade architecture, automated CI/CD pipelines, search telemetry, and complete IP handover engineered into every client deployment.
             </p>
             <div className="flex items-center gap-3 w-full sm:w-auto">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2.5 px-6 py-3 min-h-[44px] w-full sm:w-auto rounded-full bg-black text-white text-sm font-medium hover:bg-zinc-800 active:scale-[0.98] transition-all shadow-sm"
               >
-                <span>View All Projects</span>
+                <span>Start Your Project</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -746,8 +741,7 @@ export default function PortfoliteRecentWorksCarousel() {
           {[...SHOWCASE_CARDS, ...SHOWCASE_CARDS].map((card, idx) => (
             <div
               key={`${card.id}-${idx}`}
-              onClick={() => setSelectedProject(card.projectData)}
-              className="relative w-[280px] sm:w-[340px] h-[410px] sm:h-[480px] shrink-0 rounded-2xl sm:rounded-[32px] bg-[#EFECE6] overflow-hidden flex flex-col justify-between select-none cursor-pointer group hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 border border-black/5"
+              className="relative w-[280px] sm:w-[340px] h-[410px] sm:h-[480px] shrink-0 rounded-2xl sm:rounded-[32px] bg-[#EFECE6] overflow-hidden flex flex-col justify-between select-none group hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-black/5"
             >
               {/* Upper Area: Dynamic Breathing Pixel Canvas with Centered Floating Glass Card */}
               <div
@@ -775,12 +769,6 @@ export default function PortfoliteRecentWorksCarousel() {
           ))}
         </div>
       </div>
-
-      {/* Case Study Modal */}
-      <ProjectModal
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
     </section>
   );
 }

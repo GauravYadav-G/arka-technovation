@@ -98,7 +98,7 @@ const jsonLdSchema = {
       email: 'info@arkatechnovation.com',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Royace Business Park, Office No- 202, C-4, Sector 63',
+        streetAddress: 'Rayos Business Park, Office No- 202, C-4, Sector 63',
         addressLocality: 'Noida',
         addressRegion: 'Uttar Pradesh',
         postalCode: '201301',

@@ -24,7 +24,7 @@ const SOCIAL_ITEMS: SocialItem[] = [
     hoverGlow: 'hover:shadow-[0_0_14px_rgba(37,211,102,0.45)]',
     icon: ({ className }) => (
       <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
-        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.93.55 3.73 1.5 5.27L2 22l4.98-1.58c1.47.82 3.16 1.28 4.96 1.28 5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.91-9.91-9.91zm0 18.06c-1.57 0-3.07-.44-4.37-1.21l-.31-.18-3.23 1.02 1.05-3.15-.2-.33c-.88-1.42-1.35-3.07-1.35-4.78 0-4.48 3.65-8.13 8.13-8.13 4.48 0 8.13 3.65 8.13 8.13 0 4.48-3.65 8.13-8.13 8.13zm4.46-6.1c-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.76-1.82-.2-.48-.41-.41-.56-.42h-.48c-.16 0-.43.06-.66.31-.22.24-.87.85-.87 2.07s.89 2.4 1.01 2.56c.12.16 1.76 2.68 4.26 3.76.6.26 1.06.41 1.42.53.6.19 1.15.16 1.58.1.48-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z" />
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
       </svg>
     ),
   },
@@ -37,7 +37,7 @@ const SOCIAL_ITEMS: SocialItem[] = [
     hoverGlow: 'hover:shadow-[0_0_14px_rgba(10,102,194,0.45)]',
     icon: ({ className }) => (
       <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
-        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.8v8.37h-2.8v-8.37M7.86 6.3a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z" />
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
       </svg>
     ),
   },
@@ -50,7 +50,7 @@ const SOCIAL_ITEMS: SocialItem[] = [
     hoverGlow: 'hover:shadow-[0_0_14px_rgba(24,119,242,0.45)]',
     icon: ({ className }) => (
       <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
-        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+        <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" />
       </svg>
     ),
   },
@@ -62,30 +62,15 @@ const SOCIAL_ITEMS: SocialItem[] = [
     hoverBorder: 'hover:border-[#E4405F]/50',
     hoverGlow: 'hover:shadow-[0_0_14px_rgba(228,64,95,0.45)]',
     icon: ({ className }) => (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
-        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-      </svg>
-    ),
-  },
-  {
-    name: 'X (Twitter)',
-    href: 'https://x.com',
-    ariaLabel: 'Follow ARKA on X',
-    colorClass: 'text-zinc-900',
-    hoverBorder: 'hover:border-black/50',
-    hoverGlow: 'hover:shadow-[0_0_12px_rgba(0,0,0,0.25)]',
-    icon: ({ className }) => (
       <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
       </svg>
     ),
   },
   {
     name: 'Call Direct',
     href: 'tel:+919711487316',
-    ariaLabel: 'Call ARKA Technovation Private Limited Support (+91 97114 87316)',
+    ariaLabel: 'Call ARKA Technovation Support (+91 97114 87316)',
     colorClass: 'text-[#E8742C]',
     hoverBorder: 'hover:border-[#E8742C]/50',
     hoverGlow: 'hover:shadow-[0_0_14px_rgba(232,116,44,0.45)]',
@@ -123,27 +108,35 @@ export default function FloatingSocialWidget() {
       className="fixed bottom-5 right-4 sm:bottom-6 sm:right-6 z-[850] select-none"
       aria-label="Floating Social and Quick Connect Hub"
     >
-      {/* ── Light Theme Frosted Glass Capsule (Expands inwards to the left) ── */}
+      {/* ── Expandable Social Capsule Hub ── */}
       <div
         ref={containerRef}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="relative flex flex-row-reverse items-center p-1.5 rounded-full bg-white/95 backdrop-blur-2xl border border-white/90 shadow-[0_16px_44px_rgba(0,0,0,0.16),0_1px_2px_rgba(255,255,255,1)_inset] transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.22)]"
+        className={`relative flex flex-row-reverse items-center transition-all duration-300 ${
+          isOpen
+            ? 'p-1.5 rounded-full bg-white/95 backdrop-blur-2xl border border-zinc-200/90 shadow-[0_16px_44px_rgba(0,0,0,0.18)]'
+            : 'p-0 rounded-full shadow-none'
+        }`}
       >
-        {/* Subtle Ambient Radial Highlight */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-r from-solar/10 via-white/40 to-emerald-500/10 opacity-70"
-        />
-
-        {/* ── Single Social FAB Trigger Button (Always Visible at Far Right) ── */}
+        {/* ── Single Social FAB Trigger Button (Vibrant Green) ── */}
         <button
           type="button"
           onClick={() => setIsOpen((prev) => !prev)}
           aria-expanded={isOpen}
           aria-label={isOpen ? 'Close social channels' : 'Open social channels'}
-          className="relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-zinc-50 hover:bg-white text-zinc-800 border border-black/[0.06] shadow-sm transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer shrink-0 group/fab"
+          style={{ backgroundColor: '#25D366', color: '#ffffff' }}
+          className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full text-white shadow-[0_6px_24px_rgba(37,211,102,0.45)] hover:shadow-[0_8px_30px_rgba(37,211,102,0.6)] transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer shrink-0 group/fab"
         >
+          {/* Subtle radar pulse ring when closed */}
+          {!isOpen && (
+            <span
+              className="absolute -inset-1 rounded-full opacity-40 animate-ping pointer-events-none"
+              style={{ backgroundColor: '#25D366' }}
+              aria-hidden="true"
+            />
+          )}
+
           <AnimatePresence mode="wait">
             {isOpen ? (
               <motion.div
@@ -152,9 +145,9 @@ export default function FloatingSocialWidget() {
                 animate={{ rotate: 0, opacity: 1 }}
                 exit={{ rotate: 90, opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="flex items-center justify-center"
+                className="relative z-10 flex items-center justify-center"
               >
-                <X className="w-5 h-5 text-zinc-700" />
+                <X className="w-6 h-6 text-white" strokeWidth={2.5} />
               </motion.div>
             ) : (
               <motion.div
@@ -163,23 +156,16 @@ export default function FloatingSocialWidget() {
                 animate={{ rotate: 0, opacity: 1 }}
                 exit={{ rotate: -90, opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="flex items-center justify-center"
+                className="relative z-10 flex items-center justify-center"
               >
-                {/* Modern Chat & Social Hub SVG FAB Icon */}
+                {/* Official SimpleIcons WhatsApp SVG Icon */}
                 <svg
                   viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-5 h-5 text-zinc-900 group-hover/fab:scale-110 transition-transform duration-300"
+                  fill="currentColor"
+                  className="w-6 h-6 sm:w-7 sm:h-7 text-white group-hover/fab:scale-110 transition-transform duration-300"
                   aria-hidden="true"
                 >
-                  <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
-                  <circle cx="8" cy="12" r="0.9" fill="currentColor" />
-                  <circle cx="12" cy="12" r="0.9" fill="currentColor" />
-                  <circle cx="16" cy="12" r="0.9" fill="currentColor" />
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
                 </svg>
               </motion.div>
             )}

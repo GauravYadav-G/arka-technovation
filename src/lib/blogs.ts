@@ -41,11 +41,11 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Oct 28, 2026',
     readTime: '8 min read',
     author: {
-      name: 'Kranti Parashar',
-      role: 'Founder & Managing Director',
-      avatarInitials: 'KP',
+      name: 'Admin',
+      role: 'Engineering Lead',
+      avatarInitials: 'AD',
     },
-    image: '/images/products/grid-05-plant-seo.webp',
+    image: '/images/blogs/blog-07-core-web-vitals-speed.webp',
     alt: 'Sub-second Core Web Vitals and Technical SEO architecture dashboard',
     tags: ['Core Web Vitals', 'Technical SEO', 'PageSpeed', 'Next.js', 'Google Rankings'],
     keyTakeaways: [
@@ -117,11 +117,11 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Oct 24, 2026',
     readTime: '7 min read',
     author: {
-      name: 'Kranti Parashar',
-      role: 'Founder & Managing Director',
-      avatarInitials: 'KP',
+      name: 'Admin',
+      role: 'Systems Architecture',
+      avatarInitials: 'AD',
     },
-    image: '/images/products/grid-04-enterprise-crm.webp',
+    image: '/images/blogs/blog-03-enterprise-crm-erp.webp',
     alt: 'Custom Enterprise CRM and ERP Workflow Automation Dashboard',
     tags: ['Custom CRM', 'ERP', 'Automation', 'Enterprise Software', 'Workflow'],
     keyTakeaways: [
@@ -180,11 +180,11 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Oct 20, 2026',
     readTime: '10 min read',
     author: {
-      name: 'Arka Web Platform Pod',
-      role: 'Engineering Team',
-      avatarInitials: 'AW',
+      name: 'Admin',
+      role: 'Full-Stack Architecture',
+      avatarInitials: 'AD',
     },
-    image: '/images/products/grid-01-precision-cad.webp',
+    image: '/images/blogs/blog-01-web-architecture.webp',
     alt: 'Next.js 15 Server Components and Edge Caching Architecture',
     tags: ['Next.js 15', 'React', 'Headless CMS', 'Edge Computing', 'Performance'],
     keyTakeaways: [
@@ -230,11 +230,11 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Oct 14, 2026',
     readTime: '6 min read',
     author: {
-      name: 'Arka Product Design Pod',
-      role: 'UX & Brand Architecture',
-      avatarInitials: 'AP',
+      name: 'Admin',
+      role: 'Product Design Lead',
+      avatarInitials: 'AD',
     },
-    image: '/images/products/grid-02-maison-d2c.webp',
+    image: '/images/blogs/blog-06-accessible-ui-design.webp',
     alt: 'B2B Landing Page UX and Conversion Rate Optimization Heatmap',
     tags: ['CRO', 'UX Design', 'Landing Pages', 'B2B Marketing', 'Conversion'],
     keyTakeaways: [
@@ -281,11 +281,11 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Oct 8, 2026',
     readTime: '9 min read',
     author: {
-      name: 'Arka Growth Marketing Pod',
-      role: 'Performance Media',
-      avatarInitials: 'AG',
+      name: 'Admin',
+      role: 'Growth Marketing Lead',
+      avatarInitials: 'AD',
     },
-    image: '/images/products/grid-07-botblox-robotics.webp',
+    image: '/images/blogs/blog-05-b2b-digital-marketing.webp',
     alt: 'Addressable Geofencing and Precision PPC Campaign Mapping',
     tags: ['PPC', 'Geofencing', 'Paid Ads', 'B2B Growth', 'Lead Generation'],
     keyTakeaways: [
@@ -326,11 +326,11 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Sep 30, 2026',
     readTime: '5 min read',
     author: {
-      name: 'Arka Cinema & Creative Pod',
-      role: 'Media Production Unit',
-      avatarInitials: 'AC',
+      name: 'Admin',
+      role: 'Cinematography Director',
+      avatarInitials: 'AD',
     },
-    image: '/images/products/grid-03-northline-cinema.webp',
+    image: '/images/blogs/blog-04-corporate-film-production.webp',
     alt: 'Cinematic Industrial Corporate Film Production on Factory Floor',
     tags: ['Corporate Film', 'Video Production', 'Industrial Cinema', 'Storytelling', 'Branding'],
     keyTakeaways: [
@@ -371,11 +371,11 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Sep 22, 2026',
     readTime: '8 min read',
     author: {
-      name: 'Arka Data Engineering Pod',
-      role: 'Analytics & Infrastructure',
+      name: 'Admin',
+      role: 'Data Infrastructure',
       avatarInitials: 'AD',
     },
-    image: '/images/products/grid-08-kestrix-thermal.webp',
+    image: '/images/blogs/blog-02-seo-topical-authority.webp',
     alt: 'Customer Data Platform and Real-time Attribution Pipeline Architecture',
     tags: ['CDP', 'Analytics', 'Attribution', 'Data Engineering', 'Revenue'],
     keyTakeaways: [
@@ -416,11 +416,11 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Sep 12, 2026',
     readTime: '6 min read',
     author: {
-      name: 'Arka Local Search Pod',
-      role: 'Local Search Optimization',
-      avatarInitials: 'AL',
+      name: 'Admin',
+      role: 'Local SEO Strategy',
+      avatarInitials: 'AD',
     },
-    image: '/images/products/grid-09-skipper-maritime.webp',
+    image: '/images/blogs/blog-08-executive-broadcast-news.webp',
     alt: 'Google Guarantee and Multi-location Map Pack Optimization Strategy',
     tags: ['Local SEO', 'Google Maps', 'Google Guarantee', 'NCR Business', 'Reputation'],
     keyTakeaways: [
@@ -473,7 +473,6 @@ export function getRelatedBlogs(currentSlug: string, count: number = 3): BlogPos
   const related = BLOG_POSTS.filter((p) => current.relatedSlugs.includes(p.slug));
   if (related.length >= count) return related.slice(0, count);
 
-  // Fill remaining with other posts
   const others = BLOG_POSTS.filter((p) => p.slug !== currentSlug && !related.some((r) => r.slug === p.slug));
   return [...related, ...others].slice(0, count);
 }

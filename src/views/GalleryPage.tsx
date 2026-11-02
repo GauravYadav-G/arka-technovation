@@ -1,22 +1,19 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from '@/components/Link';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Sparkles,
   ArrowUpRight,
-  Eye,
   X,
-  Layers,
-  Code2,
-  Film,
-  Compass,
-  Palette,
-  TrendingUp,
-  CheckCircle2,
+  ChevronRight,
+  ChevronLeft,
   ArrowRight,
+  Calendar,
+  Layers,
+  Sparkles,
+  ExternalLink,
 } from 'lucide-react';
 import PortfoliteNav from '@/components/portfolite/PortfoliteNav';
 import PortfoliteFooter from '@/components/portfolite/PortfoliteFooter';
@@ -40,7 +37,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     id: 'precision-cad',
     title: 'Precision CAD Industrial Portal',
     category: 'Web & Apps',
-    image: '/images/products/grid-01-precision-cad.webp',
+    image: '/images/gallery/gallery-01-web-apps.webp',
     client: 'Precision CAD International',
     year: '2024',
     aspect: 'landscape',
@@ -52,7 +49,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     id: 'maison-d2c',
     title: 'Maison Luxury D2C Experience',
     category: 'Branding & UI/UX',
-    image: '/images/products/grid-02-maison-d2c.webp',
+    image: '/images/gallery/gallery-02-branding-ui.webp',
     client: 'Maison Artisans',
     year: '2024',
     aspect: 'portrait',
@@ -64,7 +61,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     id: 'northline-cinema',
     title: 'Northline Cinematic Commercial',
     category: 'Cinema & Films',
-    image: '/images/products/grid-03-northline-cinema.webp',
+    image: '/images/gallery/gallery-03-cinema-film.webp',
     client: 'Northline Industrial Ltd.',
     year: '2023',
     aspect: 'landscape',
@@ -76,7 +73,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     id: 'enterprise-crm',
     title: 'CoreOps Enterprise CRM Platform',
     category: 'Enterprise Systems',
-    image: '/images/products/grid-04-enterprise-crm.webp',
+    image: '/images/gallery/gallery-04-enterprise-crm.webp',
     client: 'CoreOps Logistics',
     year: '2024',
     aspect: 'landscape',
@@ -88,7 +85,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     id: 'plant-seo',
     title: 'Plant Dynamics Organic Authority',
     category: 'Performance & SEO',
-    image: '/images/products/grid-05-plant-seo.webp',
+    image: '/images/gallery/gallery-05-seo-analytics.webp',
     client: 'Plant Dynamics',
     year: '2024',
     aspect: 'portrait',
@@ -100,7 +97,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     id: 'meridian-health',
     title: 'Meridian Health Patient Portal',
     category: 'Web & Apps',
-    image: '/images/products/grid-06-meridian-health.webp',
+    image: '/images/gallery/gallery-06-healthcare-portal.webp',
     client: 'Meridian Healthcare Network',
     year: '2023',
     aspect: 'landscape',
@@ -112,7 +109,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     id: 'botblox-robotics',
     title: 'BotBlox Robotics Hardware Interface',
     category: 'Enterprise Systems',
-    image: '/images/products/grid-07-botblox-robotics.webp',
+    image: '/images/gallery/gallery-07-robotics-hardware.webp',
     client: 'BotBlox Robotics',
     year: '2024',
     aspect: 'square',
@@ -124,7 +121,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     id: 'kestrix-thermal',
     title: 'Kestrix Thermal Drone Analytics',
     category: 'Performance & SEO',
-    image: '/images/products/grid-08-kestrix-thermal.webp',
+    image: '/images/gallery/gallery-08-thermal-analytics.webp',
     client: 'Kestrix Green Building Tech',
     year: '2023',
     aspect: 'portrait',
@@ -136,7 +133,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     id: 'skipper-maritime',
     title: 'Skipper Maritime Fleet Tracking',
     category: 'Web & Apps',
-    image: '/images/products/grid-09-skipper-maritime.webp',
+    image: '/images/gallery/gallery-09-maritime-logistics.webp',
     client: 'Skipper Shipping Lines',
     year: '2024',
     aspect: 'landscape',
@@ -164,113 +161,108 @@ export default function GalleryPage() {
       ? GALLERY_ITEMS
       : GALLERY_ITEMS.filter((item) => item.category === activeCategory);
 
+  const currentIndex = activeItem
+    ? filteredItems.findIndex((item) => item.id === activeItem.id)
+    : -1;
+
+  const handlePrev = useCallback(() => {
+    if (!filteredItems.length) return;
+    const prevIdx = currentIndex > 0 ? currentIndex - 1 : filteredItems.length - 1;
+    setActiveItem(filteredItems[prevIdx]);
+  }, [currentIndex, filteredItems]);
+
+  const handleNext = useCallback(() => {
+    if (!filteredItems.length) return;
+    const nextIdx = currentIndex < filteredItems.length - 1 ? currentIndex + 1 : 0;
+    setActiveItem(filteredItems[nextIdx]);
+  }, [currentIndex, filteredItems]);
+
+  // Lock body scroll and register keyboard controls (ESC, Left, Right)
+  useEffect(() => {
+    if (!activeItem) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setActiveItem(null);
+      } else if (e.key === 'ArrowLeft') {
+        handlePrev();
+      } else if (e.key === 'ArrowRight') {
+        handleNext();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [activeItem, handlePrev, handleNext]);
+
   return (
-    <div className="min-h-screen bg-[#FAFAFA] text-black font-sans selection:bg-solar selection:text-white">
-      {/* Floating Glassmorphic Top Navbar */}
+    <div className="min-h-screen bg-white text-black font-sans selection:bg-[#E8742C] selection:text-white">
+      {/* Navigation */}
       <PortfoliteNav />
 
-      {/* ======================================================== */}
-      {/* HERO SECTION: Title & Philosophy                         */}
-      {/* ======================================================== */}
-      <section className="relative pt-36 sm:pt-44 pb-12 sm:pb-16 overflow-hidden">
-        {/* Subtle Architectural Dot Grid */}
-        <div
-          className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-60 pointer-events-none"
-          aria-hidden="true"
-        />
+      {/* ── Editorial Header Section (NO BADGES) ── */}
+      <section className="relative pt-36 sm:pt-44 pb-12 sm:pb-16 border-b border-black/10 bg-[#FAF9F5] overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 text-xs font-mono text-zinc-500 mb-6">
+            <Link href="/" className="hover:text-[#E8742C] transition-colors">Home</Link>
+            <ChevronRight size={13} className="text-zinc-400" />
+            <span className="text-black font-medium">Visual Gallery</span>
+          </div>
 
-        {/* Ambient Solar Warmth Glow Pool */}
-        <div
-          className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-amber-200/25 via-orange-200/10 to-transparent rounded-full blur-3xl pointer-events-none"
-          aria-hidden="true"
-        />
+          <div className="max-w-3xl">
+            <p className="text-xs sm:text-sm font-mono font-semibold uppercase tracking-widest text-[#E8742C] mb-3">
+              Curated Portfolio Archive
+            </p>
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-black leading-[1.08] mb-4">
+              Visual Gallery &amp; Production Showcase
+            </h1>
+            <p className="text-base sm:text-lg text-zinc-600 font-light leading-relaxed max-w-2xl">
+              A curated visual archive of full-stack web platforms, corporate cinema films, enterprise software architectures, and high-conversion growth systems created in Sector 63, Noida.
+            </p>
+          </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
-          {/* Eyebrow Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-zinc-200/80 shadow-xs mb-5"
-          >
-            <Sparkles className="w-3.5 h-3.5 text-solar" />
-            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-zinc-700">
-              Visual Archive · Production Deliverables
-            </span>
-          </motion.div>
-
-          {/* Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-950 font-display leading-[1.12]"
-            style={{ textWrap: 'balance' }}
-          >
-            Curated Visual Gallery &amp; Engineering Showcase
-          </motion.h1>
-
-          {/* Subtext */}
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-5 text-sm sm:text-base md:text-lg text-zinc-600 font-light leading-relaxed max-w-2xl mx-auto"
-            style={{ textWrap: 'pretty' }}
-          >
-            Explore our visual gallery of full-stack web platforms, corporate cinema films, enterprise software architectures, and high-conversion growth systems created in Sector 63, Noida.
-          </motion.p>
-
-          {/* Category Filter Tabs */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-8 flex flex-wrap justify-center gap-1.5 sm:gap-2"
-          >
+          {/* Minimalist Category Filter Strip (NO PILL BADGES) */}
+          <div className="mt-10 pt-8 border-t border-black/10 flex items-center gap-6 overflow-x-auto pb-2 scrollbar-none font-mono text-xs">
             {CATEGORIES.map((cat) => {
-              const isActive = activeCategory === cat;
+              const active = activeCategory === cat;
               return (
                 <button
                   key={cat}
+                  type="button"
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold tracking-tight transition-all duration-200 cursor-pointer select-none ${isActive
-                      ? 'bg-zinc-950 text-white shadow-md'
-                      : 'bg-white text-zinc-600 hover:text-black border border-zinc-200/80 hover:border-zinc-300 hover:bg-zinc-50'
-                    }`}
+                  className={`whitespace-nowrap pb-1.5 transition-colors cursor-pointer border-b-2 uppercase tracking-wider ${
+                    active
+                      ? 'text-black font-bold border-black'
+                      : 'text-zinc-500 hover:text-black border-transparent font-medium'
+                  }`}
                 >
                   {cat}
                 </button>
               );
             })}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* ======================================================== */}
-      {/* GALLERY GRID: Responsive Masonry Card Layout             */}
-      {/* ======================================================== */}
-      <section className="relative pb-24 sm:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <motion.div
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
-        >
-          <AnimatePresence>
-            {filteredItems.map((item) => (
-              <motion.div
-                key={item.id}
-                layout
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative flex flex-col rounded-2xl sm:rounded-3xl bg-white border border-zinc-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.04)] overflow-hidden hover:shadow-[0_20px_45px_-12px_rgba(0,0,0,0.12)] hover:border-zinc-300 transition-all duration-300"
-              >
-                {/* Image Container with Hover Zoom & Action Overlay */}
-                <div
-                  onClick={() => setActiveItem(item)}
-                  className="relative w-full aspect-[16/11] overflow-hidden bg-zinc-100 cursor-pointer"
-                >
+      {/* ── Gallery Cards Grid (NO BADGES ON IMAGES) ── */}
+      <section className="py-16 sm:py-24 container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredItems.map((item) => (
+            <div
+              key={item.id}
+              onClick={() => setActiveItem(item)}
+              className="group flex flex-col justify-between bg-white rounded-2xl border border-black/10 overflow-hidden hover:border-black/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+            >
+              <div>
+                {/* Pure Image Container (ABSOLUTELY ZERO BADGES / OVERLAYS ON IMAGE) */}
+                <div className="relative w-full aspect-[16/11] overflow-hidden bg-zinc-100 border-b border-black/10">
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -278,177 +270,230 @@ export default function GalleryPage() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
+                </div>
 
-                  {/* Gradient Overlay */}
-                  <div
-                    className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    aria-hidden="true"
-                  />
-
-                  {/* Category Pill Tag */}
-                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md border border-white/60 text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-900 shadow-sm">
-                    {item.category}
-                  </div>
-
-                  {/* Quick View Button on Hover */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                    <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/95 text-zinc-950 font-semibold text-xs shadow-lg backdrop-blur-md">
-                      <Eye className="w-3.5 h-3.5 text-solar" />
-                      View Project
+                {/* Card Details (Clean Typography) */}
+                <div className="p-6">
+                  {/* Category & Year Row */}
+                  <div className="flex items-center justify-between text-xs font-mono mb-2">
+                    <span className="font-semibold text-[#E8742C] uppercase tracking-wider">
+                      {item.category}
+                    </span>
+                    <span className="text-zinc-400 font-mono">
+                      {item.year}
                     </span>
                   </div>
 
-                  {/* Year Tag */}
-                  <div className="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/60 backdrop-blur-md text-white text-[10px] font-mono font-semibold">
-                    {item.year}
+                  {/* Title */}
+                  <h3 className="text-xl font-bold tracking-tight text-black group-hover:text-[#E8742C] transition-colors leading-snug mb-1">
+                    {item.title}
+                  </h3>
+
+                  {/* Client */}
+                  <p className="text-xs font-mono text-zinc-500 mb-3">
+                    {item.client}
+                  </p>
+
+                  {/* Description */}
+                  <p className="text-zinc-600 text-xs sm:text-sm leading-relaxed font-light mb-4 line-clamp-2">
+                    {item.description}
+                  </p>
+
+                  {/* Key Deliverables Minimalist List */}
+                  <div className="flex flex-wrap gap-x-2 gap-y-1 text-xs font-mono text-zinc-500 pt-3 border-t border-black/6">
+                    {item.deliverables.slice(0, 3).map((d, i) => (
+                      <span key={i}>
+                        {d}{i < Math.min(item.deliverables.length - 1, 2) ? ' ·' : ''}
+                      </span>
+                    ))}
                   </div>
                 </div>
+              </div>
 
-                {/* Card Info Content */}
-                <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
-                  <div>
-                    <p className="text-[11px] font-mono font-semibold text-solar uppercase tracking-wider mb-1">
-                      {item.client}
-                    </p>
-                    <h3
-                      onClick={() => setActiveItem(item)}
-                      className="text-base sm:text-lg font-bold text-zinc-950 font-display tracking-tight hover:text-solar transition-colors cursor-pointer"
-                    >
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-xs text-zinc-600 font-light leading-relaxed line-clamp-2">
-                      {item.description}
-                    </p>
-                  </div>
-
-                  {/* Card Bottom Meta */}
-                  <div className="mt-4 pt-3.5 border-t border-zinc-100 flex items-center justify-between">
-                    <span className="text-[11px] font-mono text-emerald-700 font-semibold">
-                      {item.stats || 'Production Ready'}
-                    </span>
-                    <button
-                      onClick={() => setActiveItem(item)}
-                      className="text-xs font-semibold text-zinc-900 hover:text-solar inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-all cursor-pointer"
-                    >
-                      <span>Details</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-solar" />
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+              {/* Action Link Footer */}
+              <div className="px-6 pb-6 pt-2 flex items-center justify-between text-xs font-mono">
+                {item.stats ? (
+                  <span className="text-emerald-700 font-medium">{item.stats}</span>
+                ) : (
+                  <span className="text-zinc-400">View Project</span>
+                )}
+                <span className="font-bold text-black group-hover:text-[#E8742C] inline-flex items-center gap-1 transition-colors">
+                  <span>Inspect</span>
+                  <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
-      {/* ======================================================== */}
-      {/* LIGHTBOX MODAL: Inspect Project in High-Resolution       */}
-      {/* ======================================================== */}
+      {/* ── Interactive Modal for Deep Project Inspection (FIXED & HIGH-Z) ── */}
       <AnimatePresence>
         {activeItem && (
-          <div className="fixed inset-0 z-[990] flex items-center justify-center p-3 sm:p-6 lg:p-8">
-            {/* Backdrop Scrim */}
+          <div className="fixed inset-0 z-[1000] flex items-center justify-center p-3 sm:p-6 md:p-8 font-sans overflow-y-auto">
+            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
               onClick={() => setActiveItem(null)}
-              className="absolute inset-0 bg-black/75 backdrop-blur-md cursor-pointer"
+              className="fixed inset-0 bg-black/80 backdrop-blur-md"
             />
 
             {/* Modal Dialog Card */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 16 }}
+              initial={{ opacity: 0, scale: 0.96, y: 16 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 16 }}
+              exit={{ opacity: 0, scale: 0.96, y: 16 }}
               transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              className="relative z-10 w-full max-w-4xl max-h-[90vh] bg-white rounded-2xl sm:rounded-3xl shadow-2xl border border-black/10 overflow-hidden flex flex-col md:flex-row"
+              className="relative w-full max-w-4xl max-h-[90vh] bg-white border border-black/15 rounded-2xl sm:rounded-3xl shadow-2xl flex flex-col z-10 text-black overflow-hidden my-auto"
+              onClick={(e) => e.stopPropagation()}
             >
-              {/* Close Button */}
-              <button
-                onClick={() => setActiveItem(null)}
-                className="absolute top-3 right-3 z-20 grid h-9 w-9 place-items-center rounded-full bg-white/90 backdrop-blur-md text-zinc-700 hover:text-black border border-black/10 shadow-md cursor-pointer transition-colors"
-                aria-label="Close dialog"
-              >
-                <X className="w-4 h-4" />
-              </button>
-
-              {/* Left Column: Big Image Display */}
-              <div className="relative w-full md:w-3/5 h-64 md:h-auto min-h-[280px] bg-zinc-950 flex items-center justify-center">
-                <Image
-                  src={activeItem.image}
-                  alt={activeItem.title}
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-
-              {/* Right Column: Project Specifications */}
-              <div className="w-full md:w-2/5 p-5 sm:p-7 flex flex-col justify-between overflow-y-auto max-h-[50vh] md:max-h-[85vh]">
-                <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="px-2.5 py-1 rounded-full bg-solar/10 text-solar text-[10px] font-mono font-bold uppercase">
-                      {activeItem.category}
-                    </span>
-                    <span className="text-[10px] font-mono text-zinc-400">
-                      {activeItem.year}
-                    </span>
-                  </div>
-
-                  <h2 className="text-xl sm:text-2xl font-bold text-zinc-950 font-display leading-tight mb-2">
-                    {activeItem.title}
-                  </h2>
-                  <p className="text-xs font-mono text-zinc-500 mb-4">
-                    Client: {activeItem.client}
-                  </p>
-
-                  <p className="text-xs sm:text-sm text-zinc-600 font-light leading-relaxed mb-6">
-                    {activeItem.description}
-                  </p>
-
-                  {/* Deliverables Specs */}
-                  <div className="mb-6">
-                    <h4 className="text-[11px] font-mono uppercase tracking-wider text-zinc-900 font-semibold mb-2 flex items-center gap-1.5">
-                      <Code2 className="w-3.5 h-3.5 text-solar" />
-                      <span>Deliverables &amp; Tech Stack</span>
-                    </h4>
-                    <div className="flex flex-wrap gap-1.5">
-                      {activeItem.deliverables.map((del, i) => (
-                        <span
-                          key={i}
-                          className="px-2.5 py-1 rounded-lg bg-zinc-100 text-zinc-800 text-[11px] font-medium"
-                        >
-                          {del}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Impact Result */}
-                  {activeItem.stats && (
-                    <div className="p-3.5 rounded-xl bg-orange-50/70 border border-orange-200/60 mb-6">
-                      <div className="flex items-center gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-solar shrink-0" />
-                        <div>
-                          <p className="text-[10px] font-mono text-zinc-500 uppercase">Verified Impact</p>
-                          <p className="text-sm font-bold text-zinc-950 font-display">{activeItem.stats}</p>
-                        </div>
-                      </div>
-                    </div>
-                  )}
+              {/* Sticky Top Header Bar with Prominent Navigation & Close Button */}
+              <div className="flex items-center justify-between px-5 sm:px-7 py-3.5 sm:py-4 border-b border-black/10 bg-[#FAF9F5]/98 backdrop-blur-md sticky top-0 z-30 shrink-0">
+                <div className="flex items-center gap-2 sm:gap-3 text-xs font-mono">
+                  <span className="font-semibold text-[#E8742C] uppercase tracking-wider">
+                    {activeItem.category}
+                  </span>
+                  <span className="text-zinc-300">·</span>
+                  <span className="text-zinc-700 truncate max-w-[150px] sm:max-w-xs font-medium">{activeItem.client}</span>
+                  <span className="text-zinc-300 hidden sm:inline">·</span>
+                  <span className="text-zinc-400 hidden sm:inline font-mono">{activeItem.year}</span>
                 </div>
 
-                {/* CTAs in Modal */}
-                <div className="pt-4 border-t border-zinc-100 flex items-center gap-2.5">
-                  <Link
-                    href="/contact-us"
+                {/* Right controls: Prev / Next + High-Visibility Close Button */}
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="hidden sm:flex items-center border border-black/10 rounded-full overflow-hidden bg-white shadow-xs">
+                    <button
+                      type="button"
+                      onClick={handlePrev}
+                      className="px-2.5 py-1 text-zinc-600 hover:text-black hover:bg-zinc-100 transition-colors flex items-center gap-1 text-xs font-mono cursor-pointer"
+                      title="Previous project (Left Arrow)"
+                      aria-label="Previous project"
+                    >
+                      <ChevronLeft className="w-3.5 h-3.5" />
+                      <span>Prev</span>
+                    </button>
+                    <span className="w-px h-3.5 bg-black/10" />
+                    <button
+                      type="button"
+                      onClick={handleNext}
+                      className="px-2.5 py-1 text-zinc-600 hover:text-black hover:bg-zinc-100 transition-colors flex items-center gap-1 text-xs font-mono cursor-pointer"
+                      title="Next project (Right Arrow)"
+                      aria-label="Next project"
+                    >
+                      <span>Next</span>
+                      <ChevronRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+
+                  <button
+                    type="button"
                     onClick={() => setActiveItem(null)}
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-zinc-950 text-white text-xs font-semibold hover:bg-zinc-800 transition-colors shadow-sm"
+                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black text-white hover:bg-[#E8742C] active:scale-95 flex items-center justify-center transition-all shadow-md cursor-pointer shrink-0"
+                    aria-label="Close modal"
+                    title="Close preview (Esc)"
                   >
-                    <span>Request Similar Project</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-solar" />
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Scrollable Content Body */}
+              <div className="overflow-y-auto p-5 sm:p-8 space-y-6">
+                {/* Large Project Image Container */}
+                <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-xl sm:rounded-2xl overflow-hidden bg-zinc-100 border border-black/10 shadow-sm">
+                  <Image
+                    src={activeItem.image}
+                    alt={activeItem.title}
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 896px"
+                    className="object-cover"
+                  />
+                </div>
+
+                {/* Narrative & Details */}
+                <div className="space-y-3">
+                  <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+                    <h2 className="text-xl sm:text-3xl font-bold tracking-tight text-black leading-tight">
+                      {activeItem.title}
+                    </h2>
+                    {activeItem.stats && (
+                      <span className="text-xs sm:text-sm font-mono font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200 self-start sm:self-auto shrink-0">
+                        {activeItem.stats}
+                      </span>
+                    )}
+                  </div>
+
+                  <p className="text-sm sm:text-base text-zinc-600 font-light leading-relaxed">
+                    {activeItem.description}
+                  </p>
+                </div>
+
+                {/* Specs Grid */}
+                <div className="grid sm:grid-cols-2 gap-6 pt-5 border-t border-black/10">
+                  <div>
+                    <h4 className="text-xs font-mono uppercase tracking-wider text-zinc-500 mb-3 font-semibold">
+                      Technical Deliverables
+                    </h4>
+                    <ul className="space-y-2 text-xs sm:text-sm text-zinc-700 font-mono">
+                      {activeItem.deliverables.map((d, i) => (
+                        <li key={i} className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#E8742C] shrink-0" />
+                          <span>{d}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xs font-mono uppercase tracking-wider text-zinc-500 mb-3 font-semibold">
+                      Production &amp; Engineering Pod
+                    </h4>
+                    <div className="space-y-2 text-xs sm:text-sm text-zinc-700 font-mono">
+                      <p><strong className="text-black">Client:</strong> {activeItem.client}</p>
+                      <p><strong className="text-black">Delivery Year:</strong> {activeItem.year}</p>
+                      <p><strong className="text-black">Deployment:</strong> 100% In-House (Sector 63, Noida)</p>
+                      <p><strong className="text-black">Handover:</strong> Complete IP &amp; Git Repository Handover</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Action CTA Bar */}
+                <div className="pt-6 border-t border-black/10 flex flex-wrap gap-3 items-center justify-between">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-black text-white hover:bg-[#E8742C] text-xs sm:text-sm font-semibold transition-colors"
+                  >
+                    <span>Scope a Similar Project</span>
+                    <ArrowRight size={14} />
                   </Link>
+
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={handlePrev}
+                      className="sm:hidden px-3 py-1.5 text-xs font-mono border border-black/15 rounded-lg text-zinc-700 hover:text-black cursor-pointer"
+                    >
+                      ← Prev
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleNext}
+                      className="sm:hidden px-3 py-1.5 text-xs font-mono border border-black/15 rounded-lg text-zinc-700 hover:text-black cursor-pointer"
+                    >
+                      Next →
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setActiveItem(null)}
+                      className="text-xs font-mono text-zinc-500 hover:text-black px-3 py-1.5 cursor-pointer underline underline-offset-4"
+                    >
+                      Close Preview
+                    </button>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -456,35 +501,27 @@ export default function GalleryPage() {
         )}
       </AnimatePresence>
 
-      {/* ======================================================== */}
-      {/* BOTTOM CTA: Transform Your Digital Product               */}
-      {/* ======================================================== */}
-      <section className="relative py-20 sm:py-28 bg-white border-t border-black/10 overflow-hidden text-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <p className="text-xs font-mono font-semibold uppercase tracking-widest text-zinc-500 mb-2">
-            Initiate Engagement
-          </p>
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-950 font-display leading-[1.15]">
-            Have an engineering vision or creative film in mind?
-          </h2>
-          <p className="mt-4 text-sm sm:text-base text-zinc-600 font-light max-w-xl mx-auto leading-relaxed">
-            Collaborate directly with our in-house engineering and production directors in Sector 63, Noida. Fast proposals with transparent timelines.
-          </p>
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link
-              href="/contact-us"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 min-h-[48px] rounded-full bg-zinc-950 hover:bg-zinc-800 text-white text-sm font-semibold tracking-wide shadow-md transition-all active:scale-[0.98]"
-            >
-              <span>Start a Project</span>
-              <ArrowRight className="w-4 h-4 text-solar" />
-            </Link>
-            <Link
-              href="/services"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 min-h-[48px] rounded-full bg-zinc-100 hover:bg-zinc-200/80 text-zinc-900 border border-zinc-200 text-sm font-medium transition-colors"
-            >
-              <span>Explore All Services</span>
-            </Link>
+      {/* ── Studio Consultation Strip ── */}
+      <section className="py-16 sm:py-20 bg-zinc-950 text-white border-t border-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex flex-col md:flex-row md:items-center justify-between gap-8">
+          <div className="max-w-2xl">
+            <p className="text-xs font-mono font-semibold uppercase tracking-widest text-[#E8742C] mb-2">
+              Studio &amp; Engineering Center
+            </p>
+            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+              Want to Review Full Project Source Code or Film Repertoire?
+            </h3>
+            <p className="mt-2 text-zinc-400 text-sm font-light leading-relaxed">
+              Visit our headquarters at Rayos Business Park, Sector 63, Noida to review working prototypes, 4K color grading suites, and live telemetry dashboards.
+            </p>
           </div>
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white text-black font-semibold text-sm hover:bg-zinc-200 transition-colors shrink-0"
+          >
+            <span>Schedule Studio Visit</span>
+            <ArrowRight size={14} />
+          </Link>
         </div>
       </section>
 
@@ -493,4 +530,3 @@ export default function GalleryPage() {
     </div>
   );
 }
-
