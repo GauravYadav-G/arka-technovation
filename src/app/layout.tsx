@@ -164,9 +164,9 @@ export default function RootLayout({
         />
         <link
           rel="preload"
-          href="/images/logo/arka-logo-white.svg"
+          href="/images/logo/arka-logo-white.webp"
           as="image"
-          type="image/svg+xml"
+          type="image/webp"
           fetchPriority="high"
         />
         <link

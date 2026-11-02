@@ -87,7 +87,7 @@ export default function FooterSection() {
           </div>
         </div>
         <div className="footer__bottom">
-          <img className="footer__logo" src="/images/logo/arka-logo.svg" alt="ARKA Technovation Private Limited" style={{ height: '64px', width: 'auto', objectFit: 'contain' }} />
+          <img className="footer__logo" src="/images/logo/arka-logo-black.png" alt="ARKA Technovation Private Limited" style={{ height: '64px', width: 'auto', objectFit: 'contain' }} />
           <p className="footer__copy">© 2026 ARKA Technovation Private Limited. All rights reserved.</p>
           <a className="footer__top-link" href="#top" data-back-to-top onClick={handleBackToTop}>
             BACK TO TOP <span aria-hidden={true}>↑</span>

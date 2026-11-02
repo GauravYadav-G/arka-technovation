@@ -230,7 +230,7 @@ export default function PortfoliteNav() {
     return () => window.removeEventListener('resize', handleResize);
   }, [open]);
 
-  // Above the hero section on the home page: completely transparent with pure white text
+  // Transparent header over the dark cinematic hero section; morphs to frosted glass on scroll
   const isHome = pathname === '/';
   const isOverHero = isHome && !solid;
 
@@ -299,7 +299,7 @@ export default function PortfoliteNav() {
             <Link to="/" className="relative flex items-center group cursor-pointer shrink-0 py-1" aria-label="ARKA Technovation Private Limited Home">
               <div className="relative h-10 sm:h-12 lg:h-[46px] w-[150px] sm:w-[175px] lg:w-[190px] xl:w-[215px]">
                 <img
-                  src="/images/logo/arka-logo-white.svg"
+                  src="/images/logo/arka-logo-white.webp"
                   alt="ARKA Technovation Private Limited"
                   loading="eager"
                   fetchPriority="high"
@@ -311,7 +311,7 @@ export default function PortfoliteNav() {
                   }`}
                 />
                 <img
-                  src="/images/logo/arka-logo.svg"
+                  src="/images/logo/arka-logo-black.webp"
                   alt="ARKA Technovation Private Limited"
                   loading="lazy"
                   decoding="async"
@@ -578,7 +578,7 @@ export default function PortfoliteNav() {
               <div className="h-[70px] sm:h-[80px] px-5 flex items-center justify-between border-b border-black/8">
                 <Link to="/" onClick={() => setMobile(false)} className="flex items-center" aria-label="ARKA Technovation Private Limited">
                   <img
-                    src="/images/logo/arka-logo.svg"
+                    src="/images/logo/arka-logo-black.webp"
                     alt="ARKA Technovation Private Limited"
                     loading="lazy"
                     decoding="async"

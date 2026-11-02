@@ -1,162 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from '@/components/Link';
 import { motion } from 'framer-motion';
-import { ArrowUp, Phone, Mail, MapPin, Sparkles, Palette } from 'lucide-react';
+import { ArrowUp, Phone, Mail, MapPin, Sparkles } from 'lucide-react';
 import { SERVICES, COMPANY, OFFICES } from '../../lib/data';
 import { CircleArrow } from '../ui';
-import { PRESETS, PRESET_NAMES, PRESET_ACCENTS } from '../LiquidBackground';
-
-/* ─────────────────────────────────────────────────────────────
-   BOTTOM THEME TESTER COMPONENT
-   Default theme: Solar Fire (0)
-   Allows interactive testing of all 12 fluid WebGL palettes
-   ───────────────────────────────────────────────────────────── */
-function ThemeTesterButton() {
-  const [currentPreset, setCurrentPreset] = useState(0);
-  const [isOpen, setIsOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('arka-hero-theme');
-      if (saved !== null) {
-        const idx = parseInt(saved, 10);
-        if (!isNaN(idx) && idx >= 0 && idx < PRESETS.length) {
-          setCurrentPreset(idx);
-        }
-      }
-
-      const handleThemeChange = (e: Event) => {
-        const customEvent = e as CustomEvent<{ index: number }>;
-        if (typeof customEvent.detail?.index === 'number') {
-          setCurrentPreset(customEvent.detail.index);
-        }
-      };
-
-      const handleKeyDown = (e: KeyboardEvent) => {
-        // Toggle theme tester visibility with Shift + 0
-        if (e.shiftKey && (e.key === '0' || e.code === 'Digit0' || e.code === 'Numpad0' || e.key === ')')) {
-          e.preventDefault();
-          setIsVisible((prev) => !prev);
-        }
-      };
-
-      window.addEventListener('keydown', handleKeyDown);
-      window.addEventListener('arka:theme-change', handleThemeChange);
-      return () => {
-        window.removeEventListener('keydown', handleKeyDown);
-        window.removeEventListener('arka:theme-change', handleThemeChange);
-      };
-    }
-  }, []);
-
-  if (!isVisible) return null;
-
-  const selectTheme = (index: number) => {
-    setCurrentPreset(index);
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('arka-hero-theme', String(index));
-      window.dispatchEvent(new CustomEvent('arka:theme-change', { detail: { index } }));
-    }
-  };
-
-  const nextTheme = () => {
-    const next = (currentPreset + 1) % PRESETS.length;
-    selectTheme(next);
-  };
-
-  const scrollToHero = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  return (
-    <div className="relative inline-flex items-center gap-2">
-      {/* Quick Test Theme Swatch Icon Button — No text, icon itself is button */}
-      <button
-        type="button"
-        onClick={nextTheme}
-        className="w-8 h-8 rounded-full bg-black/5 hover:bg-black/10 border border-black/15 hover:border-black/30 flex items-center justify-center transition-all cursor-pointer group shadow-sm"
-        title={`Fluid theme: ${PRESET_NAMES[currentPreset]} (Click to test next)`}
-        aria-label="Cycle theme"
-      >
-        <span
-          className="w-3 h-3 rounded-full shadow-[0_0_8px_currentColor] transition-colors group-hover:scale-110"
-          style={{ backgroundColor: PRESET_ACCENTS[currentPreset] }}
-        />
-      </button>
-
-      {/* Palette Tray Trigger Icon Button */}
-      <button
-        type="button"
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-8 h-8 rounded-full bg-black/5 hover:bg-black/10 border border-black/15 hover:border-black/30 flex items-center justify-center text-zinc-600 hover:text-black transition-colors cursor-pointer"
-        title="Open theme palette"
-        aria-label="Toggle theme picker tray"
-      >
-        <Palette className="w-3.5 h-3.5" />
-      </button>
-
-      {/* Popover Tray with All 12 Themes */}
-      {isOpen && (
-        <div className="absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-[300px] sm:w-[340px] p-4 rounded-2xl bg-white/95 backdrop-blur-xl border border-zinc-200 shadow-2xl z-50 text-left text-zinc-900">
-          <div className="flex items-center justify-between pb-3 mb-3 border-b border-zinc-200">
-            <span className="text-xs font-mono uppercase tracking-wider text-zinc-800 font-semibold">
-              Test Fluid Themes ({PRESETS.length})
-            </span>
-            <button
-              type="button"
-              onClick={() => selectTheme(0)}
-              className="text-[10px] font-mono text-solar hover:underline cursor-pointer"
-            >
-              Reset to Solar Fire
-            </button>
-          </div>
-
-          <div className="grid grid-cols-2 gap-1.5 max-h-[220px] overflow-y-auto pr-1">
-            {PRESET_NAMES.map((name, idx) => {
-              const isSelected = idx === currentPreset;
-              return (
-                <button
-                  key={name}
-                  type="button"
-                  onClick={() => {
-                    selectTheme(idx);
-                    setIsOpen(false);
-                  }}
-                  className={`flex items-center gap-2 px-2.5 py-2 rounded-lg text-left text-xs transition-all cursor-pointer ${
-                    isSelected
-                      ? 'bg-solar/15 text-zinc-900 border border-solar/40 font-semibold'
-                      : 'hover:bg-zinc-100 text-zinc-700 hover:text-black border border-transparent'
-                  }`}
-                >
-                  <span
-                    className="w-2.5 h-2.5 rounded-full shrink-0 shadow-sm"
-                    style={{ backgroundColor: PRESET_ACCENTS[idx] }}
-                  />
-                  <span className="truncate text-[11px]">{name}</span>
-                </button>
-              );
-            })}
-          </div>
-
-          <div className="mt-3 pt-2.5 border-t border-zinc-200 flex items-center justify-between text-[10px] font-mono text-zinc-500">
-            <span>Defaults to Solar Fire</span>
-            <button
-              type="button"
-              onClick={scrollToHero}
-              className="text-solar hover:underline flex items-center gap-0.5 cursor-pointer"
-            >
-              <span>Scroll to Hero</span>
-              <span>↑</span>
-            </button>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
 
 export default function PortfoliteFooter() {
   const serviceList = SERVICES.slice(0, 7);
@@ -199,7 +48,7 @@ export default function PortfoliteFooter() {
         <div className="col-span-2 lg:col-span-2 space-y-6">
           <Link to="/" className="inline-flex items-center group cursor-pointer" aria-label="ARKA Technovation Private Limited">
             <img
-              src="/images/logo/arka-logo.svg"
+              src="/images/logo/arka-logo-black.webp"
               alt="ARKA Technovation Private Limited"
               loading="lazy"
               decoding="async"
@@ -234,18 +83,19 @@ export default function PortfoliteFooter() {
           </div>
         </div>
 
-        {/* Col 3: Useful Links */}
+        {/* Col 3: Useful Links (Navbar Pages) */}
         <div className="col-span-1">
           <p className="mono text-[0.62rem] tracking-[0.24em] uppercase text-zinc-500 mb-5 font-semibold">
             Useful Links
           </p>
           <ul className="space-y-3">
             {[
-              ['Home', '/'],
-              ['Our Services', '/services'],
-              ['Our Work', '/work'],
-              ['Careers', '/careers'],
-              ['Contact & Support', '/contact'],
+              ['About Us', '/about-us'],
+              ['Services', '/services'],
+              ['Gallery', '/gallery'],
+              ['Blogs', '/blogs'],
+              ['Career', '/career'],
+              ['Contact Us', '/contact-us'],
             ].map(([label, to]) => (
               <li key={label}>
                 <Link
@@ -259,19 +109,26 @@ export default function PortfoliteFooter() {
           </ul>
         </div>
 
-        {/* Col 4: Services */}
+        {/* Col 4: Services (5 Core Pillars & UI/UX) */}
         <div className="col-span-1 pl-5 sm:pl-8 lg:pl-0">
           <p className="mono text-[0.62rem] tracking-[0.24em] uppercase text-zinc-500 mb-5 font-semibold">
             Services
           </p>
           <ul className="space-y-3">
-            {serviceList.map((s) => (
-              <li key={s.slug}>
+            {[
+              ['Software Development', '/services/development'],
+              ['Digital Marketing', '/services/digital-marketing'],
+              ['SEO, GEO & AEO', '/seo-lead-generation'],
+              ['Film Production & Media', '/services/film-making'],
+              ['Corporate World News', '/blogs'],
+              ['UI/UX & Interactive', '/ui-ux'],
+            ].map(([title, link]) => (
+              <li key={title}>
                 <Link
-                  to={`/services/${s.slug}`}
+                  to={link}
                   className="text-zinc-700 hover:text-solar transition-colors block text-xs sm:text-sm truncate max-w-[200px] font-medium"
                 >
-                  {s.title}
+                  {title}
                 </Link>
               </li>
             ))}
@@ -328,9 +185,10 @@ export default function PortfoliteFooter() {
             <span>© 2026 {COMPANY.name}. All rights reserved.</span>
           </div>
 
-          {/* Theme Tester Button in the bottom of website */}
-          <div className="flex items-center gap-3">
-            <ThemeTesterButton />
+          {/* Verified High-Yield Performance Badge */}
+          <div className="flex items-center gap-2 mono text-[0.58rem] tracking-[0.14em] uppercase text-zinc-500 font-medium">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            <span>Operational Scale: Enterprise Ready</span>
           </div>
 
           <div className="flex items-center gap-5 mono text-[0.58rem] tracking-[0.14em] uppercase text-zinc-600 font-medium">
