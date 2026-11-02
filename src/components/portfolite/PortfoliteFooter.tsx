@@ -159,7 +159,7 @@ export default function PortfoliteFooter() {
               ['Digital Marketing', '/services/digital-marketing'],
               ['SEO, GEO & AEO', '/seo-lead-generation'],
               ['Film Production & Media', '/services/film-making'],
-              ['Corporate World News', '/blogs'],
+              ['Corporate World News', '/corporate-world-news'],
             ].map(([title, link]) => (
               <li key={title}>
                 <Link

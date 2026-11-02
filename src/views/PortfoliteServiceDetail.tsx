@@ -41,10 +41,16 @@ const SERVICE_TECH_STACK: Record<string, string[]> = {
   'e-commerce': ['Shopify Plus', 'Custom Liquid & Headless', 'Magento 2', 'WooCommerce', 'Stripe & Razorpay', 'Inventory Sync Middleware'],
   'analytics-attribution': ['GA4 BigQuery Export', 'Looker Studio Enterprise', 'Multi-Touch Attribution', 'Dynamic Call Tracking', 'Data Lakehouse', 'SQL BI'],
   'ux-interactive': ['Figma Design Systems', 'Framer Motion', 'WCAG 2.2 AA Audit', 'FullStory Heatmaps', 'Multivariate CRO', 'Design Tokens'],
+  'corporate-world-news': ['4K Executive Broadcast Suite', 'Global Wire Syndication', 'Bloomberg & Refinitiv Feeds', 'Primary Source Verification', 'DaVinci Audio & Color', 'Real-Time Media Monitoring'],
 };
 
 // Strategic value propositions per service
 const SERVICE_STRATEGIC_BENEFITS: Record<string, { title: string; desc: string; metrics: string }[]> = {
+  'corporate-world-news': [
+    { title: 'Verified Executive Authority', desc: 'Elevate your C-suite leaders from participants to industry agenda-setters with broadcast-grade interviews and editorial features.', metrics: 'Tier-1 Syndication' },
+    { title: 'Empirical Market Intelligence', desc: 'Gain proprietary competitive edges with primary-source research and deep sector benchmarks before they become common knowledge.', metrics: '100% Primary Data' },
+    { title: 'Reputation & Narrative Control', desc: 'Command the conversation in your industry through proactive press releases and rapid-response corporate communications pods.', metrics: 'Zero Ambiguity' },
+  ],
   'crm-software': [
     { title: 'Eliminate Disconnected Silos', desc: 'Sync marketing lead ingestion, sales pipelines, and customer support tickets into a single unified database with zero data duplication.', metrics: '100% Data Parity' },
     { title: 'Automated 1-to-1 Customer Journeys', desc: 'Deploy automated behavioral triggers that nurture leads, remind clients of expiring agreements, and trigger re-order workflows on autopilot.', metrics: '12h Saved Weekly' },

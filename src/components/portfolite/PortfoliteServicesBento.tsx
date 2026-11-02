@@ -117,7 +117,7 @@ const SERVICES_DATA: BentoServiceCard[] = [
     index: '05',
     category: 'Editorial & Market Intelligence',
     title: 'Corporate World News',
-    link: '/blogs',
+    link: '/corporate-world-news',
     description:
       'Authoritative corporate journalism, executive interview broadcasts, strategic press releases, breaking business updates, and rigorous market research.',
     tags: [

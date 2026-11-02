@@ -45,6 +45,7 @@ import {
   Briefcase,
   HeartHandshake,
   ArrowUpRight,
+  Newspaper,
 } from 'lucide-react';
 import { NAV, COMPANY } from '../../lib/data';
 
@@ -66,6 +67,7 @@ const getNavIcon = (label: string) => {
     case 'Digital Marketing & Growth': return TrendingUp;
     case 'Search Engine Optimization': return Search;
     case 'E-Commerce Development & SEO': return ShoppingBag;
+    case 'Corporate World News': return Newspaper;
     case 'Corporate Film Making': return Film;
     case 'Content Marketing & Motion': return Sparkles;
     case 'UI/UX & Interactive Design': return Layout;

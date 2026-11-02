@@ -36,7 +36,7 @@ const SERVICES = [
   {
     num: '05',
     title: 'Corporate World News',
-    link: '/blogs',
+    link: '/corporate-world-news',
     text: 'Authoritative corporate journalism, executive interview broadcasts, strategic press releases, breaking business updates, and rigorous market research.',
     img: '/images/services/cards/service-04-data-revenue.webp',
   },
