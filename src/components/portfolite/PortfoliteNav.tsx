@@ -85,6 +85,7 @@ const getNavIcon = (label: string) => {
     case 'Our Story & Heritage': return Award;
     case 'Working Methodology': return Compass;
     case 'Leadership & Specialist Pods': return Users;
+    case 'Why ARKA Technovation': return ShieldCheck;
     case 'Featured Client Work': return Briefcase;
     case 'Careers at ARKA': return HeartHandshake;
     default: return ArrowUpRight;
@@ -143,9 +144,7 @@ export default function PortfoliteNav() {
     const targetWidth =
       label === 'Services'
         ? 710
-        : label === 'SEO & Lead Generation' || label === 'UX Interactives'
-        ? 710
-        : label === 'Our Technology'
+        : label === 'About Us'
         ? 580
         : 560;
 
@@ -325,7 +324,7 @@ export default function PortfoliteNav() {
           {/* Desktop Navigation Links with Full Height & Underline Indicator */}
           <nav
             ref={navRef}
-            className="relative hidden xl:flex items-center h-full min-w-0"
+            className="relative hidden lg:flex items-center h-full min-w-0"
             style={{ color: isOverHero ? '#ffffff' : undefined }}
             onMouseLeave={leave}
             onKeyDown={(event) => {
@@ -536,7 +535,7 @@ export default function PortfoliteNav() {
 
             <button
               onClick={() => setMobile(true)}
-              className={`xl:hidden grid h-11 w-11 place-items-center rounded-lg border transition-colors ${
+              className={`lg:hidden grid h-11 w-11 place-items-center rounded-lg border transition-colors ${
                 isOverHero
                   ? 'border-white/30 text-white hover:bg-white/10'
                   : 'border-black/15 text-zinc-800 hover:text-black hover:bg-black/5'
@@ -562,7 +561,7 @@ export default function PortfoliteNav() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setMobile(false)}
-              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[940] xl:hidden"
+              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[940] lg:hidden"
             />
 
             <motion.div
@@ -571,7 +570,7 @@ export default function PortfoliteNav() {
               exit={{ x: '100%' }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
               id="mobile-navigation"
-              className="fixed inset-y-0 right-0 w-full max-w-sm bg-white/98 backdrop-blur-2xl z-[950] border-l border-black/[0.08] shadow-2xl flex flex-col xl:hidden text-black font-sans"
+              className="fixed inset-y-0 right-0 w-full max-w-sm bg-white/98 backdrop-blur-2xl z-[950] border-l border-black/[0.08] shadow-2xl flex flex-col lg:hidden text-black font-sans"
             >
               <div className="h-[70px] sm:h-[80px] px-5 flex items-center justify-between border-b border-black/8">
                 <Link to="/" onClick={() => setMobile(false)} className="flex items-center" aria-label="ARKA Technovation Private Limited">

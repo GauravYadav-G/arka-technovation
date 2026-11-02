@@ -55,18 +55,13 @@ export type NavGroup = {
 export const NAV: NavGroup[] = [
   { label: 'Home', to: '/', hideOnDesktop: true },
   {
-    label: 'SEO & Lead Generation',
-    shortLabel: 'SEO & Leads',
-    to: '/seo-lead-generation',
+    label: 'About Us',
+    to: '/about-us',
     children: [
-      { label: 'Organic Search & SEO', to: '/seo-lead-generation#organic-search', note: 'Keywords · Technical SEO · Authority building' },
-      { label: 'Enterprise SEO Services', to: '/seo-lead-generation#enterprise-seo', note: 'High-volume keyword strategy & technical architecture' },
-      { label: 'Local SEO & Google Guarantee', to: '/seo-lead-generation#local-seo', note: 'Noida & multi-location map dominance' },
-      { label: 'Page Speed & Core Web Vitals', to: '/seo-lead-generation#core-web-vitals', note: 'Sub-second LCP, INP & TTFB speed engineering' },
-      { label: 'PPC Management Services', to: '/seo-lead-generation#ppc', note: 'High-ROAS Google & Meta paid media campaigns' },
-      { label: 'Competitor & Addressable Geofencing', to: '/seo-lead-generation#geofencing', note: 'Hyper-targeted 1000 sq ft location fences' },
-      { label: 'Social Media Advertising', to: '/seo-lead-generation#social-ads', note: 'Meta, LinkedIn & YouTube video ads' },
-      { label: 'Online Review Acceleration', to: '/seo-lead-generation#reviews', note: 'Reputation acceleration & sentiment tracking' },
+      { label: 'Our Story & Heritage', to: '/about-us#story', note: '17+ years of engineering craft in Sector 63, Noida' },
+      { label: 'Working Methodology', to: '/about-us#methodology', note: 'Zero outsourcing, agile delivery & dedicated teams' },
+      { label: 'Leadership & Specialist Pods', to: '/about-us#leadership', note: 'Direct access to engineers, designers & filmmakers' },
+      { label: 'Why ARKA Technovation', to: '/#why-us', note: 'Enterprise reliability, sub-second speeds & ROI focus' },
     ],
   },
   {
@@ -86,46 +81,21 @@ export const NAV: NavGroup[] = [
     ],
   },
   {
-    label: 'UX Interactives',
-    to: '/ux-interactives',
-    children: [
-      { label: 'UX Website Design & Redesign', to: '/ux-interactives#website-design', note: 'Research-backed interfaces & brand experiences' },
-      { label: 'High-Converting Landing Pages', to: '/ux-interactives#landing-pages', note: 'Sales funnels & rapid conversion systems' },
-      { label: 'Conversion Rate Optimization (CRO)', to: '/ux-interactives#cro', note: 'Data-driven heatmaps & user flow refinement' },
-      { label: 'Content Marketing & SEO Copy', to: '/ux-interactives#content-marketing', note: 'High-converting editorial, blogs & sales guides' },
-      { label: 'Personalized Web Content', to: '/ux-interactives#personalized-content', note: 'Firmographic dynamic website experiences' },
-      { label: 'Infographics & Motion Graphics', to: '/ux-interactives#infographics', note: 'Data visualization & kinetic explainer graphics' },
-      { label: 'Digital Experience Development', to: '/ux-interactives#digital-experience', note: 'Custom full-stack web portals & Shopify stores' },
-      { label: 'ADA Web Compliance Services', to: '/ux-interactives#ada-compliance', note: 'WCAG 2.2 accessibility audits & inclusive UI' },
-    ],
+    label: 'Gallery',
+    to: '/gallery',
   },
   {
-    label: 'Our Technology',
-    shortLabel: 'Technology',
-    to: '/our-technology',
-    children: [
-      { label: 'Revenue Acceleration Platform', to: '/our-technology#revenue-platform', note: 'AI-powered marketing & sales revenue engine' },
-      { label: 'Customer Data Platform (CDP)', to: '/our-technology#cdp', note: 'Unified customer profiles & segmentation' },
-      { label: 'CRM Retargeting & ETL Pipelines', to: '/our-technology#crm-retargeting', note: 'First-party CRM audience syncing & data lakes' },
-      { label: 'Web Channel Call Tracking', to: '/our-technology#call-tracking', note: 'Dynamic Number Insertion & campaign attribution' },
-      { label: 'Channel Partner Pipeline', to: '/our-technology#partner-pipeline', note: 'Multi-tier distributor & sales pipeline governance' },
-      { label: 'Marketing Automation & ABM', to: '/our-technology#marketing-automation', note: 'Salesforce, Dynamics 365 & account-based marketing' },
-    ],
+    label: 'Blogs',
+    to: '/blogs',
   },
   {
-    label: 'Who We Are',
-    to: '/who-we-are',
-    children: [
-      { label: 'Our Story & Heritage', to: '/who-we-are#story', note: '17+ years of engineering craft in Sector 63, Noida' },
-      { label: 'Working Methodology', to: '/who-we-are#methodology', note: 'Zero outsourcing, agile delivery & dedicated teams' },
-      { label: 'Leadership & Specialist Pods', to: '/who-we-are#leadership', note: 'Direct access to engineers, designers & filmmakers' },
-      { label: 'Featured Client Work', to: '/work', note: 'Case studies, web applications & films' },
-      { label: 'Careers at ARKA', to: '/careers', note: 'Join our in-house engineering pods' },
-    ],
+    label: 'Career',
+    to: '/career',
   },
-  { label: 'Our Work', to: '/work', hideOnDesktop: true },
-  { label: 'Careers', to: '/careers', hideOnDesktop: true },
-  { label: 'Contact', to: '/contact', hideOnDesktop: true },
+  {
+    label: 'Contact Us',
+    to: '/contact-us',
+  },
 ];
 
 /* ── SERVICES — full taxonomy with sub-services from the source site ── */
