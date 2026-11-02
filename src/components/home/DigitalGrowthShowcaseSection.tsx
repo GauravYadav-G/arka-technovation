@@ -127,7 +127,7 @@ export default function DigitalGrowthShowcaseSection() {
                 alt="ARKA Technovation - Software Development, SEO Authority & Digital Marketing"
                 width={896}
                 height={1200}
-                className="w-auto h-full max-h-[420px] sm:max-h-[520px] lg:max-h-none object-contain select-none pointer-events-none drop-shadow-[0_20px_45px_rgba(0,0,0,0.06)] [mix-blend-mode:multiply]"
+                className="w-auto h-full max-h-[420px] sm:max-h-[520px] lg:max-h-none object-contain select-none pointer-events-none drop-shadow-[0_20px_45px_rgba(0,0,0,0.06)]"
                 priority
               />
             </motion.div>
