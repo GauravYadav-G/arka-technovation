@@ -68,6 +68,7 @@ const getNavIcon = (label: string) => {
     case 'E-Commerce Development & SEO': return ShoppingBag;
     case 'Corporate Film Making': return Film;
     case 'Content Marketing & Motion': return Sparkles;
+    case 'UI/UX Design & Architecture': return Layout;
     case 'UX Website Design & Redesign': return Layout;
     case 'High-Converting Landing Pages': return Rocket;
     case 'Conversion Rate Optimization (CRO)': return BarChart3;
@@ -142,7 +143,7 @@ export default function PortfoliteNav() {
     const itemCenter = itemRect.left - navRect.left + itemRect.width / 2;
 
     const targetWidth =
-      label === 'Services'
+      label === 'Services' || label === 'UI/UX'
         ? 710
         : label === 'About Us'
         ? 580

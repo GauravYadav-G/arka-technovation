@@ -68,6 +68,7 @@ export const NAV: NavGroup[] = [
     label: 'Services',
     to: '/services',
     children: [
+      { label: 'UI/UX Design & Architecture', to: '/ui-ux', note: 'Human-centric interfaces, design systems & CRO' },
       { label: 'CRM Software & SaaS', to: '/services/crm-software', note: 'Custom CRM · Contact management · Automated journeys' },
       { label: 'ERP Enterprise Solutions', to: '/services/crm-software#erp', note: 'Finance, supply chain, inventory & operations' },
       { label: 'Website Development', to: '/services/development', note: 'Full-stack Next.js, React, Node.js, PHP & .NET' },
@@ -78,6 +79,20 @@ export const NAV: NavGroup[] = [
       { label: 'E-Commerce Development & SEO', to: '/services/e-commerce', note: 'Shopify, Magento, marketplace SEO & shopping PPC' },
       { label: 'Corporate Film Making', to: '/services/film-making', note: 'Commercials, factory shoots & product videos' },
       { label: 'Content Marketing & Motion', to: '/services/content-marketing', note: 'SEO copywriting, explainers & visual storytelling' },
+    ],
+  },
+  {
+    label: 'UI/UX',
+    to: '/ui-ux',
+    children: [
+      { label: 'UX Website Design & Redesign', to: '/ui-ux#website-design', note: 'Research-backed interfaces & brand experiences' },
+      { label: 'High-Converting Landing Pages', to: '/ui-ux#landing-pages', note: 'Sales funnels & rapid conversion systems' },
+      { label: 'Conversion Rate Optimization (CRO)', to: '/ui-ux#cro', note: 'Data-driven heatmaps & user flow refinement' },
+      { label: 'Content Marketing & SEO Copy', to: '/ui-ux#content-marketing', note: 'High-converting editorial, blogs & sales guides' },
+      { label: 'Personalized Web Content', to: '/ui-ux#personalized-content', note: 'Firmographic dynamic website experiences' },
+      { label: 'Infographics & Motion Graphics', to: '/ui-ux#infographics', note: 'Data visualization & kinetic explainer graphics' },
+      { label: 'Digital Experience Development', to: '/ui-ux#digital-experience', note: 'Custom full-stack web portals & Shopify stores' },
+      { label: 'ADA Web Compliance Services', to: '/ui-ux#ada-compliance', note: 'WCAG 2.2 accessibility audits & inclusive UI' },
     ],
   },
   {
