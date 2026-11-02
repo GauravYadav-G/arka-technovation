@@ -123,7 +123,7 @@ export default function PortfoliteNav() {
   const [prevOpen, setPrevOpen] = useState<string | null>(null);
   const [mobile, setMobile] = useState(false);
   const [solid, setSolid] = useState(false);
-  const [mobGroup, setMobGroup] = useState<string | null>('Services');
+  const [mobGroup, setMobGroup] = useState<string | null>(null);
   const closeTimer = useRef<number | null>(null);
   const pathname = usePathname() || '/';
 
@@ -537,7 +537,10 @@ export default function PortfoliteNav() {
             </Link>
 
             <button
-              onClick={() => setMobile(true)}
+              onClick={() => {
+                setMobile(true);
+                setMobGroup(null);
+              }}
               className={`lg:hidden grid h-11 w-11 place-items-center rounded-lg border transition-colors ${
                 isOverHero
                   ? 'border-white/30 text-white hover:bg-white/10'
